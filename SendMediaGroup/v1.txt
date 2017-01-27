@@ -1,0 +1,15 @@
+https://www.googleapis.com/pagespeedonline/v1/runPagespeed?url=http://bkid4.tk&key?=AIzaSyDeWdYRg1dANj40oxIN1e0L4fjQliTAkjQ&strategy=mobile
+https://www.googleapis.com/pagespeedonline/v1/runPagespeed?urlhttp%3A%2F%2Fbkid4.tk&key?=AIzaSyDeWdYRg1dANj40oxIN1e0L4fjQliTAkjQ&strategy=mobile 
+
+
+https://www.googleapis.com/pagespeedonline/v3beta1/mobileReady?url=https://www.foi.gov.ph&key=AIzaSyCPFRwvYYi5ASk2g9-RMIztcYSUMo2q_Gc&
+
+
+
+
+https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=http://bkid4.tk&key?=AIzaSyAmgX4UlbpGWq52v1q6QGvA5L2RtwLTZFY&strategy=mobile
+
+
+https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=http://bkid4.tk/&key=AIzaSyD7DzQ2X8XeQwj3tiHDG_CuOeb1jlBuv1o&strategy=mobile
+
+https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=http://tyjpx.com&key=AIzaSyD7DzQ2X8XeQwj3tiHDG_CuOeb1jlBuv1ostrategy=mobile

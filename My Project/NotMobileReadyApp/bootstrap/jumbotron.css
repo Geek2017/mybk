@@ -1,0 +1,258 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+.jumbotron { 
+  background: url(images/header-img-92.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    height: 650px;
+}
+@font-face {
+    font-family: "open_sans_condensedbold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/OpenSans-CondBold-webfontd41d.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-CondBold-webfont.woff") format("woff"), url("fonts/OpenSans-CondBold-webfont.ttf") format("truetype"), url("fonts/OpenSans-CondBold-webfont.svg#open_sans_condensedbold") format("svg");
+}
+@font-face {
+    font-family: "open_sanscondensed_light";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/OpenSans-CondLight-webfontd41d.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-CondLight-webfont.woff") format("woff"), url("fonts/OpenSans-CondLight-webfont.ttf") format("truetype"), url("fonts/OpenSans-CondLight-webfont.svg#open_sanscondensed_light") format("svg");
+}
+@font-face {
+    font-family: "open_sanslight";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/OpenSans-Light-webfontd41d.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-Light-webfont.woff2") format("woff2"), url("fonts/OpenSans-Light-webfont.woff") format("woff"), url("fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+}
+.jumbotron h1 {
+    font-family: open_sanscondensed_light;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+	text-align: center;
+}
+.jumbotron h1 span {
+    background: none repeat scroll 0 0 #000;
+    color: #8db3dd;
+    display: block;
+    font-family: open_sanslight;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 20px auto;
+    max-width: 655px;
+    padding: 10px 0;
+    text-align: center;
+}
+.head-bann .container > a {
+    background: none repeat scroll 0 0 #4b97ed;
+    clear: both;
+    color: #ffffff;
+    display: block;
+    font-family: open_sanslight;
+    font-size: 19px;
+    margin: 20px auto;
+    max-width: 300px;
+    padding: 15px 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.head-bann img {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+img {
+    max-width: 100%;
+}
+p {
+    color: #5f5f5f;
+    font-family: open_sanslight;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+h2 {
+    color: #5f5f5f;
+    font-family: open_sans_condensedbold;
+    font-size: 24px;
+}
+.news-let h2 {
+    border-bottom: 1px solid #9ec3ec;
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.news-let .btn-success {
+    background-color: #4b97ed;
+    border: 1px solid #4b97ed;
+    border-radius: 0;
+}
+.news-let .btn-default.active, .news-let .btn-default.focus, .news-let .btn-default:active, .news-let .btn-default:focus, .news-let .btn-default:hover {
+    background-color: #4b97ed;
+    border: 1px solid #4b97ed;
+    border-radius: 0;
+    color: #FFFFFF;
+}
+.news-let .btn-default {
+    background-color: transparent;
+    border-color: #4b97ed;
+    border-radius: 0;
+    color: #4b97ed;
+}
+.col-md-12.news-let {
+    float: none;
+    margin: auto;
+    max-width: 1170px;
+}
+.row.news-wrap {
+    background: url(images/news-bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-top: 2px solid #d8d8d8;
+    padding: 50px 0;
+    margin: auto;
+}
+.news-let .this-inputs {
+    margin-top: 20px;
+}
+.news-let .form-control.input-lg {
+    border-radius: 0 !important;
+}
+.news-let .btn.btn-primary.btn-group-lg.search-btn {
+    border: 1px solid #4b97ed;
+    border-radius: 0 !important;
+}
+.news-let .export {
+    border: 1px solid #4b97ed;
+    padding: 10px;
+    text-decoration: none;
+}
+.news-let .export > img {
+    padding-right: 10px;
+}
+.news-let .export:hover {
+    background: none repeat scroll 0 0 #ffffff;
+    color: #4b97ed;
+}
+.foot-banner {
+    background: url(images/foot-banner.jpg) no-repeat center center scroll; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 200px 0;
+    text-align: center;
+}
+.foot-banner > p, .foot-banner a {
+    color: #ffffff;
+    display: inline-block;
+    font-family: open_sanslight;
+    font-size: 26px;
+    margin: auto 25px;
+    padding: 10px 25px;
+    vertical-align: middle;
+}
+.foot-banner a:hover {
+    background: none repeat scroll 0 0 #ffffff;
+    color: #ec971f;
+    text-decoration: none;
+}
+.foot-banner > p {
+    background: none repeat scroll 0 0 #1b1b1b;
+}
+.foot-banner a {
+    background: none repeat scroll 0 0 #ec971f;
+}
+
+.not-foot-banner {
+    text-align: center;
+}
+.not-foot-banner > p, .not-foot-banner a {
+    color: #ffffff;
+    display: inline-block;
+    font-family: open_sanslight;
+    font-size: 26px;
+    margin: auto 25px;
+    padding: 10px 25px;
+    vertical-align: middle;
+}
+.not-foot-banner a:hover {
+    background: none repeat scroll 0 0 #ffffff;
+    color: #ec971f;
+    text-decoration: none;
+}
+.not-foot-banner > p {
+    background: none repeat scroll 0 0 #1b1b1b;
+}
+.not-foot-banner a {
+    background: none repeat scroll 0 0 #ec971f;
+}
+.mob-demo-cont > img {
+    position: relative;
+    z-index: 10;
+}
+
+.mob-demo-cont {
+    position: relative;
+}
+
+.mob-demo h3 {
+    font-family: open_sanslight;
+    text-align: center;
+    height: 30px;
+}
+.mob-demo-cont {
+    font-size: 0;
+    margin: 20px auto;
+    max-width: 293px;
+    position: relative;
+    text-align: center;
+}
+.mob-demo-cont  .cont-screen {
+    background: none repeat scroll 0 0 grey;
+    box-sizing: border-box;
+    max-width: 290px;
+    /*min-height: 532px;*/
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding-top: 50px;
+    padding-left: 15px;
+}
+.passed {
+    background: none repeat scroll 0 0 #098e2f;
+    color: #ffffff;
+}
+.percent {
+    background-color: #3571b5;
+    color: #ffffff;
+}
+.passed, .percent {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 2;
+    margin: 1%;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 48%;
+}
+.togs {
+    color: #4b97ed;
+    font-family: open_sanslight;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+.head-bann .container > a:hover {
+    text-decoration: none;
+}

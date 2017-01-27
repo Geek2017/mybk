@@ -1,0 +1,136 @@
+
+<html>
+<head>
+
+<title>Spot The Difference</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/btsp.css"  rel="stylesheet"  type="text/css">
+<script src="js/jq.js"></script>
+<script src="js/app.js"></script>
+<script src="js/bp.js"></script>
+</head>
+<body onload="listener()">
+
+
+<div id="share" class="fb-share-button" data-href="http://jm.dev/index/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+</div>
+
+<div id="imageswrapper">
+  <div id="first">			
+	</div>
+  <div id="second"></div>
+  <div id="third"></div>
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+
+<div id="wrapper">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+
+      <div class="modal-content">
+        <div class="modal-header">
+    
+          <h4 class="modal-title">Spot the difference</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please LogIn to start</p>
+
+         
+        </div>
+        <div class="modal-footer">
+		  <input class="btn btn-info btn-block" type="button" value="Proceed w/ Facebook" onclick="fbLogin()" />
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+<div id="progressBar">
+	<div>	
+	</div>
+</div>
+
+<!--<div id="different">
+<img  src="css/imgs/HD_PhotoHunt_After_0001_sm.jpg" ></img>
+</div>
+	
+
+<div id="original">
+
+</div>
+
+<div id="transparentmap">
+		<img class="transparentmap" src="css/imgs/transparentmap.png" usemap="#photohunt" />
+		<map name="photohunt">
+		<area id="leaf" shape ="circle" coords="133, 280, 11" />
+		<area id="light" shape ="rect" coords="253, 2, 292, 24" />
+		<area id="nolight" shape ="rect" coords="273, 151, 293, 182" />
+		<area id="sauce" shape ="circle" coords="368, 385, 7" />
+		<area id="petal" shape ="rect" coords="261, 375, 281, 403" />
+		</map>
+</div>
+
+<div>
+	<div id="leaf-diff"></div>
+	<div id="light-diff"></div>
+	<div id="nolight-diff"></div>
+	<div id="sauce-diff"></div>
+	<div id="petal-diff"></div>
+</div>-->
+	
+	<div id="page">
+  
+
+<div  >
+<img class="img1"  src="pic1.png" width="800" height="300" alt="" id="myImgId0">
+<img class="img2" src="pic2.png" width="800" height="300" alt="" id="myImgId1">
+<img class="img3" src="pic3.png" width="800" height="300" alt="" id="myImgId2">
+</div>
+<!--<div id="image2" class="image2">
+
+</div>-->
+
+<div class="blocktext">
+<p>X: <span id="x">0</span></p>
+<p>Y: <span id="y">0</span></p>
+<p>Life: <span id="life"></span></p>
+
+</div>
+
+
+
+</div>
+
+	
+
+
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

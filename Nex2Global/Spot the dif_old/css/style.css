@@ -1,0 +1,125 @@
+.blocktext{
+  position: fixed;
+    bottom: 190px;
+    right: 1260px;
+
+
+
+}
+
+.img1 {
+  position: fixed;
+    bottom: 300px;
+    right: 500px;
+
+    border: 3px solid #000;
+
+}
+
+.img2 {
+   position: fixed;
+    bottom: 300px;
+    right: 500px;
+
+    border: 3px solid #fff;
+
+}
+
+.img3 {
+   position: fixed;
+   bottom: 300px;
+    right: 500px;
+   
+    border: 3px solid #ea0016;
+
+}
+
+
+#different {
+  position: absolute;
+  /*background: url(imgs/HD_PhotoHunt_After_0001_sm.jpg) no-repeat top left;*/
+  width:400px;
+  height:600px;
+  left:440px;
+  top:166px;
+  z-index:0;}
+
+#original {position: absolute;background: url(imgs/HD_PhotoHunt_Before_0001_sm.jpg)no-repeat top left;width:400px;height:600px;left:5px;top:166px;z-index:0;}
+
+
+
+
+#leaf-diff {position:absolute;background: url(imgs/leaf.png) no-repeat top left;width:400px;height:600px;left:440px;top:166px;z-index:1;display: none;}
+#light-diff {position:absolute;background: url(imgs/light.png) no-repeat top left;width:400px;height:600px;left:440px;top:166px;display:none;z-index:1;}
+#nolight-diff {position:absolute;background: url(imgs/nolight.png) no-repeat top left;width:400px;height:600px;left:440px;top:166px;display:none;z-index:1;}
+#sauce-diff {position:absolute;background: url(imgs/sauce.png) no-repeat top left;width:400px;height:600px;left:440px;top:166px;display:none;z-index:1;}
+#petal-diff {position:absolute;background: url(imgs/petal.png) no-repeat top left;width:400px;height:600px;left:440px;top:166px;display:none;z-index:1;}
+#transparentmap {z-index:9999;position: absolute;left:440px;top:166px;}
+#form_container {display:none;color:#fff;background:#000;border:2px solid #fff;position:absolute;top:180px;left:150px;z-index:9999999;padding:10px;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+a:active {text-decoration: none;}
+body {color:#000; font-family:helvetica, arial, sans-serif;}
+
+
+
+#progressBar {
+    
+  width: 61.5%;
+  
+  height: 6px;
+
+}
+
+#progressBar div {
+
+  height: 100%;
+  left: 0px;
+  padding: 0 1px;
+
+  
+  background-color: #ea0016;
+  box-sizing: border-box;
+}
+
+#button {
+    position: absolute;
+    top: 50%;
+}
+
+
+#imageswrapper {
+  width:700px;
+  clear:both;
+}
+#first {
+  
+
+    width: 50px;
+    height: 50px;
+    background-image: url('imgs/L1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+  float:left;
+}
+#second {
+   width: 50px;
+    height: 50px;
+    background-image: url('imgs/L1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  float:left;
+}
+#third {
+  width: 50px;
+    height: 50px;
+    background-image: url('imgs/L1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  float:left;
+}
+
+

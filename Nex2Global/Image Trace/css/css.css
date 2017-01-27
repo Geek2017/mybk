@@ -1,0 +1,77 @@
+
+
+.front {
+
+   width: 48%; 
+   height:300px; 
+   background:url(imgs/front.jpg)no-repeat top left;
+
+}
+
+.one {
+   float:left; 
+   width: 200px; 
+   height:200px; 
+   background:url(imgs/70.png)no-repeat top left;
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+
+
+.oneoverlay {
+   float:left;
+   width: 200px;
+   height: 200px;   
+   position: absolute;
+   /*top: 100px;
+   right: 1180px;*/
+   /*border: 1px solid #73AD21; */
+   background:url(imgs/test.png)no-repeat top left;
+   background-size: contain;   
+}
+
+.c1 {
+   /*float:left;*/
+   display: block;
+}
+
+.two {
+   float:left;  
+   width: 200px;  
+   height:200px; 
+   background:url(imgs/80.png)no-repeat top left;
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+
+.three {
+   float:left; 
+   width: 200px;  
+   height:200px; 
+   background:url(imgs/90.png)no-repeat top left;
+   background-repeat: no-repeat;
+   background-size: contain;
+
+}
+
+.four {
+   float:left; 
+   width: 200px;  
+   height:200px; 
+   background:url(imgs/blank.png)no-repeat top left;
+   background-repeat: no-repeat;
+   background-size: contain;
+   margin:05px
+}
+
+
+
+    #wrapper {
+    display:table;
+    width:700px;
+}
+#row {
+    display:table-row;
+}

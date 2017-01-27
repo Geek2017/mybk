@@ -1,0 +1,450 @@
+<html lang="en" ng-app="angularTable">
+<head>
+  <title>Cash Counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/admin-styles.css">
+  <script src="app/angular.js"></script>
+  <script src="app/dirPagination.js"></script>
+  <script src="app/moment.js"></script>
+  <script src="app/app.js"></script>
+</head>
+<body ng-csp  ng-keypress="myFunct1($event);">
+  <div id="cc-main-wrapper">
+    <div class="container" ng-controller="CurrencyController">
+      <div class="row">
+        <div class="twelve columns">
+
+          <!-- Header -->
+          <div id="header">
+            <div class="row">
+              <div class="two columns">
+                &nbsp;
+                <a class="cc-rel-con" type="button" data-ng-show="bk" ng-init="bk=false;" data-ng-click="reset();">
+                <img class="cc-btn-back" src="images/arrow-left.png"></a>
+              </div>
+              <div class="eight columns remove-left text-center branding">
+               <label class="cc-branding">
+               <img class="logo1" src="images/logo1.png">
+               <img class="logo2" src="images/logo2.png"><span>   Cash Counter</span></label>
+              </div>
+              <div class="two columns remove-left">
+                <a type="button" ng-click="exit();"><img class="cc-btn-close" src="images/close.png"></a>
+              </div>
+            </div>
+          </div>
+          <!-- /Header -->
+
+          <!-- Content -->
+          <div id="content">
+            
+            <!--Global Modals-->
+            <div class="global-modals">
+              <div id="id01" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Please set your currency first to continue.</p>
+                  </div>
+                  <footer class="cc-container">
+                    <button class="btn cc-btn-secondary" data-ng-click="close();" type="button">Cancel</button>
+                    <button class="btn cc-btn-primary" type="button"  data-ng-click="proceed();">Proceed</button>
+                  </footer>
+                </div>
+              </div>
+
+              <div id="id02" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Transaction succesful!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Transaction succesfully saved.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id03" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Invalid!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Please check your input.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id04" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Success!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>Email succesfully set.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id05" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Invalid!</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p>No trasanction save yet</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="id06" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="cc-modal-header">
+                    <h3>Alert</h3>
+                  </div>
+                  <div class="cc-container">
+                    <p ng-show="emailnn" ng-init="emailnn=true">Please set your email</p>
+                    <p ng-show="emailn">Please Input your email</p>
+                    <input type="email" ng-model="mailset">
+                  </div>
+                  <footer class="cc-container">
+                    <button class="btn cc-btn" type="button" data-ng-click="mailsetting();">Save</button>
+                  </footer>
+                </div>
+              </div>
+              
+              <div id="id07" class="cc-modal">
+                <div class="cc-modal-content cc-animate-zoom cc-card-8">
+                  <div class="row">
+                    <div class="cc-modal-header">
+                      <h3>Warning</h3>
+                    </div>
+                  </div>
+                  <div class="cc-container">
+                    <p>Your current transaction will be deleted. Are you sure you want to exit?</p>
+                  </div>
+                  <div class="cc-container">
+                     <button class="btn cc-btn-primary" type="button" data-ng-click="ok();" value="Ok">Yes</button>
+                     <button class="btn cc-btn-secondary" type="button" data-ng-click="cancel();" value="Cancel">No</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/Global Modals-->
+
+            <!--Welcome Screen-->
+            <div id="welcome-screen" data-ng-show="h0" ng-init="h0=true">
+              <div class="row">
+                <div class="twelve columns text-center">
+                  <div class="cc-wc-title">Welcome to Cash Counter</div>
+                  <p class="cc-wc-msg">We provide merchants with a comprehensive and innovative range of services and solutions to eliminate payment complexity and make the consumer purchasing experience seamless and secure, whatever the sales channel or payment method.</p>
+                  <!--Count Bill Btn-->
+                  <a  type="button" class="btn cc-btn" data-ng-click="ito0();">
+                    <img src="images/cash.png" alt="Cash">
+                  </a>
+                  <!--/Count Bill Btn-->
+                  <!--History Btn-->
+                  <a type="button" class="btn cc-btn" data-ng-click="ito1();">
+                    <img src="images/history.png" alt="History">
+                  </a>
+                  <!--/History Btn-->
+                  <!--Settings Btn-->
+                  <a type="button" class="btn cc-btn" data-ng-click="ito2();">
+                    <img src="images/settings.png" alt="Settings">
+                  </a>
+                  <!--/Settings Btn-->
+                </div>
+              </div>
+            </div>
+            <!--/Welcome Screen-->
+            
+            <!--DATA CONTROLER-->
+            <div id="main-data-controller" data-ng-show="h1" ng-init="h1=false">
+              <div ng-controller="listdata">
+
+                <!--MAIN TABS-->
+                <div id="cc-main-tabs">
+                  <div class="row">
+                    <div class="twelve columns">
+                      <div class="cc-tabs" ng-show="tabs">
+                        <a href="#" class="btn cc-tab" data-ng-click="coinf();">COIN</a>
+                        <a href="#" class="btn cc-tab" data-ng-click="notesf();">BANKNOTES</a>
+                        <a href="#" class="btn cc-tab" data-ng-click="totalf();">TOTAL</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/MAIN TABS-->
+
+                <input type="text" ng-model="search" hidden>
+                <input type="text" ng-model="copy" hidden>
+                <input type="text" ng-model="gt" hidden>
+                <input type="text" ng-model="lt" hidden>
+                <input type="text" ng-model="gt1" hidden>
+                <input type="text" ng-model="lt1" hidden>
+
+                <div class="main-data-controller-container">
+                <!--/MainCtrl-->
+                <div  ng-controller="MainCtrl">
+                  <div dir-paginate="user in users |filter:search | itemsPerPage: pageSize" current-page="currentPage" auto-hide="false" class="bs-component">
+
+                    <input ng-model="face" type="number" ng-init="face= (users | filter: search).length" hidden />
+
+                    <div id="cc-input-controller" data-ng-controller="StorageExampleCtrl" class="ng-scope">
+
+                      <div ng-show="input">
+                        <h1>{{user.description}} {{user.symbol}}</h1>
+
+                        <input id="val" type="text" data-ng-keyup="myFunct($event);set();showme=true;" class="cc-form-control" data-ng-change="userValue=val" my-validator input maxlength="4" ng-model="val" valid-values="validValues"
+                        ng-checked="setFocus();" />
+
+                        <!--{{ currentPage}}||{{filteredData1}}<br>-->
+                        <!--<input type="button"  data-ng-click="countit();" value="?" />-->
+
+                        <input id="pagination-left" type="button"  data-ng-click="moveb();" value="<" />
+                        <input id="pagination-right" type="button"  data-ng-click="movef();" value=">"/>
+
+                        <input type="text" data-ng-model="mval" data-ng-value="mval={{user.money_value}}" hidden />
+                        <input type="text" data-ng-model="userValue" ng-value="userValue=val" hidden />
+                        <input type="text" data-ng-model="userKey"  ng-value="userKey=mval" hidden />
+
+
+                        <div class="show-me" ng-show="showme">
+                          <h2 data-ng-show="c101" >{{user.money_value}} x {{val}} =<b> {{user.money_value*val | number:2}} {{user.symbol}}</b></h2>
+                          <h2 data-ng-show="c102" >{{user.money_value | number:0}} x {{val}} =<b> {{user.money_value*val | number:0}} {{user.symbol}} </b></h2>
+                        </div>
+                      </div>
+                      <!--/INPUT-->
+
+                      <div ng-controller="StorageController" class="print">
+
+                        <div id="result" ng-show="modal">
+
+                          <div class="cc-dt">
+                            <div class="row">
+                                <div class="cc-print-date pull-left"><b>DATE:</b> <br /> {{thedate}}</div>
+                                <div class="cc-print-time pull-right"><b>TIME:</b> <br /> {{thetime}}</div>
+                            </div>
+                          </div>
+
+                          <div id="data-controller">
+                            <div class="row">
+                              <!-- total -->
+                              <div class="table-responsive">
+
+                                <table class="table">
+                                    <tr>
+                                      <td><label><b>Total:<b/></label></td>
+                                      <td class="text-right cc-sum-total"><label>{{t1 | number:2 }} {{ user.symbol}} </label></td>
+                                    </tr>
+                                </table>
+
+                                <div class="data-controller-total-container">
+
+                                  <table class="table">
+                                    <thead>
+                                    <tr>
+                                      <td width="40%"><b>Coins:</b></td>
+                                      <td width="20%" class="text-center"><b>{{t4}}</b></td>
+                                      <td width="40%" class=" text-right"><b>{{t2|number:2}} {{user.symbol}} </b></td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr data-ng-repeat="key in storageKeys" data-ng-if="search===copy && key >= gt && key <=lt">
+                                        <div ng-init="storageKeys.total=0">
+                                          <td width="40%">{{key}} {{user.symbol}}</td>
+                                          <td width="20%" class="text-center">x{{get(key)}} </td>
+                                          <td width="40%" class="text-right">{{get(key)*key | number:2}} {{user.symbol}}</td>
+                                        </div>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <td width="40%"><b>Bills:</b></td>
+                                        <td width="20%" class="text-center"><b>{{t5}}</b></td>
+                                        <td width="40%" class="text-right"><b>{{t3|number:0}} {{user.symbol}} </b></td>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr data-ng-repeat="key in storageKeys" data-ng-if="search===copy && key >= gt1 && key <=lt1">
+                                        <div ng-init="storageKeys.total1=0">
+                                          <td width="40%">{{key | number:0}} {{user.symbol}}</td>
+                                          <td width="20%" class="text-center">x{{get(key)}}</td>
+                                          <td width="40%" class="text-right">{{get(key)*key |number:0}} {{user.symbol}} </td>
+                                        </div>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                </div>
+                                <!--/data-controller-total-->
+                              </div>
+                              <!-- total -->
+                            </div>
+                          </div>
+
+                          <div class="result-footer" ng-controller="SendController">
+                            <button type="button" class="btn cc-btn" ng-click="addTodo();">Save</button>
+                            <button type="button" class="btn cc-btn-print" ng-click="print();">Print</button>
+                            <button type="button" class="btn cc-btn-email" data-ng-click="email();" >Email</button>
+                          </div>
+
+                        </div>
+                        <!--/resultt-->
+                      </div>
+                      <!--PRINT StorageController-->
+
+                    </div><!-- StorageExampleCtrl -->
+
+                  </div><!-- /DIR-PAGINATE-->
+                </div>
+                <!--/MainCtrl-->
+                </div>
+
+              </div>
+            </div>
+            <!--/DATA CONTROLER-->
+
+            <!--Settings Navigation-->
+            <div id="settings" data-ng-show="settings" ng-init="settings=false;">
+              <div class="cc-page-title">Settings</div>
+                <div class="settings-container">
+                  <button class="cc-btn-settings" type="button" data-ng-click="cur=true;settings=false;">Change Currency<img class="pull-right" src="images/arrow-right.png"/></button>
+                  <button class="cc-btn-settings" type="button" data-ng-click="email=true;cur=false;settings=false;">Change Email<img class="pull-right" src="images/arrow-right.png"/></button>
+                  <button class="cc-btn-settings" type="button" data-ng-click="history2=true;cur=false;settings=false;">History<img class="pull-right" src="images/arrow-right.png"/></button>
+                </div>
+            </div>
+            <!-- /Settings Navigation-->
+
+            <!--Settings - Change Currency - DONE-->
+            <div id="currency" data-ng-show="cur" ng-init="cur=false;">
+              <div class="cc-page-title" data-ng-show="notif0" ng-init="notif0=true">Currency</div>
+              <div class="cc-page-title" data-ng-show="notif1" ng-init="notif1=false">{{list}}</div>
+              <div class="currency-container">
+                <input type="text" ng-model="list" ng-init="search=list;copy=list" hidden>
+                <label>EUR<br><small>Euro</small><input class="pull-right" type="radio" name="optradio"
+                ng-click="list='EUR';notif0=false;notif1=true;currency();"></label>
+                <label>AUD<br><small>Australian Dollar</small><input class="pull-right" type="radio" name="optradio" ng-click="list='AUD';notif0=false;notif1=true;currency();"></label>
+                <label>CAD<br><small>Canadian Dollar</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CAD';notif0=false;notif1=true;currency();"></label>
+                <label>CHF<br><small>Swiss Franc</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CHF';notif0=false;notif1=true;currency();"></label>
+                <label>GBP<br><small>British Pound</small><input class="pull-right" type="radio" name="optradio" ng-click="list='GBP';notif0=false;notif1=true;currency();"></label>
+                <label>CNY<br><small>Chinese Yuan</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CNY';notif0=false;notif1=true;currency();"></label>
+                <label>INR<br><small>Indian Rupee</small><input class="pull-right" type="radio" name="optradio" ng-click="list='INR';notif0=false;notif1=true;currency();"></label>
+                <label>JPY<br><small>Japanese Yen</small><input class="pull-right" type="radio" name="optradio" ng-click="list='JPY';notif0=false;notif1=true;currency();"></label>
+                <label>BRL<br><small>Brazilian Real</small><input class="pull-right" type="radio" name="optradio" ng-click="list='BRL';notif0=false;notif1=true;currency();"></label>
+                <label>MXN<br><small>Mexican Peso</small><input class="pull-right" type="radio" name="optradio" ng-click="list='MXN';notif0=false;notif1=true;currency();"></label>
+              </div>
+            </div>
+            <!-- /Settings - Change Currency -->
+
+            <!-- Settings - Change Email -->
+            <div id="email-settings" data-ng-show="email" ng-init="email=false;" >
+              <div class="cc-page-title">Email Settings</div>
+              <div ng-controller="EmailController">
+                <p>Add or change your email address here</p>
+                <input id="useremail"  type="text" ng-model="useremail" placeholder="Change Email" type="text" >
+                <div ng-controller="HistoryController">
+                  <button class="btn cc-btn add-m-left"  type="button" ng-click="mymail();">Update</button>
+                </div>
+              </div>
+            </div>
+            <!-- /Settings - Change Email -->
+
+            <!-- Settings - History - DONE-->
+            <div data-ng-controller="StorageController">
+              <div ng-controller="Ctrl" >
+
+                <div id="history" ng-show="history2" ng-controller="HistoryController">
+                  <div class="cc-page-title">History Settings</div>
+                  <input type="text" name="S_Date" ng-model="startDate" hidden />
+                  <input type="text" name="E_Date" ng-model="endDate"  hidden />
+                  <div class="history-container">
+                    <label>Clear History<input class="pull-right" type="radio" name="optradio"></label>
+                    <label>History Today<input class="pull-right" type="radio" name="optradio"></label>
+                    <label>History by 3 days<input class="pull-right" type="radio" name="optradio"></label>
+                    <label>History by 7 days<input class="pull-right" type="radio" name="optradio"></label>
+                    <label>History by 1 Month<input class="pull-right" type="radio" name="optradio"></label>
+                  </div>
+                </div>
+
+                <div id="history" ng-show="history" ng-controller="HistoryController">
+                  <div class="cc-page-title">History</div>
+                  <div class="row">
+                    <div class="twelve columns">
+                      <div class="history-container-results">
+                        <table class="table" data-ng-repeat="todo in tblstorage| myfilter: startDate: endDate track by $index">
+                          <thead class="cc-dt-head">
+                            <tr>
+                              <td><b>{{todo.Date }}</b></td>
+                              <td class="text-right"><b>{{todo.Time}}</b></td>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td><b>Coin:</b></td>
+                            <td class="text-right">{{todo.Coin}}</td>
+                          </tr>
+                          <!--<tr>
+                            <td align="right" style="color:#d40410; font-weight: bold"><pre>{{todo.CoinSummary}}</pre></td>
+                          </tr>-->
+                          <tr>
+                            <td><b>Banknotes:</b></td>
+                            <td class="text-right">{{todo.Notes}}</td>
+                          </tr>
+                          <!--<tr>
+                            <td align="right" style="color:#d40410; font-weight: bold"><pre >{{todo.NotesSummary }}</pre></td>
+                          </tr>-->
+                          <tr>
+                            <td><b>Total:</b></td>
+                            <td class="text-right" style="color:#d40410; font-weight: bold">{{todo.Total}}</td>
+                          </tr>
+                          <!--<tr>
+                            <td><button class="btn btn-ingenico btn-sm pull-left" ng-click="allow();">PRINT</button></td>
+                            <td><button class="btn btn-ingenico-secondary btn-sm pull-right" ng-click="allow();">EMAIL</button></td>
+                          </tr>-->
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!--<form>
+                    <input type="text" data-ng-model="todoTime" placeholder="todoTime"/ hidden>
+                    <input type="text" data-ng-model="todoDate" placeholder="todoDate"/ hidden>
+                    <input type="text" data-ng-model="todoBill" placeholder="todoBill" / hidden>
+                    <input type="text" data-ng-model="todoCoin" placeholder="todoCoin"/ hidden>
+                    <input type="text" data-ng-model="todoPsum" placeholder="todoPsum"/ hidden>
+                    <input type="text" data-ng-model="todoCsum" placeholder="todoCsum"/ hidden>
+                    <input type="text" data-ng-model="todoTotal" placeholder="todoTotal"/ hidden>
+                    <input ng-click="addTodo()" type="button" value="Test"  / hidden>
+                  </form>-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /content -->
+
+          <!-- Footer -->
+          <div id="footer">
+            <div class="row">
+              <div class="one-half column remove-left">
+                <div class="cc-date text-left">{{date}}</div>
+              </div>
+              <div class="one-half column remove-left">
+                <div class="cc-time text-right">{{time}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- /Footer -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

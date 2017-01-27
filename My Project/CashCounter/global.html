@@ -1,0 +1,32 @@
+          <!-- Header -->
+          <div id="header">
+            <div class="row">
+              <table class="table">
+                  <tr>
+                    <td><a type="button" data-ng-show="bk" ng-init="bk=false;" data-ng-click="reset();"><img class="cc-btn-back" src="images/arrow-left.png"></a></td>
+                    <td>
+                      <label class="cc-branding">
+                     <img class="logo1" src="images/logo1.png">
+                     <img class="logo2" src="images/logo2.png"><span>Cash Counter</span>
+                     </label>
+                    </td>
+                    <td><a type="button" ng-click="exit();"><img class="cc-btn-close" src="images/close.png"></a></td>
+                  </tr>
+            </div>
+          </div>
+          <!-- /Header -->
+
+
+          <!-- Footer -->
+          <div id="footer">
+            <div class="row">
+                <table class="table">
+                  <tr>
+                    <td class="text-left cc-date">{{date}}</td>
+                    <td class="text-right cc-time">{{time}}</td>
+                  </tr>
+                  
+                </table>
+            </div>
+          </div>
+          <!-- /Footer -->

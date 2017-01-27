@@ -1,0 +1,364 @@
+<html lang="en" ng-app="angularTable">
+<head>
+  <title>Cash Counter</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/admin-styles.css">
+  <script src="app/angular.js"></script>
+  <script src="app/dirPagination.js"></script>
+  <script src="app/moment.js"></script>
+	<script src="app/app.js"></script>
+
+
+</head>
+<body ng-csp ng-keypress="myFunct1($event);">
+  <div class="main" ng-controller="CurrencyController">
+    <!-- Header -->
+    <div id="header" class="container-fluid ">
+        <div class="row ">
+            <div class="col-xs-2 " >
+              <!--BACK BUTTON-->
+              <!--<span ng-controller="refresh">-->
+              <a class="back" data-ng-show="bk" ng-init="bk=false;" data-ng-click="reset();" type="button">
+                <img src="images/arrow-left.png" alt="left arrow">
+              </a>
+              <!--</span>-->
+              <!--/BACK BUTTON-->
+            </div>
+            <div class="col-xs-8">
+               <!--BRANDING-->
+               <label class="branding center-block">
+               <img class="logo1" src="images/logo1.png" width="32" height="32">
+               <img class="logo2" src="images/logo2.png" width="32" height="32"> <span>Cash Counter</span></label>
+               <!--/BRANDING-->
+            </div>
+            <div class="col-xs-2">
+              <!--CLOSE BUTTON-->
+              <a class="btn-close" type="button" ng-click="exit();">
+                <img src="images/close.png" alt="close button">
+              </a>
+              <!--/CLOSE BUTTON-->
+            </div>
+        </div>
+    </div>
+    <!-- /Header -->
+    <!-- Body -->
+    <div class="container" >
+      <div id="content">
+        <div class="row text-center">
+            <div class="col-sm-12" >
+                  <!-- HOMEPAGE BUTTONS-->
+
+
+<!--<div class="alert warning" ng-show="alert">
+  <strong>Warning!</strong> Please set your email address.
+  <input type="text" ng-model="setmail" >
+  <input type="button" value="set" ng-click="mymail();" >
+</div>-->
+
+                  <div data-ng-show="h0" ng-init="h0=true" >
+                      <h3>Welcome to Ingenico</h3>
+                       <div class="alert-box warning" data-ng-show="warning"><span>warning: </span>Write your warning message here.</div>
+                      <p>We provide merchants with a comprehensive and innovative range of services and solutions to eliminate payment complexity and make the consumer purchasing experience seamless and secure, whatever the sales channel or payment method.</p>
+                      <div id="home-btns" >
+                        <div class="row" >
+
+                          <!--Count Bill Btn-->
+                          <button  type="button" class="btn btn-ingenico" data-ng-click="ito0();">
+                            <img src="images/cash.png" alt="Cash">
+                          </button>
+                          <!--/Count Bill Btn-->
+                          <!--History Btn-->
+                          <button type="button" class="btn btn-ingenico" data-ng-click="ito1();">
+                            <img src="images/history.png" alt="History">
+                          </button>
+                          <!--/History Btn-->
+                          <!--Settings Btn-->
+                          <button type="button" class="btn btn-ingenico" data-ng-click="ito2();">
+                            <img src="images/settings.png" alt="Settings">
+                          </button>
+                          <!--/Settings Btn-->
+                        </div>
+                      </div>
+                  </div>
+                  <!-- /HOMEPAGE BUTTONS-->
+
+                  <!--Settings-->
+                  <div id="settings" data-ng-show="settings" ng-init="settings=false;">
+                    <div class="ingenico-tab">Settings</div>
+                    <button class="btn-settings" data-ng-click="cur=true;settings=false;" type="button">Change Currency<img class="pull-right" src="images/arrow-right.png"/></button>
+                    <button class="btn-settings" data-ng-click="email=true;cur=false;settings=false;" type="button">Change Email<img class="pull-right" src="images/arrow-right.png"/></button>
+                    <button class="btn-settings" data-ng-click="history2=true;cur=false;settings=false;" type="button">History<img class="pull-right" src="images/arrow-right.png"/></button>
+                  </div>
+
+                  <div id="settings" data-ng-show="email" ng-init="email=false;" >
+                    <div class="ingenico-tab" >Email Settings</div>
+                    <div ng-controller="EmailController">
+                      <p>Add or change your email address here</p>
+                      <input id="useremail"  type="text" ng-model="useremail" placeholder="Change Email" type="text" >
+                      <div class="col-xs-6" ng-controller="HistoryController">
+                        <button class="btn-ingenico"  type="button" ng-click="mymail();">Update</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/Settings-->
+
+                  <!--Currency-->
+                  <div id="currency" data-ng-show="cur" ng-init="cur=false;" >
+                     <div class="ingenico-tab" data-ng-show="notif0" ng-init="notif0=true">Currency</div>
+                     <div class="ingenico-tab" data-ng-show="notif1" ng-init="notif1=false">{{list}}</div>
+                     <div class="currency-container">
+                        <input type="text" ng-model="list" ng-init="search=list;copy=list"  hidden>
+                        <label>EUR<br><small>Euro</small><input  class="pull-right" type="radio" name="optradio" ng-click="list='EUR';notif0=false;notif1=true;currency();"></label>
+                        <label>AUD<br><small>Australian Dollar</small><input class="pull-right" type="radio" name="optradio" ng-click="list='AUD';notif0=false;notif1=true;currency();"></label>
+                        <label>CAD<br><small>Canadian Dollar</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CAD';notif0=false;notif1=true;currency();"></label>
+                        <label>CHF<br><small>Swiss Franc</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CHF';notif0=false;notif1=true;currency();"></label>
+                        <label>GBP<br><small>British Pound</small><input class="pull-right" type="radio" name="optradio" ng-click="list='GBP';notif0=false;notif1=true;currency();"></label>
+                        <label>CNY<br><small>Chinese Yuan</small><input class="pull-right" type="radio" name="optradio" ng-click="list='CNY';notif0=false;notif1=true;currency();"></label>
+                        <label>INR<br><small>Indian Rupee</small><input class="pull-right" type="radio" name="optradio" ng-click="list='INR';notif0=false;notif1=true;currency();"></label>
+                        <label>JPY<br><small>Japanese Yen</small><input class="pull-right" type="radio" name="optradio" ng-click="list='JPY';notif0=false;notif1=true;currency();"></label>
+                        <label>BRL<br><small>Brazilian Real</small><input class="pull-right" type="radio" name="optradio" ng-click="list='BRL';notif0=false;notif1=true;currency();"></label>
+                         <label>MXN<br><small>Mexican Peso</small><input class="pull-right" type="radio" name="optradio" ng-click="list='MXN';notif0=false;notif1=true;currency();"></label>
+                     </div>
+                  </div>
+                  <!--Currency-->
+
+                  <!--History-->
+                  <div data-ng-controller="StorageController">
+                      <div ng-controller="Ctrl" >
+
+                        <div id="history"  ng-show="history2" ng-controller="HistoryController" >
+                          <div class="ingenico-tab">History Settings</div>
+                          <input type="text" name="S_Date" ng-model="startDate" hidden />
+                          <input type="text" name="E_Date" ng-model="endDate"  hidden />
+                          <label>Clear History<input class="pull-right" type="radio" name="optradio" ng-click="reset1();"></label>
+                          <label>History Today<input class="pull-right" type="radio" name="optradio" ng-click="getn();SandEdate();"></label>
+                          <label>History by 3 days<input class="pull-right" type="radio" name="optradio" ng-click="get3();SandEdate();"></label>
+                          <label>History by 7 days<input class="pull-right" type="radio" name="optradio" ng-click="get7();SandEdate();"></label>
+                          <label>History by 1 Month<input class="pull-right" type="radio" name="optradio" ng-click="get30();SandEdate();"></label>
+                        </div>
+
+                        <div id="history" ng-show="history" ng-controller="HistoryController">
+                          <div class="ingenico-tab">History</div>
+                          <div class="panel-body">
+                              <div class="row">
+                                <div class="col-sm-12">
+
+                                  <table class="table" data-ng-repeat="todo in tblstorage| myfilter: startDate: endDate track by $index">
+                                    <thead class="dt-head">
+                                    <tr>
+                                      <td><b>{{todo.Date }}</b></td>
+                                      <td align="right"><b>{{todo.Time}}</b></td>
+                                    </tr>
+                                    </thead>
+                                    <tr>
+                                      <td><b>Coin:</b></td>
+                                      <td align="right">{{todo.Coin}}</td>
+                                    </td>
+                                    <!--<tr>
+                                      <td align="right" style="color:#d40410; font-weight: bold"><pre>{{todo.CoinSummary}}</pre></td>
+                                    </tr>-->
+                                    <tr>
+                                      <td><b>Banknotes:</b></td>
+                                      <td align="right">{{todo.Notes}}</td>
+                                    </td>
+                                    <!--<tr>
+                                      <td align="right" style="color:#d40410; font-weight: bold"><pre >{{todo.NotesSummary }}</pre></td>
+                                    </tr>-->
+                                    <tr>
+                                      <td><b>Total:</b></td>
+                                      <td align="right" style="color:#d40410; font-weight: bold">{{todo.Total}}</td>
+                                    </tr>
+                                    <!--<tr>
+                                      <td><button class="btn btn-ingenico btn-sm pull-left" ng-click="allow();">PRINT</button></td>
+                                      <td><button class="btn btn-ingenico-secondary btn-sm pull-right" ng-click="allow();">EMAIL</button></td>
+                                    </tr>-->
+                                  </table>
+
+                                </div>
+                              </div>
+                          </div>
+                          <!--<form>
+                            <input type="text" data-ng-model="todoTime" placeholder="todoTime"/ hidden>
+                            <input type="text" data-ng-model="todoDate" placeholder="todoDate"/ hidden>
+                            <input type="text" data-ng-model="todoBill" placeholder="todoBill" / hidden>
+                            <input type="text" data-ng-model="todoCoin" placeholder="todoCoin"/ hidden>
+                            <input type="text" data-ng-model="todoPsum" placeholder="todoPsum"/ hidden>
+                            <input type="text" data-ng-model="todoCsum" placeholder="todoCsum"/ hidden>
+                            <input type="text" data-ng-model="todoTotal" placeholder="todoTotal"/ hidden>
+                            <input ng-click="addTodo()" type="button" value="Test"  / hidden>
+                          </form>-->
+                        </div>
+
+                      </div>
+                  </div>
+                  <!--/History-->
+
+                  <!-- data-controller -->
+                  <div data-ng-show="h1" ng-init="h1=false">
+                    <div ng-controller="listdata">
+
+                      <!-- TABS-->
+                      <div id="btn-tabs" class="btn-group btn-group-justified" ng-show="tabs" >
+                        <a class="btn btn-ingenico-tab" data-ng-click="coinf();" >COIN</a>
+                        <a class="btn btn-ingenico-tab" data-ng-click="notesf();" >BANKNOTES</a>
+                        <a class="btn btn-ingenico-tab"  data-ng-click="totalf();"  type="button" >TOTAL</a>
+                      </div>
+                      <!-- /TABS-->
+
+                      <input type="text" ng-model="search" hidden>
+                      <input type="text" ng-model="copy"  hidden>
+                      <input type="text" ng-model="gt" hidden >
+                      <input type="text" ng-model="lt" hidden >
+                      <input type="text" ng-model="gt1" hidden >
+                      <input type="text" ng-model="lt1" hidden >
+
+                      <div  ng-controller="MainCtrl">
+                        <div dir-paginate="user in users |filter:search | itemsPerPage: pageSize" current-page="currentPage" auto-hide="false" class="bs-component" >
+
+                          <input ng-model="face" type="number" ng-init="face= (users | filter: search).length" hidden />
+
+                          <div  data-ng-controller="StorageExampleCtrl" class="ng-scope">
+
+                            <div ng-show="input">
+                              <h1>{{user.description}} {{user.symbol}}</h1>
+
+                              <input id="val" type="text" data-ng-keyup="myFunct($event);set();showme=true;"  class="ingenico-form-control" data-ng-change="userValue=val" my-validator input maxlength="4" ng-model="val"  valid-values="validValues"
+                              ng-checked="setFocus();"  />
+
+
+                              <!--{{ currentPage}}||{{filteredData1}}<br>-->
+                              <!--<input type="button"  data-ng-click="countit();" value="?" />-->
+
+                              <input id="pagination-left" type="button"  data-ng-click="moveb();" value="<" />
+                              <input id="pagination-right" type="button"  data-ng-click="movef();" value=">"/>
+
+                              <input type="text" data-ng-model="mval" data-ng-value="mval={{user.money_value}}" hidden />
+                              <input type="text" data-ng-model="userValue" ng-value="userValue=val" hidden />
+                              <input type="text" data-ng-model="userKey"  ng-value="userKey=mval" hidden />
+
+
+                              <div class="show-me" ng-show="showme">
+                              <h2 data-ng-show="c101" >{{user.money_value}} x {{val}} =<b>
+                                {{user.money_value*val | number:2}} {{user.symbol}}</b></h2>
+                              <h2 data-ng-show="c102" >{{user.money_value | number:0}} x {{val}} =<b>
+                                {{user.money_value*val | number:0}} {{user.symbol}} </b></h2>
+                              </div>
+                            </div>
+                            <div ng-controller="StorageController" class="print">
+
+                              <div id="result" ng-show="modal">
+                                <div cla ss="row">
+                                  <div class="mdt visible-print-block">
+                                    <div class="date pull-right add-right"><b>DATE:</b> <br /> {{thedate}}</div>
+                                    <div class="time pull-left  add-left"><b>TIME:</b> <br /> {{thetime}}</div>
+                                  </div>
+                                </div>
+
+                                <div id="data-controller">
+                                  <div class="row">
+                                    <!-- total -->
+                                    <div class="table-responsive total-head">
+                                      <table class="table total">
+                                          <tr>
+                                            <td class="col-sm-2"><label><b>Total:<b/></label></td>
+                                            <td class="col-sm-1"></td>
+                                            <td class="col-sm-3"></td>
+                                            <td class="col-sm-1"></td>
+                                            <td class="col-sm-5 text-right sum-total"><label>{{t1 | number:2 }} {{ user.symbol}} </label></td>
+                                          </tr>
+                                      </table>
+
+                                      <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                          <td width="30%" class=""><b>Coins:</b></td>
+                                          <td width="5%" class=""></td>
+                                          <td width="20%" class="text-center"><b>{{t4}}</b></td>
+                                          <td width="5%" class=""></td>
+                                          <td width="40%" class=" text-right"><b>{{t2|number:2}} {{user.symbol}} </b></td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr data-ng-repeat="key in storageKeys " data-ng-if="search===copy && key >= gt && key <=lt">
+                                            <div ng-init="storageKeys.total=0">
+                                              <td width="30%">{{key}} {{user.symbol}}</td>
+                                              <td width="5%"></td>
+                                              <td width="20%" class="text-center">x{{get(key)}} </td>
+                                              <td width="5%"></td>
+                                              <td width="40%" class="text-right">
+                                             {{get(key)*key | number:2}} {{user.symbol}}</td>
+                                            </div>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                      <table class="table table-striped">
+                                        <thead>
+                                          <tr>
+                                            <td width="30%" class=""><b>Bills:</b></td>
+                                            <td width="5%" class=""></td>
+                                            <td width="20%" class="text-center"><b>{{t5}}</b></td>
+                                            <td width="5%" class=""></td>
+                                            <td width="40%" class=" text-right"><b>{{t3|number:0}} {{user.symbol}} </b></td>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr data-ng-repeat="key in storageKeys " data-ng-if="search===copy && key >= gt1 && key <=lt1">
+                                            <div ng-init="storageKeys.total1=0">
+                                              <td width="30%" class="">{{key | number:0}} {{user.symbol}}</td>
+                                              <td width="5%" class=""></td>
+                                              <td width="20%" class=" text-center">x{{get(key)}}</td>
+                                              <td width="5%" class=""></td>
+                                              <td width="40%" class="text-right">{{get(key)*key |number:0}} {{user.symbol}} </td>
+                                            </div>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <!-- total -->
+                                  </div>
+                                </div>
+
+                                <div class="result-footer" ng-controller="SendController">
+                                  <button type="button" class="btn btn-default btn-sm" ng-click="addTodo();">Save</button>
+                                  <button type="button" class="btn btn-ingenico-secondary btn-sm" ng-click="print();">Print</button>
+                                  <button type="button" class="btn btn-ingenico btn-sm" data-ng-click="email();" >Email</button>
+                                </div>
+                              </div>
+                              <!--/resultt-->
+                            </div>
+                            <!--StorageController-->
+
+                          </div><!-- myApp -->
+
+                        </div><!-- /DIR-PAGINATE-->
+                      </div><!--/Restrict-->
+
+                    </div>
+                  </div>
+                  <!-- /data-controller -->
+
+            </div><!-- /col-sm-12 -->
+
+          </div><!-- /row -->
+      </div><!-- /content -->
+    </div><!-- /container-fluid -->
+
+    <!-- Footer-->
+    <div id="footer" class="container-fluid">
+        <div class="row" >
+            <div class="col-xs-6">
+             {{date}}
+            </div>
+
+            <div class="text-right col-xs-6">
+             {{time}}
+            </div>
+        </div>
+    </div>
+    <!-- /Footer -->
+
+  </div><!-- /Main-->
+
+</body>
+</html>

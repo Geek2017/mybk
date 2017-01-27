@@ -1,0 +1,93 @@
+.border {
+	width: 745px;
+	height: 390px;
+	-webkit-clip-path: polygon(43% 9%, 61% 10%, 88% 12%, 87% 95%, 56% 94%, 51% 74%, 35% 55%, 41% 38%, 43% 19%);
+    clip-path: polygon(43% 9%, 61% 10%, 88% 12%, 87% 95%, 56% 94%, 51% 74%, 35% 55%, 41% 38%, 43% 19%);
+   position:relative; 
+   overflow:hidden;
+   cursor:move;
+   left: -8px; 
+   top: -7px;
+   z-index: 1; 
+   
+}
+
+
+.selfie {
+    width: 745px;
+    height: 390px;
+    background-image: url('imgs/pic.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+     margin-left: auto;
+	display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    
+}
+
+
+
+.draggable
+{
+    
+    position: relative; 
+    left: 400px;
+    top: 50px;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;   
+    cursor: hand; 
+    cursor: pointer;    
+      
+}
+
+.resizable
+{
+    width: 50%;   
+    border: 1px solid #bb0000;   
+}
+.resizable img
+{
+    width: 100%;   
+}
+
+.ui-resizable-handle 
+{
+    background: #f5dc58;
+    border: 1px solid #FFF;
+    width: 9px;
+    height: 9px;
+    
+    z-index: 2;
+}
+.ui-resizable-se
+{
+    right: -5px;
+    bottom: -5px;
+}
+
+.ui-rotatable-handle 
+{
+    background: #f5dc58;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    
+    height:        10px;
+    left:          50%;
+    margin:        0 0 0 -5px;
+    position:      absolute;
+    top:           -5px;
+    width:         10px;
+}
+.ui-rotatable-handle.ui-draggable-dragging
+{
+    visibility:  visible;
+}

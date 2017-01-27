@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EvoStream Media Server</title>
+    <description>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</description>
+    <link>http://docs.evostream.com/ems_api_definition/</link>
+    <atom:link href="http://docs.evostream.com/ems_api_definition/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 26 Sep 2016 22:39:44 +0000</pubDate>
+    <lastBuildDate>Mon, 26 Sep 2016 22:39:44 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>EMS API Definition</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/document_definitions&quot;&gt;Document Definitions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/run_time_api&quot;&gt;Run-Time API&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/accessing_runtime_api&quot;&gt;Accessing the Runtime API&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;ASCII&lt;/li&gt;
+          &lt;li&gt;HTTP&lt;/li&gt;
+          &lt;li&gt;PHP and JavaScript&lt;/li&gt;
+          &lt;li&gt;JSON&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/configuring_and_receiving_event_notifications&quot;&gt;Configuring and Receiving Event Notifications&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Sinks&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/user_defined_variables&quot;&gt;User Defined Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/streams_vs_stream_configs_and_api_command_return_values&quot;&gt;Streams vs Stream Configs and API Command Return Values&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Stream Configs&lt;/li&gt;
+          &lt;li&gt;Streams&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;EvoStream Media Server API
+    &lt;ol&gt;
+      &lt;li&gt;Streams
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/pullstream&quot;&gt;pullStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/pushstream&quot;&gt;pushStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createhlsstream&quot;&gt;createHLSStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createhdsstream&quot;&gt;createHDSStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createmssstream&quot;&gt;createMSSStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createdashstream&quot;&gt;createDASHStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/record&quot;&gt;record&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/transcode&quot;&gt;transcode&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/liststreamsids&quot;&gt;listStreamsIds&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getstreaminfo&quot;&gt;getStreamInfo&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/liststreams&quot;&gt;listStreams&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getstreamscount&quot;&gt;getStreamsCount&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/shutdownstream&quot;&gt;shutdownStream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listconfig&quot;&gt;listConfig&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removeconfig&quot;&gt;removeConfig&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getconfiginfo&quot;&gt;getConfigInfo&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/isstreamrunning&quot;&gt;isStreamRunning&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Aliasing
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/addstreamalias&quot;&gt;addStreamAlias&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/liststreamaliases&quot;&gt;listStreamAliases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removestreamalias&quot;&gt;removeStreamAlias&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/flushstreamaliases&quot;&gt;flushStreamAliases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/addgroupnamealias&quot;&gt;addGroupNameAlias&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/flushgroupnamealiases&quot;&gt;flushGroupNameAliases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getgroupnamebyalias&quot;&gt;getGroupNameByAlias&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listgroupnamealiases&quot;&gt;listGroupNameAliases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removegroupnamealiases&quot;&gt;removeGroupNameAliases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listhttpstreamingsessions&quot;&gt;listHttpStreamingSessions&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createingestpoint&quot;&gt;createIngestPoint&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removeingestpoint&quot;&gt;removeIngestPoint&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listingestpoints&quot;&gt;listIngestPoints&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Utility and Feature API Functions
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/startwebrtc&quot;&gt;startWebRTC&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/stopwebrtc&quot;&gt;stopWebRTC&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/launchprocess&quot;&gt;launchProcess&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/settimer&quot;&gt;setTimer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listtimers&quot;&gt;listTimers&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removetimer&quot;&gt;removeTimer&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/generatelazypullfile&quot;&gt;generateLazyPullFile&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/generateserverplaylist&quot;&gt;generateServerPlaylist&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/insertplaylistitem&quot;&gt;insertPlaylistItem&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/uploadmedia&quot;&gt;uploadMedia&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getmetadata&quot;&gt;getMetadata&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/pushmetadata&quot;&gt;pushMetadata&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/shutdownmetadata&quot;&gt;shutdownMetadata&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/liststorage&quot;&gt;listStorage&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/addstorage&quot;&gt;addStorage&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/removestorage&quot;&gt;removeStorage&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/setauthentication&quot;&gt;setAuthentication&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/setloglevel&quot;&gt;setLogLevel&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/version&quot;&gt;version&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/quit&quot;&gt;quit&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/help&quot;&gt;help&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/shutdownserver&quot;&gt;shutdownServer&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Connections
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listinboundstreamnames&quot;&gt;listInboundStreamNames&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listinboundstreams&quot;&gt;listInboundStreams&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getconnectioninfo&quot;&gt;getConnectionInfo&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listconnections&quot;&gt;listConnections&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/clientsconnected&quot;&gt;clientsConnected&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/httpclientsconnected&quot;&gt;httpClientsConnected&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getextendedconnectioncounters&quot;&gt;getExtendedConnectionCounters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/resetmaxfdcounters&quot;&gt;resetMaxFdCounters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/resettotalfdcounters&quot;&gt;resetTotalFdCounters&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getconnectionscount&quot;&gt;getConnectionsCount&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getconnectionscountlimit&quot;&gt;getConnectionsCountLimit&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/setconnectionscountlimit&quot;&gt;setConnectionsCountLimit&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/getbandwidth&quot;&gt;getBandwidth&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/setbandwidthlimit&quot;&gt;setBandwidthLimit&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Services
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/listservices&quot;&gt;listServices&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/createservice&quot;&gt;createService&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/enableservice&quot;&gt;enableService&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/shutdownservice&quot;&gt;shutdownService&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;EMS Event Notification System
+    &lt;ol&gt;
+      &lt;li&gt;Stream Event Definitions
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/stream_created&quot;&gt;inStreamCreated, outStreamCreated, streamCreated&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/stream_closed&quot;&gt;inStreamClosed, outStreamClosed, streamClosed&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/codecs_updated&quot;&gt;inStreamCodecsUpdated, outStreamCodecsUpdated, streamCodecsUpdated&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/audiofeedstopped&quot;&gt;audioFeedStopped&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/videofeedstopped&quot;&gt;videoFeedStopped&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/playlistitemstart_firstplaylistitemstart_lastplaylistitemstart&quot;&gt;playlistItemStart, firstPlaylistItemStart, lastPlaylistItemStart&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/adaptive_streaming&quot;&gt;Adaptive Streaming/File-based Streaming Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;hlsChunkCreated, hdsChunkCreated, mssChunkCreated, dashChunkCreated&lt;/li&gt;
+          &lt;li&gt;hlsChunkClosed, hdsChunkClosed, mssChunkClosed, dashChunkClosed&lt;/li&gt;
+          &lt;li&gt;hlsChunkError, hdsChunkError, mssChunkError, dashChunkError&lt;/li&gt;
+          &lt;li&gt;hlsChildPlaylistUpdated, hdsChildPlaylistUpdated&lt;/li&gt;
+          &lt;li&gt;hlsMasterPlaylistUpdated, hdsMasterPlaylistUpdated&lt;/li&gt;
+          &lt;li&gt;mssPlaylistUpdated, dashPlaylistUpdated&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/web_server_events&quot;&gt;Web Server Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;streamingSessionStarted&lt;/li&gt;
+          &lt;li&gt;streamingSessionEnded&lt;/li&gt;
+          &lt;li&gt;fileDownloaded&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/api_based_events&quot;&gt;API Based Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;cliRequest&lt;/li&gt;
+          &lt;li&gt;cliResponse&lt;/li&gt;
+          &lt;li&gt;processStarted, processStopped&lt;/li&gt;
+          &lt;li&gt;timerCreated&lt;/li&gt;
+          &lt;li&gt;timerTriggered&lt;/li&gt;
+          &lt;li&gt;timerClosed&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/connection_based_events&quot;&gt;Connection Based Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;protocolRegisteredToApp&lt;/li&gt;
+          &lt;li&gt;protocolUnregisteredFromApp&lt;/li&gt;
+          &lt;li&gt;carrierCreated&lt;/li&gt;
+          &lt;li&gt;carrierClosed&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/application_based_events&quot;&gt;Application Based Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;applicationStart, applicationStop&lt;/li&gt;
+          &lt;li&gt;serverStarted&lt;/li&gt;
+          &lt;li&gt;serverStopped&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/web_server_events&quot;&gt;Web Server Events&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;streamingSessionStarted&lt;/li&gt;
+          &lt;li&gt;streamingSessionEnded&lt;/li&gt;
+          &lt;li&gt;fileDownloaded&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_api_definition/event_table_of_protocol_types&quot;&gt;Event Table of Protocol Types&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 01:01:01 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/table_of_contents</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/table_of_contents</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Web Server Events</title>
+        <description>&lt;h2 id=&quot;streamingsessionstarted&quot;&gt;streamingSessionStarted&lt;/h2&gt;
+
+&lt;p&gt;This event is created right after an HTTP streaming session has started.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;clientIP – Address of connecting client&lt;/li&gt;
+  &lt;li&gt;sessionID – Internal ID&lt;/li&gt;
+  &lt;li&gt;playlist – The playlist file&lt;/li&gt;
+  &lt;li&gt;startTime – Time session started&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;streamingsessionended&quot;&gt;streamingSessionEnded&lt;/h2&gt;
+
+&lt;p&gt;This event is created right after an HTTP streaming session has stopped.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;clientIP – Address of connecting client&lt;/li&gt;
+  &lt;li&gt;sessionID – Internal ID&lt;/li&gt;
+  &lt;li&gt;playlist – The playlist file&lt;/li&gt;
+  &lt;li&gt;startTime – Time session started&lt;/li&gt;
+  &lt;li&gt;stopTime – Time session stopped&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;filedownloaded&quot;&gt;fileDownloaded&lt;/h2&gt;
+
+&lt;p&gt;This event is created right after an HTTP file download has completed.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;clientIP – Address of connecting client.&lt;/li&gt;
+  &lt;li&gt;mediaFile – The path to the media file.&lt;/li&gt;
+  &lt;li&gt;startTime – Time session started.&lt;/li&gt;
+  &lt;li&gt;elapsed – The number of seconds since the session started&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/web_server_events</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/web_server_events</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>videoFeedStopped</title>
+        <description>&lt;p&gt;Event triggered when a video packet is lost&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;streamId – The stream ID&lt;/li&gt;
+  &lt;li&gt;localStreamName – Name of the stream which lost the video&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/videofeedstopped</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/videofeedstopped</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>version</title>
+        <description>&lt;p&gt;Returns the versions for framework and this application.&lt;/p&gt;
+
+&lt;p&gt;This function has no parameters.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;API Call:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON Response:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;banner&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;EvoStream Media Server (www.evostream.com) version 1.7.0 build 4242 with hash: 86bdcde75942b25390a15a6b1de521e913182bcf - PacMan|m| - (built for Ubuntu-14.04-x86_64 on 2015-11-18T10:54:56.000)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;branchName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;buildDate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2015-11-18T10:54:56.000&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;buildNumber&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;4242&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;codeName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PacMan|m|&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;hash&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;86bdcde75942b25390a15a6b1de521e913182bcf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;releaseNumber&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.7.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SUCCESS&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The JSON response contains the following details:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data – Contains an integer representing the version.
+    &lt;ul&gt;
+      &lt;li&gt;banner – The EMS banner&lt;/li&gt;
+      &lt;li&gt;branchName – The branch name where the package is created&lt;/li&gt;
+      &lt;li&gt;buildDate – The build date of the released package&lt;/li&gt;
+      &lt;li&gt;buildNumber – The build number of the released package&lt;/li&gt;
+      &lt;li&gt;codeName – The code name of the released EMS version&lt;/li&gt;
+      &lt;li&gt;hash – The hash of the released package&lt;/li&gt;
+      &lt;li&gt;releaseNumber – The version of the released package&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;description – Describes the result of parsing/executing the command&lt;/li&gt;
+  &lt;li&gt;status – &lt;code class=&quot;highlighter-rouge&quot;&gt;SUCCESS&lt;/code&gt; if the command was parsed and executed successfully, &lt;code class=&quot;highlighter-rouge&quot;&gt;FAIL&lt;/code&gt; if not&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/version</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/version</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>User Defined Variables</title>
+        <description>&lt;p&gt;While the EMS provides an extensive set of API functions, there may be times where the variables provided are not sufficient, or where you may need extra information to be associated with individual streams. To support these needs, the EMS API implements User Defined Variables. User Defined Variables can be used with any API function where information is maintained by the EMS (i.e. pulling a stream, creating a timer, starting a transcode job, etc.).&lt;/p&gt;
+
+&lt;p&gt;To specify a User Defined Variable, you simply need to append a ‘_’ to the beginning of your variable name. The User Defined variables are reported back whenever you get information about the command: listStreams, listConfig, Event Notifications, etc.&lt;/p&gt;
+
+&lt;p&gt;Some common use cases for User Defined Variables are as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; Setting a timer to stop a stream after a set period of time&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;setTimer value=120 _streamName=MyStream
+setTimer value=120 _streamID=5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;These commands will fire a timer event after 120 seconds with the set stream name or stream id respectively.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;B.&lt;/strong&gt; Attach a custom identifier to a local stream&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pullstream uri=rtmp://192.168.1.5/live/myStream localstreamname=test1 _myID=5 _myName=secretSquirrel
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;C.&lt;/strong&gt; Set a custom value on a pushed stream&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pushstream uri=rtmp://192.168.1.5/live/myStream localstreamname=test1 _myID=5 _myName=secretSquirrel
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/user_defined_variables</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/user_defined_variables</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>uploadMedia</title>
+        <description>&lt;p&gt;Creates an acceptor which receives an HTTP POST binary upload. The acceptor will be opened on a specified port and the uploaded media file will be written on a specified directory. The acceptor then waits for an HTTP POST from a client with the media file as payload. The media file is then written on the specified location in the server.&lt;/p&gt;
+
+&lt;p&gt;This function has the following parameters:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Parameter Name&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Mandatory&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Default Value&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;port&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;The port value to bind on&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;targetFolder&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;The folder where the binary upload will be serialized&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The sending client must conform to the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It must send the data by way of HTTP POST&lt;/li&gt;
+  &lt;li&gt;The POST request must be in http/1.1 format&lt;/li&gt;
+  &lt;li&gt;A StreamName must be provided in the POST line. This will then be the filename of the media file (mp4) when written. (e.g., &lt;em&gt;POST /mystreamname HTTP/1.1\r\n&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;Content-type must be set to &lt;em&gt;video/mp4&lt;/em&gt; or &lt;em&gt;application/octet-stream&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Content-length must be used. This function is intended for uploading VOD MP4 so the EMS will expect that the size of the file is already known&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;API Call:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;uploadMedia port=3333 targetFolder=/MyMediaFolder
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON Response:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;ip&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.0.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3333&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;targetFolder&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;..\/media&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Media upload acceptor configuration.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SUCCESS&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The JSON response contains the following details:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data – The data to parse.
+    &lt;ul&gt;
+      &lt;li&gt;ip – The IP referring to the EMS, normally 0.0.0.0&lt;/li&gt;
+      &lt;li&gt;port – The specified port number where the acceptor will wait for HTTP POSTs&lt;/li&gt;
+      &lt;li&gt;targetFolder – The specified folder where the media file will be written&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;description – Describes the result of parsing/executing the command&lt;/li&gt;
+  &lt;li&gt;status – &lt;code class=&quot;highlighter-rouge&quot;&gt;SUCCES&lt;/code&gt; if the command was parsed and executed successfully, &lt;code class=&quot;highlighter-rouge&quot;&gt;FAIL&lt;/code&gt; if not&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/uploadmedia</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/uploadmedia</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>transcode</title>
+        <description>&lt;p&gt;This function changes the compression characteristics of an audio and/or video stream. This function allows you to change the resolution of a source stream, change the bitrate of a stream, change a VP8 or MPEG2 stream into H.264 and much more. This function will also allow users to create overlays on the final stream as well as crop streams.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Transcoding requires SIGNIFICANT computing resources and will severely impact performance. A general guideline is that you can accomplish one transcoding job per CPU core for HD streams.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;IMPORTANT NOTES:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;For any parameter that is pluralized, you may specify one value, or multiple. Multiple values must be separated by only a comma (comma-delimited). Specifying multiple values indicates multiple new streams will be created.&lt;/li&gt;
+  &lt;li&gt;There must be the same number of values for all pluralized parameters. Order is important: all first values are grouped together to make the first stream, all second parameters are grouped to make the second stream, etc…&lt;/li&gt;
+  &lt;li&gt;Video related parameters are ignored if the parameter &lt;strong&gt;&lt;em&gt;videoBitrates&lt;/em&gt;&lt;/strong&gt; is not specified.&lt;/li&gt;
+  &lt;li&gt;Audio related parameters are ignored if the parameter &lt;strong&gt;&lt;em&gt;audioBitrates&lt;/em&gt;&lt;/strong&gt; is not specified.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This function has the following parameters:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Parameter Name&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Mandatory&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Default Value&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;source&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Can be a URI or a local stream name from EMS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;destinations&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;The target URI(s) or stream name(s) of the transcoded stream. If only a name is given, it will be pushed back to the EMS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;targetStreamNames&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;transcoded_xxxx &lt;em&gt;(timestamp)&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;The name of the stream(s) at destination(s). If not specified, and a full URI is provided to destinations, name will have a time stamped value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;groupName&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;transcoded_group_xxxx &lt;em&gt;(random)&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;The group name assigned to this process. If not specified, groupName will have a random value&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;videoBitrates&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;input video’s bitrate&lt;/td&gt;
+      &lt;td&gt;Target output video bitrate(s) (in bits/s, append ‘k’ to value for kbits/s). Accepts the value ‘copy’ to copy the input bitrate. An empty value passed would mean no video&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;videoSizes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;input video’s size&lt;/td&gt;
+      &lt;td&gt;Target output video size(s) in wxh (width x height) format. IE: 240x480 &lt;em&gt;See Note 3 above&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;videoAdvancedParamsProfiles&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Name of video profile template that will be used. See the contents of ‘evo-avconv-presets’ folder for sample file presets. &lt;em&gt;See Note 3 above&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;audioBitrates&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;input audio’s bitrate&lt;/td&gt;
+      &lt;td&gt;Target output audio bitrate(s) (in bits/s, append ‘k’ to value for kbits/s). Accepts the value ‘copy’ to copy the input bitrate. An empty value passed would mean no audio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;audioChannelsCounts&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;input audio’s channel count&lt;/td&gt;
+      &lt;td&gt;Target output audio channel(s) count(s). Valid values are 1 (mono), 2 (stereo), and so on. Actual supported channel count is dependent on the number of input audio channels. &lt;em&gt;See Note 4 above&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;audioFrequencies&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;input audio’s frequency&lt;/td&gt;
+      &lt;td&gt;Target output audio frequency(ies) (in Hz, append ‘k’ to value for kHz). &lt;em&gt;See Note 4 above&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;audioAdvancedParamsProfiles&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Name of audio profile template that will be used. &lt;em&gt;See Note 4 above&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;overlays&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Location of the overlay source(s) to be used. These are transparent images (normally in PNG format) that have the same or smaller size than the video. Image is placed at the top-left position of the video&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;croppings&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Target video cropping position(s) and size(s) in ‘left : top : width : height’ format (e.g. 0:0:200:100. Positions are optional (200:100 for a centered cropping of 200 width and 100 height in pixels). Values are limited to the actual size of the video&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;keepAlive&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1 &lt;em&gt;true&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;If keepAlive is set to 1, the server will restart transcoding if it was previously activated&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;commandFlags&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;null&lt;/em&gt;&lt;/td&gt;
+      &lt;td&gt;Other commands to the transcode process that are not supported by the baseline transcode command&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An example of the transcode command is:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=rtmp://&amp;lt;RTMP server&amp;gt;/live/streamname groupName=group videoBitrates=200k destinations=stream1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;transcode-examples&quot;&gt;&lt;strong&gt;Transcode Examples&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;To transcode an RTMP source into different video bitratesand send back to EMS&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=rtmp://&amp;lt;RTMP server&amp;gt;/live/streamname groupName=group videoBitrates=100k,200k,300k destinations=stream100,stream200,stream300
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To transcode an existing EMS stream into a different audio channel count and send to an RTMP server&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=stream1 groupName=group audioBitrates=copy audioChannelsCounts=1 destinations=rtmp://&amp;lt;RTMP server 2&amp;gt; targetStreamNames=streamMono
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To use files as input and/or output&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=file://C:\videos\test.mp4 groupName=group videoBitrates=100k audioBitrates=copy destinations=file://C:\videos\out.mp4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To force TCP for inbound RTSP&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=rtsp://&amp;lt;RTSP server&amp;gt;/live/streamname groupName=group videoBitrates=copy videoSizes=360x200 $EMS_RTSP_TRANSPORT=tcp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To use command flags&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=rtmp://&amp;lt;RTSP server&amp;gt;/live/streamname groupName=group destinations=destinationStream commandFlags=&quot;&amp;lt;command&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To stop a running transcoding process(es)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;removeConfig groupName=group
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;transcoding-customizations&quot;&gt;Transcoding Customizations:&lt;/h2&gt;
+
+&lt;p&gt;To configure the transcoder script settings, edit the file &lt;strong&gt;config.lua&lt;/strong&gt; and edit the following entries as needed:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcoder = {
+	scriptPath=&quot;emsTranscoder&quot;,
+	srcUriPrefix=&quot;rtsp://localhost:5544/&quot;,
+	dstUriPrefix=&quot;-f flv tcp://localhost:6666/&quot;
+},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To change the location of the actual trancoder binary, edit the file &lt;strong&gt;emsTranscoder.sh&lt;/strong&gt; (linux/unix) and &lt;strong&gt;emsTranscoder.cmd&lt;/strong&gt; (windows); and change the following line:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TRANSCODER\_BIN=/usr/bin/evo-avconv&lt;/code&gt; (linux/unix)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set TRANSCODER\_BIN= ..\\evo-avconv.exe&lt;/code&gt; (windows)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;API Call:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;transcode source=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 groupName=group videoBitrates=200k destinations=stream1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;JSON Response:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;audioAdvancedParamsProfiles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;audioBitrates&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;audioChannelsCounts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;audioFrequencies&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;croppings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;destinations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;dstUriPrefix&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-f flv tcp:\/\/localhost:6666\/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;emsTargetStreamName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;fullBinaryPath&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;C:\\EvoStream\\emsTranscoder.bat&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;groupName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;group&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;keepAlive&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;localStreamName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;overlays&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rtmp:\/\/s2pchzxmtymn2k.cloudfront.net\/cfx\/st\/mp4:sintel.mp4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;srcUriPrefix&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;rtsp:\/\/localhost:5544\/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;targetStreamNames&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;videoAdvancedParamsProfiles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;videoBitrates&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;200k&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;videoSizes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;na&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Transcoding successfully started.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SUCCESS&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The JSON response contains the following details:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;data – The data to parse
+    &lt;ul&gt;
+      &lt;li&gt;audioAdvancedParamsProfiles - An array of strings specifying the name of profile presets to be used for audio&lt;/li&gt;
+      &lt;li&gt;audioBitrates - An array of integers for target audio output bitrates&lt;/li&gt;
+      &lt;li&gt;audioChannelsCounts - An array of values for the target number of audio channels&lt;/li&gt;
+      &lt;li&gt;croppings - An array of values for the target cropping positions and size&lt;/li&gt;
+      &lt;li&gt;destinations - An array of target URIs or stream names&lt;/li&gt;
+      &lt;li&gt;dstUriPrefix - Default destination if destination is a stream name&lt;/li&gt;
+      &lt;li&gt;emsTargetStreamName - Target stream name used internally by EMS&lt;/li&gt;
+      &lt;li&gt;fullBinaryPath - Actual location of the transcoder binary&lt;/li&gt;
+      &lt;li&gt;groupName - Name of the group associated with this transcoding process&lt;/li&gt;
+      &lt;li&gt;keepAlive - Transcoding will restart if previously activated&lt;/li&gt;
+      &lt;li&gt;localStreamName - Actual EMS stream name of source (if given)&lt;/li&gt;
+      &lt;li&gt;overlays - An array of locations for the images to be used as overlays&lt;/li&gt;
+      &lt;li&gt;source - The actual stream/file to be used as input for transcoding&lt;/li&gt;
+      &lt;li&gt;srcUriPrefix - Default source if given source is a stream name&lt;/li&gt;
+      &lt;li&gt;targetStreamNames - An array of the target stream names to be used at the destination&lt;/li&gt;
+      &lt;li&gt;videoAdvancedParamsProfiles - An array of strings specifying the name of profile presets to be used for video&lt;/li&gt;
+      &lt;li&gt;videoBitrates - An array of values for target video output bitrates&lt;/li&gt;
+      &lt;li&gt;videoSizes - An array of values for target video sizes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;description – Describes the result of parsing/executing the command&lt;/li&gt;
+  &lt;li&gt;status – &lt;code class=&quot;highlighter-rouge&quot;&gt;SUCCESS&lt;/code&gt; if the command was parsed and executed successfully, &lt;code class=&quot;highlighter-rouge&quot;&gt;FAIL&lt;/code&gt; if not&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/transcode</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/transcode</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Streams vs Stream Configs and API Command Return Values</title>
+        <description>&lt;p&gt;Issuing commands to the EvoStream Media Server is an Asynchronous event. This means that a successfully issued command will not actually be executed immediately. It will instead be Queued for execution. While this generally transparent for the user, there is an important ramification of this reality:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When the EMS returns SUCCESS for an issued API command, this only means that the command was successfully QUEUED. IT DOES NOT MEAN THAT THE COMMAND WAS SUCCESSFULLY EXECUTED!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, a pullStream command may return SUCCESS, but the stream may not have actually been pulled!&lt;/p&gt;
+
+&lt;p&gt;More details on why this occurs follows.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;stream-configs&quot;&gt;Stream Configs&lt;/h2&gt;
+
+&lt;p&gt;When an API command is issued, it creates a Stream Config entry. Each Stream Config is a list of parameters which instructs EMS to take an action. As a result of that action, a stream may be born. At the time at which the command is executed (stream config is created), there is absolutely no guarantee that the action will indeed spawn a stream. There is a very good reason for this behavior. The action itself doesn’t solely depend on EMS. In the case of &lt;code class=&quot;highlighter-rouge&quot;&gt;pullStream&lt;/code&gt;, the success of the command greatly depends on the distant party being invoked to send the stream in question. If that distant party doesn’t do that, then the stream can’t be created. To summarize, stream config is only the blueprint of the future stream, nothing less, and nothing more.&lt;/p&gt;
+
+&lt;p&gt;Stream Configs also have a unique, monotonically increasing ID. This is completely different from the “stream id”. When listConfig is used, it will output the format described in the “API Definiion.pdf”. Notice the configId value for each node. The listing of the configurations also contains the current status of the stream and the previous status. Finally, removeConfig can be used to terminate a configuration and the corresponding stream (if ever spawned)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;streams&quot;&gt;Streams&lt;/h2&gt;
+
+&lt;p&gt;Streams are the active streams currently managed by EMS. They may or may not have an associated config. That is because the stream could be pushed/pulled into/from EMS by a distant party, without any execution of a pushStream/pullStream command.&lt;/p&gt;
+
+&lt;p&gt;For example, an Adobe flash application does a “publish” or a “play”. However, when a stream is born due to a &lt;code class=&quot;highlighter-rouge&quot;&gt;pullStream&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;pushStream&lt;/code&gt;/etc API command, that stream Will have an associated config. listStreams will list all streams regardless of their nature: pulled/pushed by EMS or from 3rd party apps like explained in the Adobe example above. When a stream is actively pushed/pulled by EMS, the node describing that stream will also contain a sub node with the configuration (the stream config explained above). shutdownStream, as the name implies, acts on a stream, not on a stream config. That is why you can’t do a &lt;code class=&quot;highlighter-rouge&quot;&gt;shutdownStream&lt;/code&gt; on a stream name which is not present BUT was configured. The &lt;code class=&quot;highlighter-rouge&quot;&gt;permanently=1&lt;/code&gt; parameter is provided to save an extra call to &lt;code class=&quot;highlighter-rouge&quot;&gt;removeConfig&lt;/code&gt; call, but, again, that is only making sense when the stream is active. The streams information returned by listStreams contains a unique id for each and every stream node. That is what we refer to as “stream id”.&lt;/p&gt;
+
+&lt;p&gt;To summarize the above: &lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;streamID&lt;/code&gt;&lt;/em&gt; is different from &lt;code class=&quot;highlighter-rouge&quot;&gt;configID&lt;/code&gt; because they signify two different kinds of entities.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/streams_vs_stream_configs_and_api_command_return_values</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/streams_vs_stream_configs_and_api_command_return_values</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>inStreamCreated, outStreamCreated, streamCreated</title>
+        <description>&lt;p&gt;A new inbound, outbound or neutral stream has been created.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;appName – Name of the application using the stream&lt;/li&gt;
+  &lt;li&gt;audio – Statistics about the audio stream&lt;/li&gt;
+  &lt;li&gt;bandwidth – Bandwidth of the stream&lt;/li&gt;
+  &lt;li&gt;connectionType – Connection type used by stream&lt;/li&gt;
+  &lt;li&gt;creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)&lt;/li&gt;
+  &lt;li&gt;ip – IP address used by the stream&lt;/li&gt;
+  &lt;li&gt;nearIP – The address of the host computer&lt;/li&gt;
+  &lt;li&gt;farIP – The IP of the stream source&lt;/li&gt;
+  &lt;li&gt;name – Name assigned to the stream&lt;/li&gt;
+  &lt;li&gt;port – Port used by the stream&lt;/li&gt;
+  &lt;li&gt;nearPort – The port used by the host computer&lt;/li&gt;
+  &lt;li&gt;farPort – the port used by the stream source&lt;/li&gt;
+  &lt;li&gt;pullSettings – &lt;code class=&quot;highlighter-rouge&quot;&gt;pullstream&lt;/code&gt; settings. &lt;em&gt;Only present for inbound streams that are pulled via the pullStream API command&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)&lt;/li&gt;
+  &lt;li&gt;record – Record settings for the stream&lt;/li&gt;
+  &lt;li&gt;type – Protocol type (see Table of Protocol Types)&lt;/li&gt;
+  &lt;li&gt;typeNumeric – Protocol type in decimal&lt;/li&gt;
+  &lt;li&gt;uniqueId – Stream ID&lt;/li&gt;
+  &lt;li&gt;upTime – Stream duration in milliseconds&lt;/li&gt;
+  &lt;li&gt;video – Statistics about the video stream&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;appName: evostreamms
+    audio:
+        bytesCount: 0
+        codec: AUNK
+        codecNumeric: 4707755069515235328
+        droppedBytesCount: 0
+        droppedPacketsCount: 0
+        packetsCount: 0
+    bandwidth: 0
+    connectionType: 1
+    creationTimestamp: 1361182998409.229
+    ip: 192.168.1.130
+    name: test
+    port: 49730
+    pullSettings:
+        audioCodecBytes: 
+        configId: 1
+        emulateUserAgent: EvoStream Media Server (www.evostream.com) player
+        forceTcp: false
+        isAudio: true
+        keepAlive: true
+        localStreamName: test
+        operationType: 1
+        pageUrl: 
+        ppsBytes: 
+        rtcpDetectionInterval: 10
+        spsBytes: 
+        ssmIp: 
+        swfUrl: 
+        tcUrl: 
+        tos: 256
+        ttl: 256
+        uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
+    queryTimestamp: 1361182998424.829
+    type: INR
+    typeNumeric: 5282249572905648128
+    uniqueId: 2
+    upTime: 15.600
+    video:
+        bytesCount: 0
+        codec: VUNK
+        codecNumeric: 6220964544311721984
+        droppedBytesCount: 0
+        droppedPacketsCount: 0
+        packetsCount: 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/stream_created</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/stream_created</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>inStreamClosed, outStreamClosed, streamClosed</title>
+        <description>&lt;p&gt;An inbound, outbound or neutral stream has been closed&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;appName – Name of the application using the stream&lt;/li&gt;
+  &lt;li&gt;audio – Statistics about the audio stream&lt;/li&gt;
+  &lt;li&gt;bandwidth – Bandwidth of the stream&lt;/li&gt;
+  &lt;li&gt;connectionType – Connection type used by stream&lt;/li&gt;
+  &lt;li&gt;creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)&lt;/li&gt;
+  &lt;li&gt;ip – IP address used by the stream&lt;/li&gt;
+  &lt;li&gt;nearIP – The address used by the host computer&lt;/li&gt;
+  &lt;li&gt;farIP – the adress used by the stream source&lt;/li&gt;
+  &lt;li&gt;name – Name assigned to the stream&lt;/li&gt;
+  &lt;li&gt;port – Port used by the stream&lt;/li&gt;
+  &lt;li&gt;nearPort – The port used by the host computer&lt;/li&gt;
+  &lt;li&gt;farPort – the port used by the stream source&lt;/li&gt;
+  &lt;li&gt;queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)&lt;/li&gt;
+  &lt;li&gt;record – Record settings for the stream&lt;/li&gt;
+  &lt;li&gt;type – Protocol type (see Table of Protocol Types below)&lt;/li&gt;
+  &lt;li&gt;typeNumeric – Protocol type in decimal&lt;/li&gt;
+  &lt;li&gt;uniqueId – Stream ID&lt;/li&gt;
+  &lt;li&gt;upTime – Stream duration in milliseconds&lt;/li&gt;
+  &lt;li&gt;video – Statistics about the video stream&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;appName: evostreamms
+	audio:
+		bytesCount: 190351
+		codec: AAAC
+		codecNumeric: 4702111241970122752
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 681
+	bandwidth: 548
+	connectionType: 1
+	creationTimestamp: 1361182998409.229
+	ip: 192.168.2.88
+	name: test
+	outStreamsUniqueIds:
+		0: 3
+	port: 49730
+	pullSettings:
+		audioCodecBytes: 
+		configId: 1
+		emulateUserAgent: EvoStream Media Server (www.evostream.com) player
+		forceTcp: false
+		isAudio: true
+		keepAlive: true
+		localStreamName: test
+		operationType: 1
+		pageUrl: 
+		ppsBytes: 
+		rtcpDetectionInterval: 10
+		spsBytes: 
+		ssmIp: 
+		swfUrl: 
+		tcUrl: 
+		tos: 256
+		ttl: 256
+		uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
+	queryTimestamp: 1361183030139.685
+	type: INR
+	typeNumeric: 5282249572905648128
+	uniqueId: 2
+	upTime: 31730.456
+	video:
+		bytesCount: 2346717
+		codec: VH264
+		codecNumeric: 6217274493967007744
+		droppedBytesCount: 0
+		droppedPacketsCount: 0
+		packetsCount: 1147
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_api_definition/stream_closed</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_api_definition/stream_closed</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

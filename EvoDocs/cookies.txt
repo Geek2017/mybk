@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+evostream.com	TRUE	/	FALSE	1999999999	PHPSESSID	dcbovi1jk9aru6l3vmg23imak3
+azuredeploy.net	TRUE	/	FALSE	1999999999	ARRAffinity	515f7ab1fc21c1f09b210e8f230f62a9d54e70f727be7c8c668cfb23174bd8a7
+

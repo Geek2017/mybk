@@ -1,0 +1,100 @@
+
+<html>
+<head>
+<title>DDMS</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/css.css" rel="stylesheet">
+
+<script src="js/jq.js"></script>
+<script src="js/bt.js"></script>
+<script src = "js/ang.js"></script>
+<script src = "js/app.js"></script>
+
+
+</head>
+<body ng-app="crudApp">
+<div class="container" ng-controller="userController" ng-init="getRecords()">
+    <div class="row">
+    	<h2>DDMS</h2>
+        <div class="panel panel-default users-content">
+            <div class="panel-heading">Data 
+                <!--<a href="javascript:void(0);" class="glyphicon glyphicon-plus" onClick="$('.formData').slideToggle();"></a>-->
+    
+            </div>
+            <div class="alert alert-danger none"><p></p></div>
+            <div class="alert alert-success none"><p></p></div>
+            <div class="panel-body">
+           <!--<div  class="panel-body none formData">-->
+                <form class="form" name="userForm">
+                    <div class="form-group">
+                        <label>Lapstime:</label>
+                           <span id="lapsetime"></span> 
+                    </div>
+
+                    <div class="form-group">
+                        <label>On Process:</label>
+                        <span id="onprocess"></span> 
+                    </div>
+                     
+<div ng-hide="true">
+
+                    <div class="form-group">
+                        <label>Site Name:</label>
+                        <input id="SiteName" type="text" class="form-control"  ng-model="tempUserData.SiteName"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Url:</label>
+                        <input id="stat" type="text" class="form-control"  ng-model="tempUserData.stat"/>
+                    </div>
+                     <div class="form-group">
+                        <label>Google Stat:</label>
+                        <input id="url"  type="text" class="form-control" ng-model="tempUserData.url"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Google Score:</label>
+                        <input id="rank" type="text" class="form-control"  ng-model="tempUserData.rank"/>
+                    </div>
+                    <!--<a href="javascript:void(0);" class="btn btn-warning" onClick="$('.formData').slideUp();">Cancel</a>-->
+                    <a href="javascript:void(0);" class="btn btn-success" ng-hide="tempUserData.id" ng-click="addData()">Save Result</a>
+</div >                 
+                    
+                     
+                     <a href="javascript:void(0);" class="btn btn-info" ng-hide="tempUserData.id" ng-click="startnow()">Run DDMS</a>
+                     <a href="javascript:void(0);" class="btn btn-danger" ng-hide="tempUserData.id" ng-click="stopnow()">Stop DDMS</a>
+                    <a href="javascript:void(0);" class="btn btn-success" ng-hide="!tempUserData.id" ng-click="updateUser()">Update User</a>
+                </form>
+            </div>
+            <table class="table table-striped">
+              <input id="find"  type="text" class="form-control" ng-model="find"/>
+                <tr>
+                    <th width="5%">#</th>
+                    <th width="15%">Site Name</th>
+
+                    <th width="20%">Url</th>
+
+                    <th width="10%">Google Stat</th>
+                    <th width="10%">Google Score</th>
+                    <th width="14%">Created</th>
+                    <th width="10%"></th>
+                </tr>
+                <tr ng-repeat="user in users | orderBy:'-created'|filter:find">
+                <!--| pagination: curPage * pageSize | limitTo: pageSize">-->
+                    <td>{{$index + 1}}</td>
+                    <td>{{user.SiteName}}</td>
+                    
+                    <td>{{user.url}}</td>
+                    
+                    <td>{{user.stat}}</td>
+                    <td>{{user.rank}}</td>
+                    <td>{{user.created}}</td>
+                    <td>
+                        <a href="javascript:void(0);" class="glyphicon glyphicon-edit" ng-click="editUser(user)"></a>
+                        <a href="javascript:void(0);" class="glyphicon glyphicon-trash" ng-click="deleteUser(user)"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

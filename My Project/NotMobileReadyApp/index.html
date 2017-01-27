@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+
+<title>Not Mobile-Friendly Checker</title>
+<link href="bootstrap/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/jumbotron.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap-switch.min.css">
+
+<script src="bootstrap/jquerymain.js"></script>
+<script src="bootstrap/ie-emulation-modes-warning.js"></script>
+
+
+</head>
+<body>
+
+     
+    <div class="jumbotron head-bann">
+        <div class="container">
+            <h1>Introducing<span>The Not Mobile-Friendly Checker</span></h1>
+            <a href="#main-anch">Click Here To Begin</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="bootstrap/images/mob-samp.png" />
+            </div>
+            <div class="col-md-8">
+                <h2>This is a test to check the Google Mobile Friendliness of your website. </h2>
+                <p>The Google Mobile-friendly Tester is a vital tool for you to use to check the mobile-friendliness of your websites and provides additional information sourced from all official Google data.  This tool even provides more information than Google’s own tool.</p>
+                <p>If your website is not mobile-friendly, this checker will tell you.  If your website checker response is “FAILED”, then you must get your website redesigned to be mobile-friendly or you will likely lose ALL of your mobile traffic.</p>
+                <p>This Google Mobile-friendly Tester includes a bulk testing feature in which you can upload a list of URLs and download the test results into a CSV file!</p>
+            </div>
+        </div>
+    </div> 
+    <div class="row news-wrap" id="main-anch">
+        <div class="col-md-12 news-let">
+            <h2>Is IT Mobile-Friendly?</h2>
+            <p>
+                <a id="single-btn" class="btn btn btn-success domain-btn" onclick="javascript: toggle('single');" href="javascript: void(0);" role="button">Single Domain</a>
+                <a id="bulk-btn" class="btn btn btn-default domain-btn" onclick="javascript: toggle('bulk');" href="javascript: void(0);" role="button">Multiple Domains</a>
+                <a id="csv-btn" class="btn btn btn-default domain-btn" onclick="javascript: toggle('csv');" href="javascript: void(0);" role="button">Domains From CSV</a>
+                <br>
+            </p>
+            <div id="input-single" class="this-inputs">
+                <div class="input-group input-group-lg">
+                    <input id="domain_name" class="form-control input-lg" type="text" style="border-radius: 30px 0px 0px 30px;" placeholder="http://">
+				<span class="input-group-btn">
+				<a id="check-now" class="btn btn-primary btn-group-lg search-btn" style="border-radius: 0px 30px 30px 0px;" name="q" data-target="#search-form" type="submit"> Check </a>
+				</span>
+                </div>
+            </div>
+            <div id="input-bulk" class="this-inputs" style="display:none;">
+                <textarea id="domain_name_bulk" class="form-control" placeholder="One(1) domain per line..."></textarea>
+                <br>
+                <a id="check-now-bulk" class="btn btn-primary search-btn pull-right" style="width:100%;border-radius: 30px 30px 30px 30px;"> Check </a>
+                <br />
+                <br />
+            </div>
+            <div id="input-csv" class="this-inputs" style="display:none;">
+				<span class="btn btn-default btn-file">
+				<input id="thefile" type="file" name="thefile">
+				</span>
+                <button class="btn btn-primary" type="button" onclick="javascript: add_csv();">Check</button>
+                <br>
+                <small>
+                    *Domains must be on the first column only.
+                    <a href="domain_sample.csv">Download sample here.</a>
+                </small>
+            </div>
+            <br>
+            <p>
+                <a class="export" style="font-size: 12px;" href="javascript: void(0);"><img src="bootstrap/images/exp-icon.png" alt="export" />Export Results</a>
+            </p>
+            <div id="progress-div" style="display: none;">
+                <input id="finish_on_q" type="hidden" autocomplete="off" value="0">
+                <input id="total_on_q" type="hidden" autocomplete="off" value="0">
+                <span class="no_progress">0</span>
+                %
+                <div class="progress">
+                    <div id="the-progress-bar" class="progress-bar" style="width: 0%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="99" role="progressbar">
+				<span class="sr-only">
+				<span class="no_progress">0</span>
+				Complete
+				</span>
+                    </div>
+                </div>
+            </div>
+            <div id="not-mobile-btn" class="row text-center" style="display: none;">
+                <div class="not-foot-banner">
+                    <p>Not Mobile-friendly?</p>
+                    <a style="cursor: pointer;" data-target="#myModal" data-toggle="modal" type="button">
+                        Get your website redesigned here!
+                    </a>
+                </div>
+                                            </div>
+            <div id="myModal" class="modal fade" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" aria-label="Close" data-dismiss="modal" type="button">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 id="myModalLabel" class="modal-title">Please fill out the form</h4>
+                        </div>
+                        <form id="main-form" method="post" action="">
+                            <!--<input type="hidden" name="_token" value="9Hvp1BvwpiBgTZJdZEIVXENX9iWpfZj3bzR4LLh8">-->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="first_name">First Name</label>
+                                    <input id="" class="form-control" type="text" required="required" placeholder="Enter First Name" name="first_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Last Name</label>
+                                    <input id="" class="form-control" type="text" required="required" placeholder="Enter Last Name" name="last_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input id="" class="form-control" type="email" required="required" placeholder="Enter Email" name="email">
+                                </div>
+                                <hr>
+                                Give me consultation to make my website/s mobile-friendly:
+                                <ul id="failed-domain-list"> </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-default" data-dismiss="modal" type="button">Close</a>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mob-demo">
+        <div id="queue">
+                    </div>
+        <input type="hidden" id="is_active" value="0" autocomplete="off"/>
+        <div class="row" id="view-toggle" style="display:none;">
+            <h3>View: <input autocomplete="off" type="checkbox" name="my-checkbox" id="view-switch"></h3>
+        </div>
+   
+        <div class="row view-style" id="results-content">
+                                </div>
+
+                <div class="row view-style" id="dvData" style="display:none;">
+            <table id="export-tbl" class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Result</th>
+                    <th>Mobile Friendliness Grade</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+    <div class="foot-banner">
+</div>
+
+
+<script src="bootstrap/jquery.js"></script>
+<script src="bootstrap/bootstrap.js"></script>
+
+<script src="bootstrap/ie10-viewport-bug-workaround.js"></script>
+<script src="js/bootstrap-switch.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+
+</html>

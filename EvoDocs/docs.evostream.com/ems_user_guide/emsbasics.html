@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+  
+<!-- Mirrored from docs.evostream.com/ems_user_guide/emsbasics by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>EMS Basics</title>
+  <meta name="description" content="There are a number of things that are good to keep in mind when interacting with the EvoStream Media Server.">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="emsbasics.html">
+  <link rel="alternate" type="application/rss+xml" title="EvoStream Media Server" href="feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="https://evostream.com/">Back to EvoStream.com</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="doc_index/index.html">Documentation Main Index</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="search/index.html">Search User Guide</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">EMS Basics</h1>
+    <p class="post-meta">
+      <a href="https://github.com/EvoStream/ems_user_guide/blob/gh-pages/_posts/2016-01-01-emsbasics.md">Edit on GitHub</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>There are a number of things that are good to keep in mind when interacting with the EvoStream Media Server.</p>
+
+<h2 id="streams">Streams</h2>
+
+<p><strong>Stream directionality</strong> is always from the perspective of the server itself. So when a pullstream is executed, you are always telling the server to go get a stream to bring into it. Conversely pushstream implies taking a stream that is already within the EMS and forcibly sending it to an external destination.</p>
+
+<p>When you pull, push, or create a stream, the command is logged in the <code class="highlighter-rouge">config/pushPullSetup.xml</code> configuration file. This is the default behavior and allows commands to be persistent if you stop the server and then restart it. In other words, if you pull in two streams, and then stop the server, the next time you start the server it will try to reconnect those two streams.</p>
+
+<p>The logging of commands can be skipped by changing the “keepAlive” parameter in pullstream and pushstream. By setting keepalive=0, the command will not be logged, and if the stream disconnects the server will not try to reconnect to it.</p>
+
+<p>If you wish to “start clean” the pushPullSetup.xml file can simply be deleted prior to starting the EMS.</p>
+
+<p>All in-bound streams have a <code class="highlighter-rouge">localStreamName</code> that is used to uniquely identify that stream. It is used in play requests and can be used to identify streams in some API calls. It is important to note that no two streams may have the same localStreamName. The EMS will return an error if you try to “pull” a second stream with a localStreamName that has already been used.</p>
+
+<h2 id="config-files">Config Files</h2>
+
+<p>The Configuration files are described in better detail later in this document. This will section serve as more of an introduction to the configuration files used by the EvoStream Media Server.</p>
+
+<h3 id="lua">LUA</h3>
+
+<p>The EMS uses the LUA scripting language for many of its configuration files. LUA is an extremely powerful scripting language that allows you to do many things from executing programs to interacting with databases. Typically, the EMS configuration files only trivially use LUA. The configuration files are no more than a collection of statically defined LUA variables.</p>
+
+<p>The use of LUA provides users with a unique ability to dynamically configure the EvoStream Media Server. For example, if you wanted to pull authentication information from a database that is regularly updated you would simply need to replace the contents of the <em>users.lua</em> file with the LUA script to query your authentication database. The EMS will then automatically query your database for authentication details at runtime!</p>
+
+<p>The LUA scripting language is easy to learn and has had excellent acceptance in the software community. The game World of Warcraft® relies heavily on the LUA scripting language. You will be able to clearly understand the contents of the EMS configuration files even if you have never seen a LUA script before.</p>
+
+<h3 id="ems-configuration-overview">EMS Configuration Overview</h3>
+
+<p><strong>config.lua</strong> – This is the main configuration file for the EMS. This file defines all of the startup parameters used by the server, including the location and names of all of the other configuration files. If you wish to change the name of any of the subsequent configuration files, you can do so here. This file is also just a command-line parameter to the EMS executable. The run-scripts provided with the EMS distribution use this file by default. If you want to change the location or name of this file you can simply modify the run scripts to use a different file.</p>
+
+<p>If you modify this file and the server then fails to start, you have made an error. You can either roll-back your changes or you can use the <code class="highlighter-rouge">--use-implicit-console-appender</code> command line parameter to get extra debug information about what failed during startup.</p>
+
+<p><strong>pushPullSetup.xml</strong> – The most important thing to know about the pushPullSetup.xml file is that it <strong>should not be modified manually</strong>! This file is used for internal purposes only. If, during startup, the EMS detects that changes have been made to the pushPullSetup.xml file, it will rename the existing pushPullSetup.xml file and start with a fresh configuration.</p>
+
+<p>Now that the disclaimer is out of the way, it is important to understand how this file is used. When a pullStream, pushStream, createHLSStream, createHDSStream, createMSSStream, createDASHStream, record, or launchProcess, or startWebRtc command is executed, that command is logged to this file (assuming the keepAlive flag is 1, which it is by default). When the EMS is started, it parses this file and attempts to recreate all of the connections. These configuration entries can be removed by issuing <code class="highlighter-rouge">removeConfig</code> commands, or by setting the keepAlive flag to 0 when the initial command is made.</p>
+
+<p><strong>Note:</strong> If you wish to have a “clean start” of the server, with no previous streams, you may delete this file before starting the EMS.</p>
+
+<h3 id="ews-configuration-overview">EWS Configuration Overview</h3>
+
+<p><strong>webconfig.lua</strong> – This is the main configuration file of the EvoStream Web Server (EWS). This file sets the locations of important web server files/folders such as the web root folder, server key &amp; certificate, white list, black list, logs, etc. This is where other web server settings are defined, including HTTP port, group name aliasing, SSL mode, connection/memory limits, mime types, etc.</p>
+
+<p>Some of the more critical settings and their defaults:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings</th>
+      <th>Default Value</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Port</td>
+      <td>8888</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>webRootFolder</td>
+      <td>Linux Installer: /var/evo-webroot/Linux .tar: [EMSInstallDir]/evo-webrootWindows: C:\EvoStream\evo-webroot</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>hasGroupNameAliases</td>
+      <td>False</td>
+      <td>This parameter turns on or off (off is default) Group Name Aliasing, a powerful security feature. Group Name Aliasing does change the behavior of the EWS drastically, so please make sure to read up on Group Name Aliasing before enabling!</td>
+    </tr>
+    <tr>
+      <td>threadPoolSize</td>
+      <td>4</td>
+      <td>Depending on your planned HTTP load and use case, increasing the thread pool might be necessary.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="video-compression">Video Compression</h2>
+
+<p>The EvoStream Media Server requires that the video streams be encoded as H.264 data. H.264 has many different options and configurations. The EMS can support virtually every <em>valid</em> H2.64 stream with a few exceptions:</p>
+
+<p><strong>Widely Varying GOP Sizes</strong> – The EMS works best when there are a consistent number of P-Frames per I-Frame. This is particularly true when creating file-based outbound streams like HLS.</p>
+
+<h2 id="production-logging">Production Logging</h2>
+
+<p>The EMS provides production logging through the Event Notification System which you can read more about below. The production logs allow you to track streaming sessions, data transfers, invalid requests and more. Logging can be done in XML, JSON or formatted for W3C.</p>
+
+<ul>
+  <li>Log HTTP streaming sessions for HLS, DASH, MSS and HDS. Get a SINGLE log entry for the streaming session across the multiple file requests inherent to HTTP streaming.</li>
+  <li>Log live stream and file accesses</li>
+  <li>Log recording events</li>
+  <li>Log both start and end record and streaming events to take action in real-time</li>
+</ul>
+
+<h2 id="debug-logging">Debug Logging</h2>
+
+<p>The EMS provides system level logging which is turned on by default. This logging assists in integration and debugging efforts. The logs can be found in the <code class="highlighter-rouge">logs/</code> directory in either the main EMS distribution (from archive installation) or in the <code class="highlighter-rouge">/var/log/evostreamms/</code> directory when using the Linux installer and in C:\EvoStream\logs\ in Windows®.</p>
+
+<h3 id="log-accumulation">Log Accumulation</h3>
+
+<p>The EMS logs constantly while it is running, which may have negative impacts on disk usage over the course of time. This can be mitigated by either quieting the logs, or disabling logging all-together. To quiet logs, edit the <code class="highlighter-rouge">logLevel</code> configuration value in config.lua. 6 is the highest (most prolific) level of logging, 0 is the lowest.</p>
+
+<p>To disable logging completely, remove or comment out any “file” type <code class="highlighter-rouge">logAppender</code> in the config.lua file. Alternatively, set logLevel to -1 to disable logging without removing the logAppender entry.</p>
+
+<p>See the configuration section of this document for more information on manipulating the config.lua file.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="../index.html">Documentation main index</a></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Sales Support</li>
+          <li><a href="mailto:salesupport@evostream.com">salesupport@evostream.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/EvoStream"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">EvoStream</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/EvoStreamInc"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">EvoStreamInc</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+
+<!-- Mirrored from docs.evostream.com/ems_user_guide/emsbasics by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:28 GMT -->
+</html>

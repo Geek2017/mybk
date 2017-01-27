@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EvoStream Media Server</title>
+    <description>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</description>
+    <link>http://docs.evostream.com/ems_web_ui_user_guide/</link>
+    <atom:link href="http://docs.evostream.com/ems_web_ui_user_guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 18 Aug 2016 12:07:53 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Aug 2016 12:07:53 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>EMS Web UI User Guide</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/document_definitions&quot;&gt;Document Definitions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/installation_and_startup&quot;&gt;Installation and Startup&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/installing_license&quot;&gt;Getting Started&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/installing_license&quot;&gt;Installing License&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/connecting_to_server&quot;&gt;Connecting to Server&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/server_commands&quot;&gt;Server Commands&lt;/a&gt;
+        &lt;ol&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/add_inbound_stream&quot;&gt;Add an Inbound Stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/create_hls_stream&quot;&gt;Create an HLS stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/create_hds_stream&quot;&gt;Create an HDS stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/create_mss_stream&quot;&gt;Create an MSS stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/create_dash_stream&quot;&gt;Create a DASH stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/update_stream_list&quot;&gt;Update stream list&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/send_mpegts&quot;&gt;Send MPEG-TS&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/remove_existing_stream&quot;&gt;Remove Existing Stream&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/stream_details&quot;&gt;Stream Details&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_ui_user_guide/authentication&quot;&gt;Authentication&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:01:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/table_of_contents</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/table_of_contents</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Update Stream List</title>
+        <description>&lt;p&gt;The Stream List provides the list of streams available in EMS. Simply choose the &lt;strong&gt;Update stream list&lt;/strong&gt; under the Service Commands and automatically the Stream List will update.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image13.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/update_stream_list</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/update_stream_list</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Stream Details</title>
+        <description>&lt;p&gt;When streams are selected in the Stream List, the EMS will display the URIs that can be used to get the stream from the EMS. The RTMP URI can be used by Flash-Based video players. The RTSP URI can be used by players such as VLC, QuickTime and by Android devices.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image19.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/stream_details</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/stream_details</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Server Commands</title>
+        <description>&lt;p&gt;There are several commands in the Web UI that makes functions as easy as 1-2-3. Simply choose the API in the Server Commands’ drop down list and fill up the necessary fields.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/server_commands</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/server_commands</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Send MPEG-TS</title>
+        <description>&lt;p&gt;The Send MPEG-TS command allows you to create a UDP based MPEG Transport Stream to some destination. The destination IP can be a unicast, broadcast or multicast address. Be careful not to use a port that is reserved or already in use!&lt;/p&gt;
+
+&lt;p&gt;To create a MPEG-TS stream, simply follow these steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select a stream under Stream List&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the Target Address where is the stream will be sent&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the Target Port to listen to&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image15.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Send MPEG-TS Stream&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image16.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/send_mpegts</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/send_mpegts</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Remove Existing Stream</title>
+        <description>&lt;p&gt;Added stream can be removed using the Web UI. This command is similar to the &lt;code class=&quot;highlighter-rouge&quot;&gt;removeConfig&lt;/code&gt; API.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select a stream to remove&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image17.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Remove Stream&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image18.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/remove_existing_stream</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/remove_existing_stream</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Overview</title>
+        <description>&lt;p&gt;This document provides instructions on how to use the Web-based User Interface for the EvoStream Media Server. It will cover the basics of installing and using the Web-based User Interface.&lt;/p&gt;
+
+&lt;p&gt;This document is written for users of the EvoStream Media Server. It is expected that you already have a basic functional knowledge of the EvoStream Media Server. Please read the EMS User Guide prior to working with the Web UI!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/overview</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/overview</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Installing License</title>
+        <description>&lt;p&gt;User’s may opt to install license manually by copying the License.lic to the config folder or through Web UI by following the steps below:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run EMS&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open Web UI in browser&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Install EMS License&lt;/strong&gt; in the upper left corner of the page&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Browse&lt;/strong&gt; the license file, and enter the directory where license will be installed&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Install License&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A successful message will prompt for successful installation&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/image2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Restart EMS to apply the license file added&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/installing_license</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/installing_license</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Installation and Startup</title>
+        <description>&lt;h2 id=&quot;install-and-configure-the-ems&quot;&gt;Install and Configure the EMS&lt;/h2&gt;
+
+&lt;p&gt;Following the instructions that can be found in the EMS User Guide, install the EMS and verify that it is functioning on your platform. You must be sure that the EMS is functional on your system prior to working with the UI. This will greatly simplify any problem solving that may need to be done with the installation of the Web UI!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;environment-installation&quot;&gt;Environment Installation&lt;/h2&gt;
+
+&lt;p&gt;The Web-based UI requires the evo-webserver which is the EMS’s local web server and installed along the installation of the EMS package.&lt;/p&gt;
+
+&lt;p&gt;The evo-webserver listens to port 8888 as default.&lt;/p&gt;
+
+&lt;p&gt;User’s may still use other web-servers such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NGINX&lt;/li&gt;
+  &lt;li&gt;LIGHTTPD&lt;/li&gt;
+  &lt;li&gt;Apache: WAMP/LAMP, XAMPP, etc.&lt;/li&gt;
+  &lt;li&gt;IIS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Required Modules to Install:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;PHP5 – PHP language translation modules&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PHP_CURL* – Handles external HTTP Post/Get requests. Required to interact with the EMS.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Some recent distributions of WAMP/LAMP have been released with corrupt PHP_CURL modules! If the Web UI does not cause any logging events on the EMS (see below), then your CURL module may be inactive or corrupt.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Please refer to the documents of your chosen web server for installation and configuration directions.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;web-ui-installation&quot;&gt;Web UI Installation&lt;/h2&gt;
+
+&lt;p&gt;The Web UI is located in the evo-webroot folder which is the evo-webservices’ web root. If user will use other web server, simply copy the contents of the EMS Web UI into the Web Server’s web root.&lt;/p&gt;
+
+&lt;p&gt;Test the installation by navigating to:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:8888/EMS_Web_UI/index.php
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;EMS should be running to open Web UI&lt;/li&gt;
+  &lt;li&gt;localhost – IP address of the EMS&lt;/li&gt;
+  &lt;li&gt;8888 - Web server’s assigned port.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This will open the EMS Web UI’s home screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://docs.evostream.com/ems_web_ui_user_guide/assets/homepage.jpg&quot; alt=&quot;homepage&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/installation_and_startup</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/installation_and_startup</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Document Definitions</title>
+        <description>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;TERM&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;DEFINITION&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;API&lt;/td&gt;
+      &lt;td&gt;Application Programming Interface&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;CURL&lt;/td&gt;
+      &lt;td&gt;A tool to transfer data from or to a server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;DASH&lt;/td&gt;
+      &lt;td&gt;Dynamic Adaptive Streaming over HTTP. HTTP adaptive bitrate streaming defined by ISO&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;EMS&lt;/td&gt;
+      &lt;td&gt;EvoStream Media Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;EWS&lt;/td&gt;
+      &lt;td&gt;EvoStream Web Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ERS&lt;/td&gt;
+      &lt;td&gt;EvoStream Rendezvous Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HDS&lt;/td&gt;
+      &lt;td&gt;HTTP Dynamic Streaming. HTTP adaptive bitrate streaming defined by Adobe.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HLS&lt;/td&gt;
+      &lt;td&gt;HTTP Live Stream. HTTP adaptive bitrate streaming defined by Apple.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HTTP&lt;/td&gt;
+      &lt;td&gt;Hyper-Text Transfer Protocol. The basic protocol used for web-page loading and web browsing. Also used for tunneling by many protocols. TCP based.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;IDR&lt;/td&gt;
+      &lt;td&gt;Instantaneous Decoding Refresh – This is a specific packet in the H.264 video encoding specification. It is a full snapshot of the video at a specific instance (one full frame). Video players require an IDR frame to start playing any video. “Frames” that occur between IDR Frames are simply offsets/differences from the first IDR&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;JSON&lt;/td&gt;
+      &lt;td&gt;JavaScript Object Notation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Lua&lt;/td&gt;
+      &lt;td&gt;A lightweight multi-paradigm programming language&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;MSS&lt;/td&gt;
+      &lt;td&gt;Microsoft Smooth Streaming. HTTP adaptive bitrate streaming defined by Microsoft.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
+      &lt;td&gt;A server-side scripting language designed for web development but also used as a general-purpose programming language&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RTCP&lt;/td&gt;
+      &lt;td&gt;Real Time Control Protocol – An protocol that is typically used with RTSP to synchronize two RTP streams, often audio and video streams&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RTMP&lt;/td&gt;
+      &lt;td&gt;Real Time Messaging Protocol – Used with Adobe Flash players&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RTMPT&lt;/td&gt;
+      &lt;td&gt;Real Time Messaging Protocol Tunneled – Essentially RTMP over HTTP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RTP&lt;/td&gt;
+      &lt;td&gt;Real-time Transport Protocol – A simple protocol used to stream data, typically audio or video data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;RTSP&lt;/td&gt;
+      &lt;td&gt;Real Time Streaming Protocol – Used with Android devices and live streaming clients like VLC or Quicktime. RTSP does not actually transport the audio/video data, it is simply a negotiation protocol. It is normally paired with a protocol like RTP, which will handle the actual data transport&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;swfURL&lt;/td&gt;
+      &lt;td&gt;Used in the RTMP protocol, this field is used to designate the URL/address of the Adobe Flash Applet being used to generate the stream (if any)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;tcURL&lt;/td&gt;
+      &lt;td&gt;Used in the RTMP protocol, this field is used to designate the URL/address of the originating stream server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TOS&lt;/td&gt;
+      &lt;td&gt;Type of Service. This is a field in IPv4 packets used by routers to determine how traffic should be dispersed, usually for prioritizing packets&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TTL&lt;/td&gt;
+      &lt;td&gt;Time To Live. This is a field in Ipv4 packets used by routers to determine how many gateways/routers the packet should be able to pass through.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;URI&lt;/td&gt;
+      &lt;td&gt;Universal Resource Identifier. The generic form of a URL. URI’s are used to specify the location and type of streams.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;URL&lt;/td&gt;
+      &lt;td&gt;Uniform Resource Locator. This is a specific form of the URI used for web browsing (http://ip/page)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;VOD&lt;/td&gt;
+      &lt;td&gt;Video On Demand&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_ui_user_guide/document_definitions</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_ui_user_guide/document_definitions</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

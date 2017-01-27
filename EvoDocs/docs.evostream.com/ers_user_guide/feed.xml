@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EvoStream Media Server</title>
+    <description>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</description>
+    <link>http://docs.evostream.com/ers_user_guide/</link>
+    <atom:link href="http://docs.evostream.com/ers_user_guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 18 Aug 2016 12:09:08 +0000</pubDate>
+    <lastBuildDate>Thu, 18 Aug 2016 12:09:08 +0000</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>ERS User Guide</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/document_definitions&quot;&gt;Document Definitions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/purpose&quot;&gt;Purpose&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/evostream_rendezvous_server&quot;&gt;Evostream Rendezvous Server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/configuration&quot;&gt;Configuration&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/startup&quot;&gt;Start-up&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ers_user_guide/api&quot;&gt;API&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The EvoStream Rendezvous Server (ERS) is hosted by EvoStream for your use at http://ers.evostream.com:5050.  EvoStream does provide ERS binaries for use within customer environments with purchases of the EvoStream Media Server.&lt;/p&gt;
+
+&lt;p&gt;Demo Page Links:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ers.evostream.com:5050/demo/evowsvideo.html&quot;&gt;Sub-Second HTML5 over WebSockets&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;http://ers.evostream.com:5050/demo/evowrtcclient.html?stream=Camera1&amp;amp;room=bap&quot;&gt;Sub-Second HTML5 over Peer to Peer&lt;/a&gt; &lt;br /&gt;
+	&lt;em&gt;*The Peer to Peer link will need to be modified for before being used.  Please see the &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/protocolsupport#peer-to-peer&quot;&gt;EMS User’s Guide&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:01:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/table_of_contents</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/table_of_contents</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Start-up</title>
+        <description>&lt;h2 id=&quot;using-node&quot;&gt;Using Node&lt;/h2&gt;
+
+&lt;p&gt;On the installation folder on ERS, change directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/ers&lt;/code&gt; folder and execute the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node ers.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;ERS will then launch with the following message:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;info: ERS running on port 3535...
+info: Webserver port: 3535
+info: Admin access port: 3030
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To stop ERS, simply hit &lt;strong&gt;CTRL-C&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-pm2&quot;&gt;Using PM2&lt;/h2&gt;
+
+&lt;p&gt;On the installation folder on ERS, change directory to the &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules/ers&lt;/code&gt; folder and execute the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 start ers.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To stop ERS:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pm2 stop ers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/startup</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/startup</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Purpose</title>
+        <description>&lt;p&gt;This document provides instructions on how to use the EvoStream Rendezvous Server. It covers installation, configuration and usage.&lt;/p&gt;
+
+&lt;p&gt;This document is written for users of the EvoStream Rendezvous Server.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/purpose</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/purpose</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Installation</title>
+        <description>&lt;h2 id=&quot;manual&quot;&gt;Manual&lt;/h2&gt;
+
+&lt;p&gt;Select a location where ERS will be installed and then change directory to that folder. Install ERS through the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install http://tarballs.evostream.com/ers/ers-&amp;lt;version&amp;gt;.tgz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install http://tarballs.evostream.com/ers/ers-1.0.0.tgz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;automatic&quot;&gt;Automatic&lt;/h2&gt;
+
+&lt;p&gt;For Linux/Unix platforms, an easy to use script is provided to install Node.JS, PM2 and ERS automatically, and then start ERS using the PM2 node.js application manager.&lt;/p&gt;
+
+&lt;p&gt;This script can be download from&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://tarballs.evostream.com/ers/ers-&amp;lt;version&amp;gt;-&amp;lt;OS&amp;gt;-&amp;lt;arch&amp;gt;.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://tarballs.evostream.com/ers/ers-1.0.0-linux-x64.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Once downloaded, select the target installation directory, change to that folder, and run the script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo ./ers-&amp;lt;version&amp;gt;-&amp;lt;OS&amp;gt;-&amp;lt;arch&amp;gt;.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/installation</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/installation</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>EvoStream Rendezvous Server (ERS)</title>
+        <description>&lt;h2 id=&quot;what-is-ers&quot;&gt;What is ERS?&lt;/h2&gt;
+
+&lt;p&gt;EvoStream Rendezvous Server (ERS) allows EMS and client browser to be able to meet and communicate with each other without knowing each other’s IP addresses. It acts as the signaling server needed to establish connection between these endpoints.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;key-features&quot;&gt;Key Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Acts as signaling server&lt;/li&gt;
+  &lt;li&gt;Capable of serving static html pages&lt;/li&gt;
+  &lt;li&gt;Protect streams through tokens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;pre-requisites&quot;&gt;Pre-requisites&lt;/h2&gt;
+
+&lt;h3 id=&quot;a-stun-server&quot;&gt;A. STUN Server&lt;/h3&gt;
+
+&lt;p&gt;STUN is a set of methods and network protocols to allow an end host to discover its public IP address even if it’s located behind a NAT. This server is used by ERS to allow both EMS and the client end-point (browser) to discover their respective IP addresses. Restund is the recommended open-source STUN/TURN server to be used with ERS.&lt;/p&gt;
+
+&lt;p&gt;The default configuration of ERS already points to a public EvoStream STUN server. However, hosting your own STUN/TURN server is also possible as described below.&lt;/p&gt;
+
+&lt;p&gt;To install and host restund on Linux, execute the following instructions:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure that build-essential and unzip packages are already installed. On a debian-based Linux, these can be done through the following:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; apt-get install build-essential
+ apt-get install unzip
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download and install the toolkit library to be used by restund:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; wget http://www.creytiv.com/pub/re-0.4.12.tar.gz
+ tar -xzf re-0.4.12.tar.gz
+ cd re-0.4.12/
+ make
+ sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download and install restund itself:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; wget https://github.com/otalk/restund/archive/master.zip
+ unzip master.zip
+ cd restund-master
+ make
+ sudo make install
+ sudo ldconfig
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure restund (following is a basic sample config file):&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; #
+ # restund.conf
+ #
+ # core
+ #
+ daemon no
+ debug yes
+ realm TestRealmThatCanBeChanged
+ syncinterval 600
+ udp_listen &amp;lt;ip&amp;gt;:&amp;lt;port&amp;gt;
+ udp_sockbuf_size 524288
+ tcp_listen &amp;lt;ip&amp;gt;:&amp;lt;port&amp;gt;
+ #
+ # modules (STUN messages are processed in module loading order)
+ #
+ module_path /usr/local/lib/restund/modules
+ module stat.so
+ module binding.so
+ module syslog.so
+ module status.so
+ #
+ # syslog
+ #
+ syslog_facility 24
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Copy the updated configuration file:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sudo cp restund.conf /etc/
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run restund:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; sudo restund /etc/restund.conf # add -d option for daemon
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;b-nodejs&quot;&gt;B. Node.JS&lt;/h3&gt;
+
+&lt;p&gt;Node.js is a server side JavaScript runtime utilized to run ERS.&lt;/p&gt;
+
+&lt;p&gt;For Linux/Unix variants, a helper script is available to automate the installation process. See Automatic section.&lt;/p&gt;
+
+&lt;p&gt;For windows platforms and/or manual installation:&lt;/p&gt;
+
+&lt;p&gt;Download and install or extract node.js from their website: &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;&lt;em&gt;https://nodejs.org/en/download/&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If extracted, add the Node.JS location to the environment path so that the corresponding binaries can be found even if packages are installed on different folder location.&lt;/p&gt;
+
+&lt;h3 id=&quot;c-npm&quot;&gt;C. NPM&lt;/h3&gt;
+
+&lt;p&gt;The Node Package Manager allows easy installation of a Node.JS package and its dependencies. NPM will be used to install ERS. NPM is already part of the Node.JS application.&lt;/p&gt;
+
+&lt;h3 id=&quot;d-pm2&quot;&gt;D. PM2&lt;/h3&gt;
+
+&lt;p&gt;Although not necessarily a prerequisite, a Node.JS application/process manager can be installed, as well. This will manage the ERS process and restart it in case of failures and/or machine restart if configured. Currently PM2 is the recommended package for this task.&lt;/p&gt;
+
+&lt;p&gt;This package is already automatically installed through the Linux/Unix helper script as described on Automatic section.&lt;/p&gt;
+
+&lt;p&gt;To manually install pm2 package:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g pm2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/evostream_rendezvous_server</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/evostream_rendezvous_server</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Document Definitions</title>
+        <description>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;TERM&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;DEFINITION&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;EMS&lt;/td&gt;
+      &lt;td&gt;EvoStream Media Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;JSON&lt;/td&gt;
+      &lt;td&gt;JavaScript Object Notation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NAT&lt;/td&gt;
+      &lt;td&gt;Network Address Translators&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Room&lt;/td&gt;
+      &lt;td&gt;A logical place where a single EMS joins and waits for incoming clients (web browsers) to connect/join. If there are 10 IP cameras that has a running EMS on each of those cameras, 10 unique rooms will be created by these EMS as they connect to ERS. If an EMS attempts to connect to a room already joined by another EMS instance, the last EMS will not be allowed to join this room.  Rooms can be limited by having entries on &lt;em&gt;allowedrooms&lt;/em&gt; field of the configuration file (config/default.json) upon ERS start-up. Or they can be added upon run-time through the &lt;strong&gt;&lt;em&gt;addRoom&lt;/em&gt;&lt;/strong&gt; admin command.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;STUN&lt;/td&gt;
+      &lt;td&gt;Session Traversal Utilities for NAT&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Token&lt;/td&gt;
+      &lt;td&gt;A valid identifier passed by a connecting client (browser) to ERS to indicate that it has the appropriate permission to access the streams available on EMS of a specified room. This token will be available within 10 minutes after it is used by a client and will be removed once the 10 minute mark has expired. Once used, other clients using the same token will not be able to join a room. This prevents unwanted access to the available streams of a running EMS instance. Tokens can be added using the &lt;strong&gt;&lt;em&gt;addToken&lt;/em&gt;&lt;/strong&gt; admin command.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;TURN&lt;/td&gt;
+      &lt;td&gt;Traversal Using Relays around NAT&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;webRTC&lt;/td&gt;
+      &lt;td&gt;Web Real-Time Communication&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/document_definitions</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/document_definitions</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Configuration</title>
+        <description>&lt;h2 id=&quot;default&quot;&gt;Default&lt;/h2&gt;
+
+&lt;p&gt;A default configuration file, &lt;code class=&quot;highlighter-rouge&quot;&gt;default.json&lt;/code&gt; is included in the &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt; folder where ERS was installed (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;INSTALL_DIRECTORY/node_modules/ers/config/default.json&lt;/code&gt;). This file can be modified to customize the settings of ERS.&lt;/p&gt;
+
+&lt;p&gt;Following is the content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;default.json&lt;/code&gt; config file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;server&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;port&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3535&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;secure&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;cert&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;password&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;tokensEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;webServerEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;adminAccessEnabled&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;adminIP&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;127.0.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;adminPort&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3030&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;allowedrooms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;stunservers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stun:162.209.96.37:55555&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;turnservers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;field-description&quot;&gt;Field Description&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Name&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Default Value&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;server&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Top level field containing all server related settings&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;port&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3535&lt;/td&gt;
+      &lt;td&gt;Port number where ERS will listen to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;secure&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;Indicates if ERS will use HTTPS instead of regular HTTP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;key&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;null&lt;/td&gt;
+      &lt;td&gt;Private Key file to be used for HTTPS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;cert&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;null&lt;/td&gt;
+      &lt;td&gt;Certificate file to be used for HTTPS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;password&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;null&lt;/td&gt;
+      &lt;td&gt;Password of the certificate file&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;tokensEnabled&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;false&lt;/td&gt;
+      &lt;td&gt;Indicates if tokens (a security mechanism) is enabled. This limits viewers who can access available streams of EMS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;webServerEnabled&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;Indicates if a web server will be instantiated that enables ERS to serve static files such as html pages containing the video player&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;adminAccessEnabled&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;true&lt;/td&gt;
+      &lt;td&gt;Indicates if admin access used to manage ERS is enabled&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;adminIP&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;127.0.0.1&lt;/td&gt;
+      &lt;td&gt;Allowed IP address that can connect to ERS as an admin. This needs to be adjusted to match the actual IP address of the machine used to access the admin APIs of ERS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;adminPort&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3030&lt;/td&gt;
+      &lt;td&gt;Port number where ERS admin access listens to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;allowedrooms&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;List of room names as strings that will only allowed to be created by ERS. Leave this empty to allow any rooms to be created. Or create one room for each running ems instance so that only intended rooms get created which also serves as an additional layer of security&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;stunservers&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;List of STUN servers that ERS can use&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;turnservers&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;List of TURN servers that ERS can use&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/configuration</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/configuration</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>API</title>
+        <description>&lt;p&gt;A set of APIs are available to manage ERS and allow the actual generation and deletion of tokens and rooms. These APIs are accessible through an HTTP GET request with the following format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http(s)://&amp;lt;ERS IP&amp;gt;:&amp;lt;ERS adminPort&amp;gt;/?c=&amp;lt;commandName&amp;gt;&amp;amp;i=&amp;lt;Id&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Where:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ERS IP&lt;/td&gt;
+      &lt;td&gt;IP address of the machine hosting ERS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;ERS adminPort&lt;/td&gt;
+      &lt;td&gt;Port number where admin APIs can be accessed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;commandName&lt;/td&gt;
+      &lt;td&gt;Name of the actual command&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Id&lt;/td&gt;
+      &lt;td&gt;Value of the parameter, either token ID or room ID&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;For example, an ERS running on the same machine where the request is being generated from (default setup) can use the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=addToken&amp;amp;i=thisIsASampleToken
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This HTTP GET request can be sent through any scripting language desired.&lt;/p&gt;
+
+&lt;p&gt;An example admin interface which uses Javascript to send out this request can be accessed through:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/ersadmin.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;get-version&quot;&gt;Get Version&lt;/h2&gt;
+
+&lt;p&gt;Returns the current version of ERS.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;version&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;(ignored)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;add-token&quot;&gt;Add Token&lt;/h2&gt;
+
+&lt;p&gt;Adds a token that can be used later by a client trying to connect with EMS.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;addToken&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;lt; token Id &amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=addToken&amp;amp;i=tokenId
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;delete-token&quot;&gt;Delete Token&lt;/h2&gt;
+
+&lt;p&gt;Deletes an existing token.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;delToken&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;lt; token Id &amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=delToken&amp;amp;i=tokenId
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;list-tokens&quot;&gt;List Tokens&lt;/h2&gt;
+
+&lt;p&gt;Displays all created tokens currently active.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;listTokens&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;(ignored)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=listTokens
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;add-room&quot;&gt;Add Room&lt;/h2&gt;
+
+&lt;p&gt;Adds an allowed room to the list during runtime. This command also effectively prevents creation of rooms not included on the list.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;addRoom&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;lt; room ID &amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=addRoom&amp;amp;i=roomId
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;delete-room&quot;&gt;Delete Room&lt;/h2&gt;
+
+&lt;p&gt;Deletes a room added from the list.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;delRoom&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;lt; room ID &amp;gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=delRoom&amp;amp;i=roomId
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;list-rooms&quot;&gt;List Rooms&lt;/h2&gt;
+
+&lt;p&gt;Displays all rooms with their corresponding descriptions and status.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Field&lt;/strong&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Command Name&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;listRooms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Parameter Id&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;(ignored)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://127.0.0.1:3030/?c=listRooms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ers_user_guide/api</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ers_user_guide/api</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

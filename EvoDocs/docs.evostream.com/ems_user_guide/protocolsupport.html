@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+  
+<!-- Mirrored from docs.evostream.com/ems_user_guide/protocolsupport by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Protocol Support and Specifics</title>
+  <meta name="description" content="This section will dive into the specific capabilities of the EvoStream Media Server. Please keep in mind that directionality is always from the perspective o...">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="protocolsupport.html">
+  <link rel="alternate" type="application/rss+xml" title="EvoStream Media Server" href="feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="https://evostream.com/">Back to EvoStream.com</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="doc_index/index.html">Documentation Main Index</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="search/index.html">Search User Guide</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Protocol Support and Specifics</h1>
+    <p class="post-meta">
+      <a href="https://github.com/EvoStream/ems_user_guide/blob/gh-pages/_posts/2016-01-01-protocolsupport.md">Edit on GitHub</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>This section will dive into the specific capabilities of the EvoStream Media Server. Please keep in mind that directionality is always from the perspective of the EMS. Therefore “inbound” will refer to any stream coming into the EMS and “outbound” will refer to any stream leaving the EMS.</p>
+
+<h2 id="real-time-messaging-protocol-rtmp">Real Time Messaging Protocol (RTMP)</h2>
+
+<p>The EMS is fully compatible with the RTMP protocol.  This means that it can receive streams from Adobe’s Flash Media Live Encoder (FMLE), Wirecast, Flash Applets, and many other sources.  It also enables any Flash or Adobe-Air based clients to play streams from the EMS.  Some examples of clients/players that use RTMP are FlowPlayer, JWPlayer and VLC.  Using RTMP, you can reach ANY Flash enabled web browser, which really means that you can reach any browser on Windows, Mac OSX and Linux.</p>
+
+<h3 id="ingesting-rtmp">Ingesting RTMP</h3>
+
+<p>There are several ways that the EMS can use RTMP as a stream source. The first method is to use theRuntime-API to pull a stream from some source. An example of a pullstream command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtmp://192.168.1.5/live/MyTestStream localstreamname=TestStream
+</code></pre>
+</div>
+
+<p>This command tells the EMS to go and get “<code class="highlighter-rouge">MyTestStream</code>” from the server at <code class="highlighter-rouge">192.168.1.5</code>, and then name the stream locally “<code class="highlighter-rouge">TestStream</code>”.  Please see EMS Basics for more information on local stream names.</p>
+
+<p>The typical URI format for requesting RTMP streams is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtmp://[username[:password]@]IP[:port]/&lt;app name&gt;/&lt;stream name&gt;
+</code></pre>
+</div>
+
+<p><strong>The EMS also allows you to PUSH an RTMP stream into it.</strong>  Software like Wirecast and FMLE prefer this type of paradigm.  The EMS listens for RTMP streams on port 1935, which is the default RTMP port. You will need to consult the manuals for your stream source to understand how to push a stream.  The EMS can require authentication for streams that are being pushed to it.  If authentication is enabled, you will need to either supply authentication details along with your pushed stream, or disable authentication for the EMS before the EMS will accept your streams.  Please see the Security and Authentication for more information.</p>
+
+<p>The EMS provides additional RTMP ingest security through RMTP Ingest Points.  Please see RTMP Ingest Points below for more information.</p>
+
+<p>The EMS accepts RTMP streams pushed both as PUBLISH and RECORD.  PUBLISH streams become local live streams. RECORD streams also become local live streams but are also recorded to file. The recordedStreamsStorage parameter in the config/config.lua file specifies a default location to place files when an RTMP RECORD stream is pushed to the EMS.</p>
+
+<h3 id="outbound-rtmp-live-and-vod">Outbound RTMP (Live and VOD)</h3>
+
+<p>Any source stream can be played back via RTMP.  Most often a user will be using a Flash based player which will make an RTMP request on the EMS.  To request an RTMP stream from the EMS, you need to use a URI formatted as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtmp://[username[:password]@]IP[:port]/&lt;live/vod&gt;/&lt;LocalStreamName&gt;
+</code></pre>
+</div>
+
+<p>An example of this URI may be:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtmp://192.168.1.5/live/MyTestStream
+</code></pre>
+</div>
+
+<p>The EMS can also PUSH streams towards another server or some other destination.  The <code class="highlighter-rouge">pushStream</code> Runtime-API function is used to do this. An example of the <code class="highlighter-rouge">pushStream</code> API is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pushStream uri=rtmp://192.168.1.5/live/ localStreamName=MyTestStream targetStreamName=PushedStreamName
+</code></pre>
+</div>
+
+<h3 id="rtmpt">RTMPT</h3>
+
+<p>RTMP via HTTP is supported by the EMS.  RTMPT can be leveraged in exactly the same way as RTMP. You will simply need to use “RTMPT” instead of “RTMP” in the various URIs and addresses. To enable the EMS to accept requests from RTMPT clients, you must create an Acceptor (listener) in the config/config.lua file that looks like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="err">ip=</span><span class="nt">"0.0.0.0"</span><span class="err">,</span><span class="w">                                  
+      </span><span class="err">port=8081,</span><span class="w">                                     
+      </span><span class="err">protocol=</span><span class="nt">"inboundRtmpt"</span><span class="w">
+</span><span class="err">},</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="rtmps">RTMPS</h3>
+
+<p>RTMP secured by SSL is supported by the EMS.  RTMPS can also be leveraged in exactly the same way as RTMP. In addition to using “RTMPS” instead of “RTMP” in the various URIs and addresses, you will also need to create and specify a certificate and key to be able to “Serve” RTMPS streams.</p>
+
+<p>You must create a signed certificate file using a library like OpenSSL (<em>.crt) and a corresponding public key file (</em>.pem).  You must then create an Acceptor (listener) in the config/config.lua file that looks like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+      </span><span class="err">ip=</span><span class="nt">"0.0.0.0"</span><span class="err">,</span><span class="w">                                  
+      </span><span class="err">port=8082,</span><span class="w">                                     
+      </span><span class="err">protocol=</span><span class="nt">"inboundRtmps"</span><span class="err">,</span><span class="w">                       
+      </span><span class="err">sslKey=</span><span class="nt">"server.key"</span><span class="err">,</span><span class="w">                           
+      </span><span class="err">sslCert=</span><span class="nt">"server.crt"</span><span class="w">                           
+</span><span class="err">},</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The paths to the sslKey and sslCert are relative to the runtime directory. It may be best to use absolute paths when specifying those files.</p>
+
+<p>Again, this setup is only necessary when serving these files (clients requesting a stream via RTMPS).  These keys are not used when pushing or pulling a stream since the other side of the transaction will be acting as the server and will therefore provide its own keys</p>
+
+<h3 id="rtmp-ingest-points">RTMP Ingest Points</h3>
+
+<p>When Ingest Points are active, the EMS requires streams pushed to the EMS to provide a specific Target Stream Name.  This mechanism provides a robust way to allow trusted partners to easily push streams to your EMS server.</p>
+
+<p>Ingest Points operate by specifying two linked values: the <code class="highlighter-rouge">privateStreamName</code> and the <code class="highlighter-rouge">publicStreamName</code>.  Both the privateStreamName and the <code class="highlighter-rouge">publicStreamName</code> must be unique within a given EMS instance.  When an RTMP stream is PUSHED to the EMS, the Target Stream Name defined within the RTMP stream must match one of the defined privateStreamNames.  If a match exists, the stream is accepted and brought into the EMS.  This new stream can then be accessed from the EMS using the associated <code class="highlighter-rouge">publicStreamName</code>.</p>
+
+<p>To enable Ingest Points, you must set the <code class="highlighter-rouge">hasIngestPoints</code> parameter in the config/config.lua file to true:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>hasingestpoints=true,
+</code></pre>
+</div>
+
+<p>Ingest Points have a full set of API functions which must beused to add and remove Ingest Points. The API functions are listed here, but please see the API Definition doc for a full description.</p>
+
+<ul>
+  <li>createIngestPoint</li>
+  <li>removeIngestPoint</li>
+  <li>listIngestPoints</li>
+</ul>
+
+<p>Ingest Points are stored by the EMS into the <strong>config/ingestPoints.xml</strong> file.</p>
+
+<h2 id="real-time-streaming-protocol-rtsp">Real Time Streaming Protocol (RTSP)</h2>
+
+<p>Using the RTSP protocol can many different players and servers, including the native Android media player.   RTSP can be used as both a stream source and as an outbound stream protocol.  There are a few variants of RTSP and so it is important to understand a little bit about the protocol itself.</p>
+
+<p>RTSP itself is just a negotiation protocol.  Its job is to set up and coordinate other connections which will then handle the transfer of video and audio data.  Normally, the RTSP transaction will create 4 additional channels, one for audio, one for video, and then two Real Time Control Protocol (RTCP) connections for syncing the audio and video streams.  This means that a typical RTSP stream has actually 5 separate connections/streams.</p>
+
+<p>In addition to this setup, the audio and video streams can be transferred over a couple of different mechanisms, namely Real-time Transfer Protocol (RTP) or MPEG Transport Stream (MPEG-TS). The EMS supports all combinations of RTSP over RTP or MPEG-TS and with or without RTCP channels.</p>
+
+<p>While RTCP channels are usually included in RTSP streams, they are not required components.  The EMS does not, therefore, require them to be present.  However, the EMS will wait for a specified amount of time when a new RTSP stream is introduced while it tries to detect an RTCP channel. During this waiting period, all packets from the RTSP stream will be dropped!  This waiting period can be adjusted in the config.lua file by modifying the rtcpDetectionInterval parameter which sets the seconds to wait before starting the stream without RTCP support.</p>
+
+<h3 id="ingesting-rtsp">Ingesting RTSP</h3>
+
+<p>There are several ways that the EMS can use RTSP as a stream source.  The first method is to use the Runtime-API to pull a stream from some source. An example of a <code class="highlighter-rouge">pullstream</code> command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtsp://192.168.1.5/MyTestStream localstreamname=TestStream
+</code></pre>
+</div>
+
+<p>This command tells the EMS to go and get “<code class="highlighter-rouge">MyTestStream”</code> from the server at <code class="highlighter-rouge">192.168.1.5</code>, and then name the stream locally “<code class="highlighter-rouge">TestStream”</code>.  Please see EMS Basics for more information on local stream names.</p>
+
+<p>The typical URI format for requesting RTSP streams is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://[username[:password]@]IP[:port]/&lt;stream or sdp file name&gt;
+</code></pre>
+</div>
+
+<p>When pulling an RTSP stream via an HTTP Proxy, the pullstream command will be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtsp://[username[:password]@]HostName/StreamName httpProxy=IP[:PORT] localstreamname=TestStream
+</code></pre>
+</div>
+
+<p>To pull an RTSP stream via HTTP the httpProxy parameter can again be leveraged:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtsp://[username[:password]@]HostName/StreamName httpProxy=self localstreamname=TestStream
+</code></pre>
+</div>
+
+<p><strong>Note:</strong></p>
+
+<p>The <code class="highlighter-rouge">httpProxy=self</code> parameter simply implies that there is NO proxy, and to pull the stream, via HTTP, directly from the specified URI.</p>
+
+<p>The EMS also allows you to Push an RTSP stream into it. The EMS listens for RTSP streams on port 5544, which is NOT the default RTSP port of 554. This requires you to specify the port of 5544 when pushing streams into the EMS.  The port the EMS listens on can be modified by changing the appropriate value in the config.lua file.  You will need to consult the manuals for your stream source to understand how to push a stream.</p>
+
+<p>The EMS can require authentication for streams that are being pushed to it.  If authentication is enabled, you will need to either supply authentication details along with your pushed stream, or disable authentication for the EMS before the EMS will accept your streams.  Please see the Security and Authentication for more information.</p>
+
+<p>Please see the API Definition document for more information on API commands.</p>
+
+<h3 id="outbound-rtsp-live-and-vod">Outbound RTSP (Live and VOD)</h3>
+
+<p>Any source stream can be played back via RTSP.  Some common RTSP players are VLC, Android Devices and Quicktime.  To request an RTSP stream from the EMS, you need to use a URI formatted as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://[username[:password]@]IP[:port]/[ts|vod|vodts]/&lt;LocalStreamName or MP4 file name&gt;
+</code></pre>
+</div>
+
+<p>Some examples of RTSP requests are as follows:</p>
+
+<p>Request a live RTSP/RTP stream:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://192.168.1.5:5544/MyTestStream
+</code></pre>
+</div>
+
+<p>Request a live RTSP/MPEG-TS stream:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://192.168.1.5:5544/ts/MyTestStream
+</code></pre>
+</div>
+
+<p>Request a VOD MP4 file via RTSP/RTP:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://192.168.1.5:5544/vod/MyMP4File.mp4
+</code></pre>
+</div>
+
+<p>Request a VOD MP4 file via RTSP/MPEG-TS:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://192.168.1.5:5544/vodts/MyMP4File.mp4
+</code></pre>
+</div>
+
+<p>For VOD requests, the file name can also include the path relative to the media folder:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtsp://192.168.1.5:5544/vod/folder1/folder2/MyMP4File.mp4
+</code></pre>
+</div>
+
+<p>Only MP4 files can be used for RTSP VOD playback.  TS and FLV files cannot be used as sources at this time.</p>
+
+<p>The EMS can also PUSH streams towards another server or some other destination.  The <code class="highlighter-rouge">pushStream</code> Runtime-API function is used to do this. An example of the pushStream API is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pushStream uri=rtsp://192.168.1.5:554/live/ localStreamName=MyTestStream targetStreamName=PushedStreamName
+</code></pre>
+</div>
+
+<p><strong>Please see the API Definition document for more information on API commands.</strong></p>
+
+<h2 id="mpeg-transport-stream-mpeg-ts">MPEG Transport Stream (MPEG-TS)</h2>
+
+<p>The EMS fully supports MPEG2 Transport Stream over both UDP and TCP.  UDP MPEG-TS streams can be unicast, broadcast or multicast.  In order to receive a UDP multicast stream, you must issue a pullstream command using the <strong>dmpegtsudp://</strong> protocol indicator (the “d” is for deep-parse):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=dmpegtsudp://229.0.0.1:5555 localstreamname=TestTSMulticast
+</code></pre>
+</div>
+
+<p>TCP MPEG-TS streams can also be pulled by the server by using the above command, simply replacing “<strong>udp”</strong> with “<strong>tcp”</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=dmpegtstcp://192.168.1.5:5555 localstreamname=TestTSMulticast
+</code></pre>
+</div>
+
+<p>MPEG-TS TCP streams can also be pushed into the server, but you must first tell the EMS what ports to listen to.  You can do this by creating “acceptors” in the <strong>config/config.lua</strong> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="err">ip=</span><span class="nt">"0.0.0.0"</span><span class="err">,</span><span class="w">
+	</span><span class="err">port=9998,</span><span class="w">
+	</span><span class="err">protocol=</span><span class="nt">"inboundTcpTs"</span><span class="w">
+</span><span class="err">},</span><span class="w">
+</span><span class="p">{</span><span class="w">
+	</span><span class="err">ip=</span><span class="nt">"0.0.0.0"</span><span class="err">,</span><span class="w">
+	</span><span class="err">port=9999,</span><span class="w">
+	</span><span class="err">protocol=</span><span class="nt">"inboundUdpTs"</span><span class="w">
+</span><span class="err">},</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>For either of these configured acceptors, a “localstreamname” variable can be added to set the name of the stream that gets pushed into the acceptor.  This will limit the acceptor to just a single inbound stream (the TCP acceptor could accept many if needed) but it has the advantage of creating a known stream name.</p>
+
+<p>For example, the following config will create a stream named “test1” when an MPEG-TS stream is pushed over TCP to port 9998:
+<code class="highlighter-rouge"><span class="w">
+</span><span class="p">{</span><span class="w">
+	</span><span class="err">ip=</span><span class="nt">"0.0.0.0"</span><span class="err">,</span><span class="w">
+	</span><span class="err">port=9998,</span><span class="w">
+	</span><span class="err">localstreamname=</span><span class="nt">"test1"</span><span class="err">,</span><span class="w">
+	</span><span class="err">protocol=</span><span class="nt">"inboundTcpTs"</span><span class="w">
+</span><span class="err">},</span><span class="w">
+</span></code></p>
+
+<p>The EMS will need to be restarted before any changes to the config.lua file will take effect.</p>
+
+<h2 id="html5-web-sockets">HTML5 Web Sockets</h2>
+
+<p>HTML5 Web Socket technology provides socket connections between a web browser and a server, as opposed to the traditional request/response model of HTTP. With HTTP, for the server to send data the client has to initiate the communication via a request and the server will then send back a response. HTTP incurs considerable overhead which makes it not ideal for low latency applications.</p>
+
+<p>With Web Sockets, a persistent connection between the client (web browser) and the server is established and either of them can start sending data anytime, thus eliminating the dependency on the client-side to initiate the request. This results in a low-latency connection providing a more “real-time” data delivery.</p>
+
+<p>The EMS utilizes this technology to provide the following functions:</p>
+
+<ul>
+  <li>Metadata Outbound Push – transmits Metadata to a browser as it is received.</li>
+  <li>Metadata Ingest – accepts incoming Metadata.</li>
+  <li>FMP4 Player – an acceptor which transmits a fragmented MP4 (FMP4) stream.</li>
+</ul>
+
+<p>Both Metadata Outbound Push and Metadata Ingest use a <strong>Web Sockets Metadata Acceptor</strong>. The EMS uses this to receive and/or send metadata.</p>
+
+<p>The definition for this is found in the acceptors section of the EMS configuration file (<em>config.lua</em>):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>acceptors =
+{
+    -- content removed for clarity
+    -- WebSockets JSON Metadata
+    {
+        ip="0.0.0.0",
+        port=8210,
+        protocol="wsJsonMeta",
+        -- streamname="~0~0~0~"
+    },
+    -- content removed for clarity
+},
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">streamname</code> parameter is optional, default will match <strong>all</strong> incoming streams.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ws://host:port/streamname
+</code></pre>
+</div>
+
+<p>Use the GET format to open a websocket channel:</p>
+
+<p>The <code class="highlighter-rouge">streamname</code> above, if not empty, will override what is specified in the acceptor definition in config.lua.</p>
+
+<p>Matching JSON metadata arrives as text. Use WS.send() to input JSON metadata.</p>
+
+<p>Below is a sample minimal metadata page:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script&gt;
+    var ws= new WebSocket("ws://myems:8210/");
+    ws.onmessage= function (msg) {
+        console.log(msg.data);
+    }
+    Function doSend() {
+        var x={fred:{wife:"Wilma",friend:"Barney"}};
+        ws.send(JSON.stringify(x));
+    }
+&lt;/script&gt;
+&lt;button onclick="doSend();"&gt;SEND&lt;/button&gt;
+</code></pre>
+</div>
+
+<p>For the FMP4 Player, a Web Sockets acceptor is defined in <code class="highlighter-rouge">config.lua</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>acceptors =
+{
+    -- content removed for clarity
+    -- WebSockets FMP4 Fetch
+    {
+        ip="0.0.0.0",
+        port=8410,
+        protocol="inboundWSFMP4",
+    },
+    -- content removed for clarity
+},
+</code></pre>
+</div>
+
+<p>The above defines an outbound FMP4 acceptor. It does say “inbound” because the Web Socket connector is inbound, it being an acceptor.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ws://host:port/streamname
+</code></pre>
+</div>
+
+<p>To connect, a Web Socket “GET” call is used. Following is the “GET” URI format</p>
+
+<p>The <em>streamname</em> is a local stream name of a stream that is pulled in the EMS.</p>
+
+<p>A sample HTML file with an FMP4 player, <code class="highlighter-rouge">evowsvideo.html</code>,  is provided. You may use this to try out the Web Socket FMP4 functionality.</p>
+
+<p>For convenience, a demo page is already available upon installation: <code class="highlighter-rouge">..\evo-webroot\demo\evowsvideo.html</code>
+Another option for playback is using <code class="highlighter-rouge">http://ers.evostream.com:5050/demo/evowsvideo.html</code>.</p>
+
+<p><strong>Please see EMS How To Guide for more details.</strong></p>
+
+<h3 id="html5-playback-browser-compatibility">HTML5 Playback Browser Compatibility</h3>
+
+<p>The following diagram shows the compatibility of various browsers with the EvoStream Websockets feature. This diagram is accurate as of November 2015. An updated version of this diagram is available here: <a href="https://evostream.com/features/peer-to-peer">https://evostream.com/features/peer-to-peer</a></p>
+
+<p><img src="assets/proto3.png" alt="PROTO-FIG3" /></p>
+
+<h3 id="firefox-configuration-changes">Firefox Configuration Changes</h3>
+
+<p>The following configuration changes must be made to Firefox before it will work with HTML5 playback and Peer to Peer:</p>
+
+<ul>
+  <li>In the Firefox address field enter: about:config
+    <ul>
+      <li>Click “I’ll be careful I promise!”</li>
+    </ul>
+  </li>
+  <li>Locate the following variables and set them (double-click) as necessary to match:
+    <ul>
+      <li>media.mediasource.enabled = true</li>
+      <li>media.mediasource.whitelist = false</li>
+      <li>media.mediasource.mp4.enabled = true</li>
+      <li>media.fragmented-mp4.exposed = true</li>
+      <li>media.fragmented-mp4.ffmpeg.enabled = true</li>
+      <li>media.fragmented-mp4.gmp.enabled = true</li>
+      <li>media.fragmented-mp4.use-blank-decoder = false</li>
+    </ul>
+  </li>
+  <li>Restart Firefox to activate these changes</li>
+</ul>
+
+<h2 id="http-live-streaming-hls">HTTP Live Streaming (HLS)</h2>
+
+<p>The EvoStream Media Server fully supports HLS, which allows you to send streams to iOS devices such as iPhones and iPads. HLS is a file-based protocol. It functions by taking live streams and creating small “video file chunks” that can be downloaded by iOS devices. Because HLS works this way it introduces significant latency (with default settings around 60 seconds). There is unfortunately no way around this.</p>
+
+<p>To generate an HLS stream, you must use the createHLSStream API command. This command has many parameters that allow you to tweak how the HLS file chunks are generated. Please see the EMS API Definition document for a thorough breakdown of all the command parameters.</p>
+
+<p>The HLS files, once generated by the EMS, must be served via a standard HTTP server. If you are using the EvoStream Amazon AMI, or have used one of the EvoStream Media Server installers you already have the EvoStream Web Server (EWS) installed and running. The <code class="highlighter-rouge">targetFolder</code> parameter should reflect the web-root of your web server. When using EWS, the parameter should be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>targetFolder=../evo-webroot
+</code></pre>
+</div>
+
+<p>An example <code class="highlighter-rouge">createHLSStream</code> command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHLSStream localstreamnames=MyStream targetFolder=../evo-webroot groupName=hls playlisttype=rolling
+</code></pre>
+</div>
+
+<p>To access this stream from an iOS device, you would use the following URL:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://IPofEMS:8888/hls/playlist.m3u8
+</code></pre>
+</div>
+
+<h3 id="dvr-playback">DVR Playback</h3>
+
+<p>The EMS can support DVR functionality, allowing users to pause and resume playback of live streams.  This capability is already built into the HLS protocol support. Simply use an “<code class="highlighter-rouge">appending</code>” playlist type or a “<code class="highlighter-rouge">rolling</code>” playlist with a sufficiently large <code class="highlighter-rouge">playlistLength</code> value.</p>
+
+<p>Users may also create time-shifted content or scheduled content by doing “local pulls” of server side playlists.</p>
+
+<h3 id="hls-resume">HLS Resume</h3>
+
+<p>In cases of server or stream restarts, the HLS will resume in appending segments to previously created playlists. This can be enabled by using the <code class="highlighter-rouge">hlsResume</code> parameter when invoking the <code class="highlighter-rouge">createHLSStream</code> API.</p>
+
+<p>This parameter defaults to 0 (false).</p>
+
+<p>Below is an example usage of the <code class="highlighter-rouge">createHLSStream</code> API command with the <code class="highlighter-rouge">hlsResume</code> parameter:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling hlsResume=1
+</code></pre>
+</div>
+
+<h3 id="audio-only-hls">Audio Only HLS</h3>
+
+<p>The EMS supports audio-only HLS delivery.</p>
+
+<p>The createHLSStream API has an <code class="highlighter-rouge">audioOnly</code> parameter that specifies if the resulting stream will have no video. This parameter defaults to 0 (false) if not specified.</p>
+
+<p>An example <code class="highlighter-rouge">createHLSStream</code> command with the <code class="highlighter-rouge">audioOnly</code> parameter follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling audioOnly=1
+</code></pre>
+</div>
+
+<h3 id="verimatrix-drm">VeriMatrix DRM</h3>
+
+<p>The EMS supports Verimatrix DRM for HLS streams. To enable Verimatrix support for your HLS streams you must enable and modify the “drm” section of the config.lua file. Please see the Configuration File section below for details on the “drm” section.</p>
+
+<p>Once Verimatrix support is enabled in the config file, you can then conditionally add Verimatrix protection to your HLS streams. Simply add the following parameter:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling drmType=verimatrix	
+</code></pre>
+</div>
+
+<h3 id="aes-encryption">AES Encryption</h3>
+
+<p>The EMS supports AES encryption for HLS streams. To use AES encryption you must specify two values in the createHLSStream API command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHLSStream localstreamnames=MyStream targetFolder=/var/evo-webroot groupName=hls playlisttype=rolling drmType=ems aesKeyCount=5
+</code></pre>
+</div>
+
+<p>Simply add the following parameter:</p>
+
+<ul>
+  <li><strong>drmType</strong> is a string value that specifies the type of encryption to use (“ems” means the EvoStream AES encryption scheme).</li>
+  <li><strong>AESKeyCount</strong> is an integer value (defaulted to 5), which specifies how many AES keys will be generated, and rotated through, while encrypting the HLS Stream.</li>
+</ul>
+
+<h3 id="automatic-hls">Automatic HLS</h3>
+
+<p>The EMS can be configured to automatically create an HLS stream for every new inbound stream. The details for the HLS creation are placed in the config.lua file instead of as parameters to the createHLSStream API call.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>autoHLS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+</code></pre>
+</div>
+
+<p>To enable automatic HLS a section in the <code class="highlighter-rouge">config.lua</code> file needs to be enabled and modified.</p>
+
+<h2 id="http-dynamic-streaming-hds">HTTP Dynamic Streaming (HDS)</h2>
+
+<p>The EvoStream Media Server fully supports HDS, which allows you to play streams with Adobe’s OSMF based players. Just like HLS, HDS is a file-based protocol. It functions by taking live streams and creating small “video file chunks” that are downloaded by OSMF players. Because HDS works in this way it introduces significant latency (with default settings around 60 seconds). There is unfortunately no way around this.</p>
+
+<p>To generate an HDS stream, you must use the <code class="highlighter-rouge">createHDSStream</code> API command. This command has many parameters that allow you to tweak how the HDS file chunks are generated. Please see the EMS API Definition document for a thorough breakdown of all the command parameters.</p>
+
+<p>The HDS files, once generated by the EMS, must be served via a standard HTTP server. If you are using the EvoStream Amazon AMI, or have used one of the EvoStream Media Server installers you already have the EvoStream Web Server (EWS) installed and running. The <code class="highlighter-rouge">targetFolder</code> parameter should reflect the web-root of your web server. When using EWS, the parameter should be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createHDSStream localstreamnames=MyStream targetFolder=../evo-webroot groupName=hds playlisttype=rolling targetFolder=../evo-webroot
+</code></pre>
+</div>
+
+<p>An example <code class="highlighter-rouge">createHDSStream</code> command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://IPofEMS:8888/hds/manifest.f4m
+</code></pre>
+</div>
+
+<p>To access this stream from a flash or html based player, you would use the following URL:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://IPofEMS:8888/hds/manifest.f4m
+</code></pre>
+</div>
+
+<p>When HDS generated files are being served through a web server (e.g. Nginx, Apache, etc.) there are times that the HDS bootstrap file is being requested several times by the HDS player but no corresponding fragment file has actually been served. This results to the video to be stalled between a few seconds to a minute before settling to a normal operation. The workaround is to adjust the configuration file of the web server (Nginx, Apache, etc.) and disable the “sendfile” option by setting it to <strong>off</strong>.</p>
+
+<h3 id="automatic-hds">Automatic HDS</h3>
+
+<p>The EMS can be configured to automatically create an HDS stream for every new inbound stream. The details for the HDS creation are placed in the config.lua file instead of as parameters to the <code class="highlighter-rouge">createHDSStream</code> API call.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>autoHDS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+</code></pre>
+</div>
+
+<h2 id="dynamic-adaptive-streaming-over-http-dash">Dynamic Adaptive Streaming over HTTP (DASH)</h2>
+
+<p>The EvoStream Media Server fully supports DASH, which allows you to play streams with DASH players. Just like HLS, DASH is a file-based protocol. It functions by taking live streams and creating small “video file chunks” that are downloaded by DASH players.</p>
+
+<p>To generate a DASH stream, you must use the <code class="highlighter-rouge">createDASHStream</code> API command. This command has many parameters that allow you to tweak how the DASH file chunks are generated. Please see the EMS API Definition document for a thorough breakdown of all the command parameters.</p>
+
+<p>The DASH files, once generated by the EMS, must be served via a standard HTTP server. If you are using the EvoStream Amazon AMI, or have used one of the EvoStream Media Server installers you already have the Evostream Web Server (EWS) installed and running. The <code class="highlighter-rouge">targetFolder</code> parameter should reflect the web-root of your web server. When using EWS, the parameter should be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>targetFolder=../evo-webroot
+</code></pre>
+</div>
+
+<p>An example createDASHStream command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createDASHStream localstreamnames=MyStream targetFolder=../evo-webroot groupName=dash playlisttype=rolling
+</code></pre>
+</div>
+
+<p>To access this stream from an HTML5 based player, you would use the following URL:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://IPofEMS:8888/dash/manifest.mpd
+</code></pre>
+</div>
+
+<h3 id="automatic-dash">Automatic DASH</h3>
+
+<p>The EMS can be configured to automatically create a DASH stream for every new inbound stream. The details for the DASH creation are placed in the <code class="highlighter-rouge">config.lua</code> file instead of as parameters to the <code class="highlighter-rouge">createDASHStream</code> API call.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>autoDASH=
+{
+    targetFolder= "..\\evo-webroot",
+},
+</code></pre>
+</div>
+
+<p>To enable Automatic DASH a section in the <code class="highlighter-rouge">config.lua</code> file needs to be enabled and modified.</p>
+
+<h2 id="microsoft-smooth-streaming-mss">Microsoft Smooth Streaming (MSS)</h2>
+
+<p>The EvoStream Media Server fully supports MSS, which allows you to play streams with Microsoft Silverlight-based players. Just like HLS, MSS is a file-based protocol. It functions by taking live streams and creating small “video file chunks” that are downloaded by Silverlight players.</p>
+
+<p>To generate an MSS stream, you must use the <code class="highlighter-rouge">createMSSStream</code> API command. This command has many parameters that allow you to tweak how the MSS file chunks are generated. Please see the EMS API Definition document for a thorough breakdown of all the command parameters.</p>
+
+<p>The MSS files, once generated by the EMS, must be served via a standard HTTP server. If you are using the EvoStream Amazon AMI, or have used one of the EvoStream Media Server installers you already have the Evostream Web Server (EWS) installed and running. The targetFolder parameter should reflect the web-root of your web server. When using EWS, the parameter should be as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>targetFolder=../evo-webroot
+</code></pre>
+</div>
+
+<p>An example createMSSStream command is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>createMSSStream localstreamnames=MyStream targetFolder=../evo-webroot groupName=mss playlisttype=rolling
+</code></pre>
+</div>
+
+<p>To access this stream from a Silverlight player, you would use the following URL:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://IPofEMS:8888/mss/manifest.ismc
+</code></pre>
+</div>
+
+<h3 id="automatic-mss">Automatic MSS</h3>
+
+<p>The EMS can be configured to automatically create an MSS stream for every new inbound stream. The details for the MSS creation are placed in the config.lua file instead of as parameters to the <code class="highlighter-rouge">createMSSStream</code> API call.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>autoMSS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+</code></pre>
+</div>
+
+<p>To enable Automatic MSS a section in the <code class="highlighter-rouge">config.lua</code> file needs to be enabled and modified.</p>
+
+<h3 id="working-with-mss">Working with MSS</h3>
+
+<p>The following instructions can be used to get your first MSS stream running. We are assuming Linux, but these steps will work for Windows as well, replacing the “targetFolder” parameter path below with one appropriate for your Windows distribution.</p>
+
+<ol>
+  <li>
+    <p>Ensure that the EMS is running (see Installation and Startup above)</p>
+  </li>
+  <li>
+    <p>We will assume here that GroupNameAliasing is off. This is the default, so if you have not made any configuration changes to the EWS, this will be true.</p>
+  </li>
+  <li>
+    <p>Pull in or obtain a source live stream (see “Obtaining Sample Streams” above). We will assume your sample stream name is “test1”</p>
+  </li>
+  <li>
+    <p>[Optional] You can use VLC, or something similar, to validate your live stream:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  rtmp://localhost/live/test1
+  rtsp://localhost:5544/test1
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Use the createMSSStream call to start streaming MSS:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  createmssstream localstreamnames=test1 targetfolder=/var/evo-webroot groupname=mss_group playlisttype=rolling cleanupdestination=1
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>[Optional] You can validate the MSS is being created by looking on your server for the existence of this file:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  /var/evo-webroot/mss_group/manifest.ismc
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Open a web-based MSS player, such as: <a href="http://smf.cloudapp.net/healthmonitor">http://smf.cloudapp.net/healthmonitor</a></p>
+  </li>
+  <li>
+    <p>Replace the Stream URL with: <a href="http://localhost:8888/mss_group/manifest.ismc">http://localhost:8888/mss_group/manifest.ismc</a> and hit “Play”</p>
+  </li>
+</ol>
+
+<h2 id="raw-rtp">Raw RTP</h2>
+
+<p>The EMS can ingest raw, or unsolicited, RTP traffic. However, there are extra pieces of information that the EMS will need in order properly process a raw RTP stream. Typically this information is transferred out-of-band, either through (most commonly) RTSP, or through some other proprietary channel. Since we are operating outside of the bounds of RTSP, the data will need to be added to the pullStream command. The pullStream parameters <code class="highlighter-rouge">isAudio</code>, <code class="highlighter-rouge">audioCodecBytes</code>, <code class="highlighter-rouge">spsBytes</code> and <code class="highlighter-rouge">ppsBytes</code> are used. Please see the API Description document for more details on these parameters.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtp://127.0.0.1:8888 localstreamname=rtptest isAudio=1 audioCodecBytes=1190
+pullstream uri=rtp://127.0.0.1:8888 localstreamname=rtptest isAudio=0 spsBytes=Z0LAHpZiA2P8vCAAAAMAIAAABgHixck= ppsBytes=aMuMsg==
+</code></pre>
+</div>
+
+<h2 id="recording">Recording</h2>
+
+<p>The EMS provides a convenient way to record any inbound live stream. Simply issue a <code class="highlighter-rouge">record</code> API command to record any local stream:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>record localStreamName=Video1 pathtofile=/recording/path type=mp4|ts|flv overwrite=1
+</code></pre>
+</div>
+
+<p>If you issue the record command for a stream that does not yet exist, EMS will queue the operation and will only start recording once the stream is available.</p>
+
+<p>Users can split a recording into multiple files (chunked recording) by using the <em>chunkLength</em> parameter. By default this parameter is set to 0 (disabled) if not specified. If non-zero the record command will start a new recording file after chunkLength seconds have elapsed.</p>
+
+<p>In the example below, a new file will be created after 1 minute (60 seconds) has elapsed:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>record localStreamName=Video1 pathtofile=/recording/path type=mp4 chunkLength=60
+</code></pre>
+</div>
+
+<h2 id="video-on-demand-vod">Video On Demand (VOD)</h2>
+
+<p>The EMS can generate streams from MP4, FLV, and MOV files. The specifics for doing this are described in the previous sections.</p>
+
+<p>The EMS supports VOD from the following file formats:</p>
+
+<ul>
+  <li>FLV – Adobe/Flash style files</li>
+  <li>MP4 - .mp4, .mpv, .mpg4, etc.</li>
+</ul>
+
+<p>The EMS provides a robust mechanism for storing Audio and Video files on disk for VOD playback. You may have your files in multiple locations, and those locations are permitted to be read-only for safety reasons, if you prefer. For each folder/location you must specify a <em>mediaStorage</em> section in the config.lua file.</p>
+
+<p>Each mediaStorage section can have the following parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Parameter</th>
+      <th style="text-align: center">Mandatory</th>
+      <th style="text-align: center">Default Value</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">mediaFolder</td>
+      <td style="text-align: center">True</td>
+      <td style="text-align: center">N/A</td>
+      <td>The full path to the folder you wish to use</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">description</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">””</td>
+      <td>A description for your folder location</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">metaFolder</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">mediaFolder location</td>
+      <td>The location where the EMS will create statistic, seek and meta files for each of the VOD files. The EMS must be able to write to this folder</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">enableStats</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">False</td>
+      <td>If true, the EMS will record statistics about each VOD file played. The stats will be kept in a .stats file named the same as the media file stored in the metaFolder and will include the number of times accessed and the amount of bytes served from it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">clientSideBuffer</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">15</td>
+      <td>The number of seconds the EMS will buffer content when doing VOD playback for an RTMP client</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">keyFrameSeek</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">True</td>
+      <td>Seeking only occurs at key-frames if true. If false, seeking may occur on inter-frame packets, which may cause garbage to be shown on the client player until a keyframe is reached</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">seekGranularity</td>
+      <td style="text-align: center">False</td>
+      <td style="text-align: center">.01</td>
+      <td>The fidelity, in seconds, of seeking for the files in this mediaFolder.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pseudo-vod">Pseudo-VOD</h3>
+
+<p>There may be times that you will want to generate a “live” stream out of a file. There also may be a time where you need to create an <strong>MPEG-TS Stream</strong> ( UDP broadcast/unicast/multicast) out of a file.</p>
+
+<p>This can be accomplished by performing an RTSP <code class="highlighter-rouge">pullStream</code> command on a VOD file (see RTSP above), which then creates a new “live” inbound stream for the EMS. You can then either request that stream via RTMP/RTSP, or perform a <code class="highlighter-rouge">pushStream</code> command to push it out as any of the other protocols. If, for example, you have the mp4 file testFile.mp4, you can create a MPEG-TS UDP Multicast stream from it using the following sequence:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pullstream uri=rtsp://localhost:5544/vod/testFile.mp4 localstreamname=TestMulticast
+pushstream uri=mpegtsudp://229.0.0.1:5555 localstreamname=TestMulticast
+</code></pre>
+</div>
+
+<h2 id="peer-to-peer">Peer to Peer</h2>
+
+<p>The EMS supports direct peering to HTML5 browsers and devices that support WebRTC. Over the WebRTC channel, the EMS streams low-latency (sub-second) H.264 video and AAC audio for delivery directly to the HTML5 video player.</p>
+
+<p>By moving the streaming directly between the end client and the stream originator (for example, a security camera) you remove the largest cost driver of hosting any kind of live streaming service: the bandwidth cost!</p>
+
+<p><img src="assets/proto1.png" alt="PROTO-FIG1" /></p>
+
+<p>Peer to peer works when the <em>EMS is installed and running on the camera, wearable or other such stream creation device</em>. Here is the simplified work flow for Peer to Peer:</p>
+
+<ol>
+  <li>
+    <p>The EMS is configured to communicate with an <strong>EvoStream Rendezvous Server</strong> (ERS). The EMS will maintain that connection to the ERS while it waits for a peer request. The configuration specifies a unique “Room” in which it is waiting.</p>
+  </li>
+  <li>
+    <p>A WebRTC enabled browser/app will connect to a Web Server (either the one provided by the ERS or one of your choosing) and downloads a player page, including the EvoStream provided JavaScript Peering Code.</p>
+  </li>
+  <li>
+    <p>The browser loads the JavaScript, which has been pre-configured by the Web Server with a) an IP address of the ERS to connect to and b) a “Room” to connect to</p>
+  </li>
+  <li>
+    <p>The browser connects to the ERS and requests to join the “Room”</p>
+  </li>
+  <li>
+    <p>The EMS (on the camera) and the Browser share peering information across the ERS connection.</p>
+  </li>
+  <li>
+    <p>Using the peering information, the peer connection is established directly between EMS and the Browser and streaming proceeds.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  startWebRTC ersIP=52.6.14.61 ersPort=3535 roomID=YourRoom
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<p>EvoStream provides a hosted EvoStream Rendezvous Server at <strong>52.6.14.61:3535</strong>. This server can be used for testing and for deployment. This can be used with the EMS by issuing the following API command:</p>
+
+<p><strong>It is VERY IMPORTANT TO NOTE:</strong></p>
+
+<ul>
+  <li>This is a public ERS, and so many people may be using it</li>
+  <li>If your RoomID is not unique, it will result in race conditions with other users. You may end up seeing their streams or they may see yours!</li>
+  <li>EvoStream intends to make this ERS available at all times, but its uptime is NOT Guaranteed!</li>
+</ul>
+
+<p>For production deployments of Peer To Peer you will want to host your own ERS, or have EvoStream host a separate ERS on your behalf. Please contact EvoStream for more information.</p>
+
+<h3 id="getting-started-with-peer-to-peer">Getting Started with Peer to Peer</h3>
+
+<p><strong>Peer to Peer streaming uses the EvoStream HTML5 Streaming capabilities. It is recommended you also review the HTML5 Streaming section.</strong></p>
+
+<p>The EvoStream hosted ERS provides a sample HTML5 WebRTC player:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[http://ers.evostream.com:5050/demo/evowrtcclient.html?stream=YOURSTREAM&amp;room=ROOMID](http://ers.evostream.com:5050/demo/evowrtcclient.html?stream=YOURSTREAM&amp;room=ROOMID)
+</code></pre>
+</div>
+
+<p>ROOMID will need to be changed to the RoomID you’ve used in your StartWebRTC command</p>
+
+<p>YOURSTREAM will need to be changed to the localStreamName you wish to play</p>
+
+<p>You can follow these steps to get your first Peer to Peer session started. <em>Again, please remember to choose a unique RoomID so that you don’t collide with other users!</em></p>
+
+<ol>
+  <li>
+    <p>Run the EMS and bring in a live stream. (See the Getting Started Streaming section.) We’ll assume a stream name of “test1”.</p>
+  </li>
+  <li>
+    <p>Issue the EMS a StartWebRTC Command:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  startWebRTC ersIP=52.6.14.61 ersPort=3535 roomID=[replaceWithYourRoomID]
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>On a supported browser, go to the link:
+      [http://ers.evostream.com:5050/demo/evowrtcclient.html?stream=test1&amp;room=<a href="http://ers.evostream.com:5050/demo/evowrtcclient.html?stream=test1&amp;room=%5BreplaceWithYourRoomID">replaceWithYourRoomID</a>]</p>
+  </li>
+  <li>
+    <p>Press play and enjoy!</p>
+  </li>
+</ol>
+
+<h3 id="peer-to-peer-browser-compatibility">Peer To Peer Browser Compatibility</h3>
+
+<p>The following diagram shows the compatibility of various browsers with the EvoStream Peer to Peer feature. This diagram is accurate as of November 2015. An updated version of this diagram is available here: <a href="https://evostream.com/features/peer-to-peer">https://evostream.com/features/peer-to-peer</a></p>
+
+<p><img src="assets/proto2.png" alt="PROTO-FIG2" /></p>
+
+<h3 id="firefox-configuration-changes-1">Firefox Configuration Changes</h3>
+
+<p>The following configuration changes must be made to Firefox before it will work with HTML5 playback and Peer to Peer:</p>
+
+<ul>
+  <li>In the firefox address field enter: about:config
+    <ul>
+      <li>Click “I’ll be careful I promise!”</li>
+    </ul>
+  </li>
+  <li>Locate the following variables and set them (double-click) as necessary to match:
+    <ul>
+      <li>media.mediasource.enabled = true</li>
+      <li>media.mediasource.whitelist = false</li>
+      <li>media.mediasource.mp4.enabled = true</li>
+      <li>media.fragmented-mp4.exposed = true</li>
+      <li>media.fragmented-mp4.ffmpeg.enabled = true</li>
+      <li>media.fragmented-mp4.gmp.enabled = true</li>
+      <li>media.fragmented-mp4.use-blank-decoder = false</li>
+    </ul>
+  </li>
+  <li>Restart Firefox to activate these changes</li>
+</ul>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="../index.html">Documentation main index</a></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Sales Support</li>
+          <li><a href="mailto:salesupport@evostream.com">salesupport@evostream.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/EvoStream"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">EvoStream</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/EvoStreamInc"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">EvoStreamInc</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+
+<!-- Mirrored from docs.evostream.com/ems_user_guide/protocolsupport by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:42 GMT -->
+</html>

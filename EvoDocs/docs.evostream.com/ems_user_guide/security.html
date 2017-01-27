@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+  
+<!-- Mirrored from docs.evostream.com/ems_user_guide/security by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Security and Authentication</title>
+  <meta name="description" content="Stream Aliasing">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="security.html">
+  <link rel="alternate" type="application/rss+xml" title="EvoStream Media Server" href="feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="https://evostream.com/">Back to EvoStream.com</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="doc_index/index.html">Documentation Main Index</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="search/index.html">Search User Guide</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Security and Authentication</h1>
+    <p class="post-meta">
+      <a href="https://github.com/EvoStream/ems_user_guide/blob/gh-pages/_posts/2016-01-01-security.md">Edit on GitHub</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h3 id="stream-aliasing">Stream Aliasing</h3>
+
+<p>Stream Aliasing is the premier mechanism for securing your online content. You can specify <em>Aliases</em> for each of your inbound streams. When Stream Aliasing has been enabled, inbound streams cannot be accessed directly. Instead, you must create aliases for each stream that clients then use to obtain the stream. It is important to note again that when aliasing is on, streams can <strong>no longer be requested/played by using the localStreamName.</strong> In addition, stream aliases are <strong>single use</strong> , meaning that once a stream has been requested using an alias, that alias is deleted and is no longer available. This allows you to tightly control access to your online content.</p>
+
+<p>Stream Aliasing allows the protection of streams on servers that are available to the public. You can generate stream aliases for use by your website or player/clients. Once the client uses that alias you can be assured that the stream is again secured until you issue a new alias to an authorized user. Stream Aliasing can be enabled by changing the value <em>hasStreamAliases</em> in config.lua to <em>true</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>addStreamAlias
+removeStreamAlias
+listStreamAliases
+flushStreamAliases
+</code></pre>
+</div>
+
+<p>Aliases can be managed using four API commands:</p>
+
+<h4 id="alias-expired-period">Alias Expired Period</h4>
+
+<p>While aliases are typically single-use, there is an additional parameter, ExpirePeriod, which allows for additional flexibility in the automatic removal of aliases by the system. ExpirePeriod is an integer value that can either be positive or negative.:</p>
+
+<p>Positive number: The alias is not a <em>single use</em>, it will be valid for this many seconds. For example,</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>expirePeriod=10
+</code></pre>
+</div>
+
+<p>The alias will be valid for 10 seconds, and may be used repeatedly during that 10 seconds.</p>
+
+<p>Negative number: The alias is a <em>single use</em> and will also expire after the absolute-value of the parameter seconds have passed. For example,</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>expirePeriod=-10
+</code></pre>
+</div>
+
+<p>In this case the alias will expire after 10 seconds unless it has been used before then</p>
+
+<p>Value of 0: Zero is a special case in which the alias is made permanent. The alias will never automatically expire. This can be used to rename streams.</p>
+
+<h4 id="common-alias-configuration">Common Alias Configuration</h4>
+
+<p>Example: Pay-wall/Registered User Section</p>
+
+<p>Stream Aliasing allows you to maintain your own client authentication methods, whether that requires your users to login via your web site, through a mobile app, or some other means. Once a client has been authenticated via your existing method, you then simply need to issue the <code class="highlighter-rouge">addStreamAlias</code> command to the EMS just before issuing the video link to the client.</p>
+
+<p>For example: a user has logged into her home security account and has just clicked on a link to view the “front door camera”. Your web server will be called by that link and do the following:</p>
+
+<ol>
+  <li>Verify the user’s current session</li>
+  <li>Issue the following command to the EMS:</li>
+  <li><code class="highlighter-rouge">addStreamAlias localstreamname=privateDoorCam aliasName=publicDoorCam</code></li>
+  <li>Serve the player page to the client with the following URI (using flash in this example): <code class="highlighter-rouge">rtmp://MyServer/live/publicDoorCam</code></li>
+</ol>
+
+<p>When the user’s app or browser loads the player and plays the stream, the alias will be automatically deleted. This means that if anyone sniffed the link, or if the user copies the link somehow and tries to play it back directly at a later date, it will fail to play.</p>
+
+<h3 id="group-name-aliasing">Group Name Aliasing</h3>
+
+<p>Stream Aliasing only works for connection based protocols (RTMP and RTSP), so what about HLS, DASH and all the other HTTP based protocols? That is where Group Name Aliasing comes in.</p>
+
+<p>The EMS Web Server (EWS) API functions provide the means for adding/removing/checking/listing group name aliases. Same as stream aliases, group name aliases are designed to be used to protect or hide your source stream. Once a group name alias is created the group name can no longer be used to request HTTP playback of that stream. Once a group name alias is requested by a client the alias is then removed.</p>
+
+<p>The <em>hasGroupNameAliases</em> option in the web server configuration file, <em>webconfig.lua</em>, should be set to true to enable group name aliases. HLS/HDS/MSS/DASH streams should be created before adding group name aliases.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>addGroupNameAlias
+removeGroupNameAlias
+getGroupNameByAlias
+listGroupNameAliases
+flushGroupNameAliases
+</code></pre>
+</div>
+
+<p>Group name aliases can be managed using five API commands:</p>
+
+<p>A typical use case for Group Name Aliases is shown below. The use case also applies to HDS, MSS, and DASH streams (simply replace createHLSstream with createHDSstream, createMSSstream, or createDASHstream, respectively, and use a compatible player.</p>
+
+<p>See the Interoperability section for a list of compatible players for different HTTP stream types).</p>
+
+<p>1. Setup an HTTP Stream</p>
+
+<ul>
+  <li>
+    <p>Create an HLS stream:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>createhlsstream localstreamnames=mystream targetfolder=/var/evo-webroot groupname=mygroup playlisttype=rolling cleanupdestination=1
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>List all active HTTP streaming sessions:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>listHttpStreamingSessions
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Add a group name alias for the HTTP stream</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>addGroupNameAlias groupName=mygroup aliasName=myalias
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>2. Playback the HTTP stream</p>
+
+<ul>
+  <li>Open a compatible player</li>
+  <li>
+    <p>Open the URI of the aliased HTTP stream</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> http://localhost:8888/myalias
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>Behind the scenes, this actually plays back <a href="http://localhost:8888/mygroup/mystream/playlist.m3u8"><strong>http://localhost:8888/mygroup/mystream/playlist.m3u8</strong></a>.</p>
+
+<p>The EWS takes care of translating the group name alias to the correct path for the playlist.</p>
+
+<h3 id="inbound-authentication">Inbound Authentication</h3>
+
+<p>The EvoStream Media Server can require that streams be authenticated before they can be pushed into the server. This is done for protection and so that outside sources cannot overwhelm your server without your control. Pushing streams is only valid for TCP based protocols like RTMP and RTSP. By default, the authentication values used by the EMS are defined in the <code class="highlighter-rouge">config/users.lua</code> file.</p>
+
+<p>To enable or disable Inbound Authentication you may do either of the following:</p>
+
+<ol>
+  <li>Comment, or un-comment, out the “Authentication” section in the <code class="highlighter-rouge">config/config.lua</code> file.</li>
+  <li>Set the Boolean value in <code class="highlighter-rouge">config/auth.xml</code> to true (enabled) or false (disabled).</li>
+</ol>
+
+<p>An important part of inbound authentication for RTMP is validating the “Encoder Agent”. This is essentially a name that the stream source uses to identify itself. There are generally only a few Encoder Agents that are used since most encoders mimic the functionality of Adobe’s Flash Media Encoder. When pushing a stream into the EMS, there are two options when it comes to Encoder Agent strings:</p>
+
+<ol>
+  <li>Change your Encoder Agent string to one that the EMS anticipates:</li>
+</ol>
+
+<ul>
+  <li>FMLE/3.0 (compatible; FMSc/1.0)</li>
+  <li>Wirecast/FM 1.0 (compatible; FMSc/1.0)</li>
+  <li>EvoStream Media Server ( <a href="http://www.evostream.com/">www.evostream.com</a>)</li>
+</ul>
+
+<ol>
+  <li>Add your Encoder Agent string into the list of encoderAgents in the config.lua file.</li>
+</ol>
+
+<h3 id="outbound-authentication">Outbound Authentication</h3>
+
+<p>When pushing streams, the EMS makes it very easy to provide authentication for sources that require it. You simply need to specify the username and password in the URI for the push command.</p>
+
+<p>The official format for the URI is as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rtmp://Username:Password@IPAddress:Port/stream/destination
+</code></pre>
+</div>
+
+<p>Using this, your pushstream command may look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pushstream uri=rtmp://myname:mypass@192.168.1.5/live localstreamname=TestStream1 targetstreamname=PushedStream
+</code></pre>
+</div>
+
+<h3 id="client-authentication">Client Authentication</h3>
+
+<p>Users may optionally enforce client authentication for RTSP clients. By enabling the “AuthenticatePlay” parameter within the authentication -&gt; rtsp node of the config.lua file. When enabled, all RTSP clients must provide a username/password combination specified in users.lua.</p>
+
+<h3 id="encoderuser-agents">Encoder/User Agents</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>emulateUserAgent=FMLE/3.0\ (compatible;\ FMSc/1.0)
+</code></pre>
+</div>
+
+<p>When pushing RTMP there is often the need to change the Encoder Agent used by the EMS. The Encoder Agent is essentially a string that identifies the software that is acting as the stream source. Some RTMP end-points require that streams come from well-known sources. To accomplish this simply add the <em>emulateUserAgent</em> parameter to your <em>pushStream</em> command. It is often best to use the FMLE encoder agent:</p>
+
+<p><strong>Note:</strong> Spaces have been escaped so that the parameter is parsed correctly.</p>
+
+<p>For convenience, the EMS provides several shorthand User-Agent strings. These shorthand strings are not case-sensitive.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>emulateUserAgent</th>
+      <th>Resolves as</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>emulateUserAgent=evo</td>
+      <td>EvoStream Media Server ( <a href="http://www.evostream.com/">www.evostream.com</a>)</td>
+    </tr>
+    <tr>
+      <td>emulateUserAgent=FMLE</td>
+      <td>FMLE/3.0 (compatible; FMSc/1.0)”</td>
+    </tr>
+    <tr>
+      <td>emulateUserAgent=wirecast</td>
+      <td>Wirecast/FM 1.0 (compatible; FMSc/1.0)”</td>
+    </tr>
+    <tr>
+      <td>emulateUserAgent=flash</td>
+      <td>MAC 11,3,300,265</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> The default emulateUserAgent is evo</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="../index.html">Documentation main index</a></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Sales Support</li>
+          <li><a href="mailto:salesupport@evostream.com">salesupport@evostream.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/EvoStream"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">EvoStream</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/EvoStreamInc"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">EvoStreamInc</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+
+<!-- Mirrored from docs.evostream.com/ems_user_guide/security by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:29 GMT -->
+</html>

@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EvoStream Media Server</title>
+    <description>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</description>
+    <link>http://docs.evostream.com/ems_quick_start_guide/</link>
+    <atom:link href="http://docs.evostream.com/ems_quick_start_guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 19 Oct 2016 09:54:59 +0000</pubDate>
+    <lastBuildDate>Wed, 19 Oct 2016 09:54:59 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>EMS Quick Start Guide</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_linux&quot;&gt;EMS Quick Start Guide for Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_windows&quot;&gt;EMS Quick Start Guide for Windows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_linux&quot;&gt;EMS Quick Start Guide for Amazon Web Services - Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_windows&quot;&gt;EMS Quick Start Guide for Amazon Web Services - Windows&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_azure&quot;&gt;EMS Quick Start Guide for Microsoft Azure&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:01:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/table_of_contents</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/table_of_contents</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Quick Start Guide for Windows</title>
+        <description>&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;This document provides instructions on how to install EvoStream Media Server (EMS) on Windows® operating systems.&lt;/p&gt;
+
+&lt;p&gt;The document also provide instructions for some basic features of the EMS such as starting EMS, pulling, playing source streams and shutting down EMS.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-evostream-media-server&quot;&gt;Getting EvoStream Media Server&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download the EMS package installer at &lt;a href=&quot;https://evostream.com/software-downloads&quot;&gt;https://evostream.com/software-downloads&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install EMS&lt;/p&gt;
+
+    &lt;p&gt;2.1. Extract the zip package&lt;/p&gt;
+
+    &lt;p&gt;2.2. Right-click on &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.exe&lt;/code&gt; then click &lt;strong&gt;Run as administrator&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw1.jpg&quot; alt=&quot;qsgfw1.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.3. Select the Setup Language, click &lt;strong&gt;OK&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw2.jpg&quot; alt=&quot;qsgfw2.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.4. Click &lt;strong&gt;Next&lt;/strong&gt; to continue the installation&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw3.jpg&quot; alt=&quot;qsgfw3.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.5. Read the license agreement and select &lt;strong&gt;I accept the agreement&lt;/strong&gt;, click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw4.jpg&quot; alt=&quot;qsgfw4.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.6. Verify the installation path, click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw5.jpg&quot; alt=&quot;qsgfw5.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.7. Tick &lt;strong&gt;Create a desktop icon&lt;/strong&gt;, click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw6.jpg&quot; alt=&quot;qsgfw6.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.8. Confirm installation, click &lt;strong&gt;Install&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw7.jpg&quot; alt=&quot;qsgfw7.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.9. Read the information, click &lt;strong&gt;Next&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw8.jpg&quot; alt=&quot;qsgfw8.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.10. Click &lt;strong&gt;Finish&lt;/strong&gt; to finish the installation.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw9.jpg&quot; alt=&quot;qsgfw9.jpg&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Uncheck &lt;strong&gt;Launch EMS&lt;/strong&gt; if the license is not yet installed.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;license-installation&quot;&gt;License Installation&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You should already have your license file available. If none, EvoStream offers a &lt;strong&gt;30-day free trial&lt;/strong&gt; license to those who want to explore the features of EMS. Click &lt;a href=&quot;https://evostream.com/free-trial/&quot;&gt;here&lt;/a&gt; to avail the free trial or contact &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#108;&amp;#101;&amp;#115;&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#101;&amp;#118;&amp;#111;&amp;#115;&amp;#116;&amp;#114;&amp;#101;&amp;#097;&amp;#109;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;salesupport@evostream&lt;/a&gt; for other license type purchase.&lt;/p&gt;
+
+&lt;p&gt;There are two options for installing the license file: &lt;strong&gt;manual&lt;/strong&gt; or via &lt;strong&gt;Web UI&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;amanual&quot;&gt;A.	Manual&lt;/h3&gt;
+
+&lt;p&gt;Copy the &lt;code class=&quot;highlighter-rouge&quot;&gt;License.lic&lt;/code&gt; file to &lt;code class=&quot;highlighter-rouge&quot;&gt;..\EvoStream\config&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;bvia-web-ui&quot;&gt;B.	Via Web UI&lt;/h3&gt;
+
+&lt;p&gt;1. Run the EMS (direct launch after installation) or using the desktop shortcut.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw10.jpg&quot; alt=&quot;qsgfw10.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2. Open the EMS Web UI by pointing your browser to&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:8888/EMS_web_ui/index.html&quot;&gt;http://localhost:8888/EMS_web_ui/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw11.jpg&quot; alt=&quot;qsgfw11.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3. Click &lt;strong&gt;INSTALL EMS LICENSE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;4. Locate the license file, and enter the directory where license will be installed&lt;/p&gt;
+
+&lt;p&gt;5. Click &lt;strong&gt;Install License&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw12.jpg&quot; alt=&quot;qsgfw12.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;6. A message for successful installation will be displayed&lt;/p&gt;
+
+&lt;p&gt;7. Restart the EMS&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw13.jpg&quot; alt=&quot;qsgfw13.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; A successful EMS start will show GO! GO! GO! in console.&lt;/p&gt;
+
+&lt;h2 id=&quot;connecting-to-telnet&quot;&gt;Connecting to Telnet&lt;/h2&gt;
+
+&lt;p&gt;To use EMS, a telnet is needed for communication. User needs to enable the telnet client to be able to run the EMS API commands.&lt;/p&gt;
+
+&lt;p&gt;1. Open a command prompt, and run telnet&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For ASCII telnet interface&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ telnet localhost 1112
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For ASCII CLI interface&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ telnet localhost 1222
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A telnet localhost will be opened after pressing Enter key.&lt;/p&gt;
+
+&lt;p&gt;2. For preliminary check, type:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The result for ASCII CLI is shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw14.jpg&quot; alt=&quot;qsgfw14.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-ems-api&quot;&gt;Basic EMS API&lt;/h2&gt;
+
+&lt;h3 id=&quot;aadding-a-stream&quot;&gt;A.	Adding a Stream&lt;/h3&gt;
+
+&lt;p&gt;The pullStream command is the simplest command to get an external stream.&lt;/p&gt;
+
+&lt;p&gt;Sample command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 localstreamname=test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;bstream-playback&quot;&gt;B.	Stream Playback&lt;/h3&gt;
+
+&lt;p&gt;Pulled streams are automatically saved in EMS. To play the pulled stream, use a media player that supports the media format that was pulled.&lt;/p&gt;
+
+&lt;p&gt;EMS automatically converts the stream pulled in different protocols so no worries if you want to play the stream using an RTMP or RTSP protocol for example.&lt;/p&gt;
+
+&lt;p&gt;To play in media player:&lt;/p&gt;
+
+&lt;p&gt;1. Go to Open Network Stream&lt;/p&gt;
+
+&lt;p&gt;2. Enter the URL of the pulled stream&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rtsp://127.0.0.1:5544/test
+rtmp://127.0.0.1/live/test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will fetch the pulled stream via localStreamName and playback will start once the file is found.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw15.jpg&quot; alt=&quot;qsgfw15.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Please refer to &lt;strong&gt;EMS_User’s_Guide&lt;/strong&gt; and &lt;strong&gt;EMS_API_Definitions&lt;/strong&gt; for more information.&lt;/p&gt;
+
+&lt;h3 id=&quot;cstopping-the-ems-server&quot;&gt;C.	Stopping the EMS server&lt;/h3&gt;
+
+&lt;p&gt;If the user wants to shut down the EMS, just send the command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shutdownServer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will respond with a key:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfw16.jpg&quot; alt=&quot;qsgfw16.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then send another shutdownserver command using the key:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shutdownServer key=bVjvUo8HQ6VzDFJv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will shut down after sending the command.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_windows</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_windows</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Quick Start Guide for Linux</title>
+        <description>&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;This document provides instructions on how to install EvoStream Media Server (EMS) on Linux operating systems. It also provides instructions for some basic features of the EMS such as starting EMS, pulling, playing source streams and shutting down the EMS.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-evostream-media-server&quot;&gt;Getting EvoStream Media Server&lt;/h2&gt;
+
+&lt;p&gt;There are two options for installing the EMS: Linux archive or apt/yum installation.&lt;/p&gt;
+
+&lt;h3 id=&quot;adeprecated-linux-archive-installation&quot;&gt;A.	(Deprecated) Linux Archive Installation&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the EMS tarball at the &lt;a href=&quot;http://tarballs.evostream.com/release/4491/&quot;&gt;Release 1.7.1 Archives&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Extract the &lt;strong&gt;.tar.gz&lt;/strong&gt; file to install the EMS at a directory of your choice.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;baptyum-installation&quot;&gt;B.	APT/YUM Installation&lt;/h3&gt;
+
+&lt;h4 id=&quot;pre-requisites&quot;&gt;Pre-requisites:&lt;/h4&gt;
+
+&lt;p&gt;Administrative privileges are required. This can be accomplished in many ways.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo su –
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If the sudo utility is available:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ su –
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The prompt changes from ‘ &lt;strong&gt;$&lt;/strong&gt;’ to ‘ &lt;strong&gt;#&lt;/strong&gt;’ when administrative privileges are enabled.&lt;/p&gt;
+
+&lt;h4 id=&quot;installation-procedure&quot;&gt;Installation Procedure:&lt;/h4&gt;
+
+&lt;p&gt;1. Retrieve the script used to install the EvoStream software repository and store it&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Debian based Linux distributions (Ubuntu or Debian)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget http://apt.evostream.com/installkeys.sh -O /tmp/installkeys.sh
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RedHat based Linux distributions (CentOS, Fedora, RHEL)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# curl http://yum.evostream.com/installkeys.sh -o /tmp/installkeys.sh
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2. Execute the script to install the EvoStream software repository&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# sh /tmp/installkeys.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If successful, the following message should be printed on the console:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;EvoStream keys installed successfully&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;At this stage, the EvoStream software repository is successfully installed and you can install packages from it.&lt;/p&gt;
+
+&lt;p&gt;The following steps are used to install the EvoStream Media Server, and can be repeated to update the EMS to the most recent release.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Steps 2 and 3 must be executed only once&lt;/p&gt;
+
+&lt;p&gt;3. Install EvoStream Media Server.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Debian based Linux distributions (Ubuntu or Debian)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# apt-get install evostream-mediaserver
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RedHat based Linux distributions (CentOS, Fedora, RHEL)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# yum install evostream-mediaserver
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license-installation&quot;&gt;License Installation&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You should already have your license file available. If none, EvoStream offers a 30-day free trial license to those who want to explore the features of EMS. Click &lt;a href=&quot;https://evostream.com/free-trial/&quot;&gt;here&lt;/a&gt; to avail the free trial or contact &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#097;&amp;#108;&amp;#101;&amp;#115;&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#114;&amp;#116;&amp;#064;&amp;#101;&amp;#118;&amp;#111;&amp;#115;&amp;#116;&amp;#114;&amp;#101;&amp;#097;&amp;#109;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;salesupport@evostream&lt;/a&gt; for other license type purchase.&lt;/p&gt;
+
+&lt;p&gt;There are two options for installing the license file: manual or via Web UI.&lt;/p&gt;
+
+&lt;h3 id=&quot;amanual&quot;&gt;A.	Manual&lt;/h3&gt;
+
+&lt;p&gt;Copy the License.lic to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If via Linux Archive: &lt;code class=&quot;highlighter-rouge&quot;&gt;../config&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;If via APT/YUM: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/evostreamms/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bvia-web-ui&quot;&gt;B.	Via Web UI&lt;/h3&gt;
+
+&lt;p&gt;1. Run the EMS&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linux Archive&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd [Path to EMS bin folder]
+$ ./run_daemon_ems.sh
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;APT/YUM&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# service evostreamms start
+# service evostreamms start_console
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2. Open the EMS Web UI by pointing your browser to &lt;a href=&quot;http://localhost:8888/EMS_Web_UI/index.php&quot;&gt;http://localhost:8888/EMS_Web_UI/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl1.jpg&quot; alt=&quot;gsgfl1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3. Click &lt;strong&gt;INSTALL EMS LICENSE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;4. Locate the license file, and enter the directory where license will be installed&lt;/p&gt;
+
+&lt;p&gt;5. Click &lt;strong&gt;Install License&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl2.jpg&quot; alt=&quot;qsgfl2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;6. A message for successful installation will be displayed&lt;/p&gt;
+
+&lt;p&gt;7. Restart the EMS&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl3.jpg&quot; alt=&quot;qsgfl3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; A successful EMS startup will show GO! GO! GO! on the console.&lt;/p&gt;
+
+&lt;h2 id=&quot;connecting-to-telnet&quot;&gt;Connecting to Telnet&lt;/h2&gt;
+
+&lt;p&gt;To use EMS, a telnet is needed for communication. User needs to enable the telnet client to be able to run the EMS API commands.&lt;/p&gt;
+
+&lt;p&gt;1. Open a command prompt, and run telnet&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For ASCII telnet interface&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ telnet localhost 1112
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For ASCII CLI interface&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ telnet localhost 1222
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A telnet localhost will be opened after pressing Enter key.&lt;/p&gt;
+
+&lt;p&gt;2. For preliminary check, type:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The result for ASCII CLI is shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl4.jpg&quot; alt=&quot;qsgfl4.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-ems-api&quot;&gt;Basic EMS API&lt;/h2&gt;
+
+&lt;h3 id=&quot;aadding-a-stream&quot;&gt;A.	Adding a Stream&lt;/h3&gt;
+
+&lt;p&gt;The pullStream command is the simplest command to get an external stream.&lt;/p&gt;
+
+&lt;p&gt;Sample command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 localstreamname=test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;bstream-playback&quot;&gt;B.	Stream Playback&lt;/h3&gt;
+
+&lt;p&gt;Pulled streams are automatically saved in EMS. To play the pulled stream, use a media player that supports the media format that was pulled.&lt;/p&gt;
+
+&lt;p&gt;EMS automatically converts the stream pulled in different protocols so no worries if you want to play the stream using an RTMP or RTSP protocol for example.&lt;/p&gt;
+
+&lt;p&gt;To play in media player:&lt;/p&gt;
+
+&lt;p&gt;1. Go to Open Network Stream&lt;/p&gt;
+
+&lt;p&gt;2. Enter the URL of the pulled stream&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rtsp://127.0.0.1:5544/test
+rtmp://127.0.0.1/live/test
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will fetch the pulled stream via localStreamName and playback will start once the file is found.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl5.jpg&quot; alt=&quot;qsgfl5.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Please refer to &lt;strong&gt;EMS User’s Guide&lt;/strong&gt; and &lt;strong&gt;EMS API Definitions&lt;/strong&gt; for more information.&lt;/p&gt;
+
+&lt;h3 id=&quot;cstopping-the-ems-server&quot;&gt;C.	Stopping the EMS server&lt;/h3&gt;
+
+&lt;p&gt;If the user wants to shut down the EMS, just send the command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shutdownServer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will respond with a key:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/qsgfl6.jpg&quot; alt=&quot;qsgfl6.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then send another shutdownserver command using the key:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;shutdownServer key=bVjvUo8HQ6VzDFJv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The EMS will shut down after sending the command.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_linux</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_linux</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Quick Start Guide for Microsoft Azure</title>
+        <description>&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;This document describes how to set up a virtual machine with EvoStream Media Server software on Microsoft Azure, an open, flexible, enterprise-grade cloud computing platform.&lt;/p&gt;
+
+&lt;p&gt;Microsoft Azure is a cloud-computing platform that virtualizes computing resources as virtual machines. EvoStream provides a Linux and Windows machine with a preconfigured version of EvoStream Media Server that is ready to start using Azure services. You can use this machine to launch EMS, paying for your running instance time and bandwidth consumption only while the instances are running. You can launch EMS instances in specific geographical locations that are closer to your audience to reduce latency and in multiple geographical locations to provide high levels of redundancy.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;pre-requisites&quot;&gt;Pre-requisites&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Microsoft Account&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;setup-virtual-machine-environment&quot;&gt;Setup Virtual Machine Environment&lt;/h3&gt;
+
+&lt;p&gt;To get started with the EvoStream Media Server (EMS) on Azure, the first thing to do is to setup the virtual machine by simply following these steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Quick-Deploy: Steps 1 and 2 below can be skipped by clicking one of the following buttons:&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Quick-Deploy EvoStream Media Server 1.7.1 for Windows Server 2012 R2&lt;/em&gt;&lt;br /&gt;
+&lt;a href=&quot;https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FEvoStream%2Fevostream_addons%2Fmaster%2Fazure_templates%2Fems171_windows2012%2Fazuredeploy.json&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://azuredeploy.net/deploybutton.png&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Quick-Deploy EvoStream Media Server 1.7.1 for Ubuntu 14.04 64-bit&lt;/em&gt;&lt;br /&gt;
+&lt;a href=&quot;https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FEvoStream%2Fevostream_addons%2Fmaster%2Fazure_templates%2Fems171_ubuntu1404%2Fazuredeploy.json&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;http://azuredeploy.net/deploybutton.png&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search for the EvoStream Media Server in the Azure marketplace, or simply follow this link:&lt;/p&gt;
+
+    &lt;p&gt;https://azure.microsoft.com/en-us/marketplace/partners/evostream-inc/evostream-media-server/&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/homepage.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the operating system for the virtual machine to be created. Click on &lt;strong&gt;Create Virtual Machine&lt;/strong&gt; button.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/OSselect.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Images available:&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;EvoStream Media Server for Windows - Windows Server 2012 R2&lt;/li&gt;
+      &lt;li&gt;EvoStream Media Server for Ubuntu - Ubuntu 14.04 64-bit&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sign in&lt;/strong&gt; your Microsoft Azure account if not yet signed in. You will be redirected to the EvoStream Media Server page.  Read on the notes and if ready, click on the &lt;strong&gt;Create&lt;/strong&gt; button.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/create_windows.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure the virtual machine settings based on your preferences&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Review the Settings, Offer Details and Terms of Use then click &lt;strong&gt;Purchase&lt;/strong&gt; to start the deployment&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To check if the image has been created, on the Microsoft Azure Dashboard, click on the &lt;strong&gt;Virtual machines&lt;/strong&gt;. You will now see the image created once the deployment succeeded.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The machine is started after the deployment&lt;/p&gt;
+
+&lt;h3 id=&quot;connecting-to-ems-machine&quot;&gt;Connecting to EMS machine&lt;/h3&gt;
+
+&lt;p&gt;All the virtual machines in your account is seen under the Virtual machines in the left-side menu bar.&lt;/p&gt;
+
+&lt;p&gt;Click on the Virtual Machine name. Click on &lt;strong&gt;Start&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/startVM.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;connecting-via-ssh-from-linux-terminal&quot;&gt;Connecting via SSH from Linux Terminal&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Send command:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh &amp;lt;username&amp;gt;@&amp;lt;IP_address&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;The username and password is set in step 4 above.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;user@ubuntu:~/Desktop$ ssh user@11.221.105.202
+   
+The authenticity of host '111.221.105.202 (111.221.105.202)' can't be established.
+RSA key fingerprint is ae:02:ee:41:ff:38:96:ab:78:7b:3a:e6:09:ed:1f:4c.
+Are you sure you want to continue connecting (yes/no)? 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input “&lt;strong&gt;yes&lt;/strong&gt;”, press &lt;strong&gt;Enter&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Warning: Permanently added '111.221.105.202' (RSA) to the list of known hosts.
+user@111.221.105.202's password:
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter password, press &lt;strong&gt;Enter&lt;/strong&gt;. A welcome note will open. You then need to &lt;strong&gt;&lt;u&gt;install the license&lt;/u&gt;&lt;/strong&gt; to be able to use the EMS capabilities.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The license should be placed in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/evostreamms&lt;/code&gt; for Linux and in &lt;code class=&quot;highlighter-rouge&quot;&gt;./config&lt;/code&gt; in Windows&lt;/p&gt;
+
+&lt;h4 id=&quot;connecting-via-ssh-from-windows-putty&quot;&gt;Connecting  via SSH from Windows (PuTTy)&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Pre-requisites:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PuTTY Secure Shell Client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;strong&gt;PuTTY&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select &lt;strong&gt;Session&lt;/strong&gt; under the category tree&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Specify the destination you want to connect to:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/putty.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Host Name&lt;/strong&gt; – the username and public IP address in Azure virtual machine running EvoStream Media Server&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Port&lt;/strong&gt; – 22 (default)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Connection type&lt;/strong&gt; – SSH&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Open&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click  &lt;strong&gt;Yes&lt;/strong&gt; to accept the security key on the PuTTy Security Alert Window&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the username’s password, hit &lt;strong&gt;Enter&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Using username &quot;EvoStream&quot;.
+EvoStream@111.221.105.202's password: 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You are now connected to the machine! You then need to &lt;strong&gt;&lt;u&gt;install the license&lt;/u&gt;&lt;/strong&gt; to be able to use the EMS capabilities.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The license should be placed in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/evostreamms&lt;/code&gt; for Linux and in &lt;code class=&quot;highlighter-rouge&quot;&gt;./config&lt;/code&gt; in Windows&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;connecting-via-remote-desktop&quot;&gt;Connecting via Remote Desktop&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the &lt;strong&gt;Remote Desktop Application&lt;/strong&gt; to be used&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The remote desktop application will depend on the OS you will use.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the details of the virtual machine image, click &lt;strong&gt;Connect&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Computer&lt;/strong&gt; -  the IP address of the image&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Username&lt;/strong&gt; -  the username set for the image&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/remotedesktop.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the &lt;strong&gt;password&lt;/strong&gt; for the user, click &lt;strong&gt;OK&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The connection will be established. You may now &lt;strong&gt;&lt;u&gt;install the license&lt;/u&gt;&lt;/strong&gt; to use the EMS capabilities!&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The EMS is installed in &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\EvoStream&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ems-web-ui&quot;&gt;EMS Web UI&lt;/h2&gt;
+
+&lt;p&gt;While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://&amp;lt;DomainOrPublicIP&amp;gt;:8888/EMS_Web_UI/index.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt; DomainOrPublicIP &amp;gt; will need to be replaced with the Public Domain or Public IP of your new EC2 Instance.&lt;/p&gt;
+
+&lt;h3 id=&quot;determining-public-ip&quot;&gt;Determining Public IP&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to &lt;em&gt;http://portal.azure.com/&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on virtual machine created under Virtual Machines menu&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start the virtual machine&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the Essentials pane, the Public IP address/DNS name label is displayed&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The IP address is changing everytime the virtual machine is restarted&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/IPinAzure.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;authentication&quot;&gt;Authentication&lt;/h2&gt;
+
+&lt;p&gt;The authentication is only enabled starting the 1.7.1 version of EMS. The Authentication is enabled by default in EMS Web UI and HTTP Based API.&lt;/p&gt;
+
+&lt;h3 id=&quot;login-for-web-ui&quot;&gt;Login for Web UI&lt;/h3&gt;
+
+&lt;p&gt;The Web UI is protected by default when using the EMS on Azure.  When accessing the Web UI you will be prompted for a username and password.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/authentication.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “UID” - the unique identifier of the virtual machine, this will be seen in webconfig.lua&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;http-based-api&quot;&gt;HTTP Based API&lt;/h3&gt;
+
+&lt;p&gt;For the EMS on Azure, the HTTP based API is exposed, but it requires authentication to be used.  We call this &lt;strong&gt;Proxy Authentication&lt;/strong&gt;. Basic Authentication is used and so just a username and password are required:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “UID” - the unique identifier of the virtual machine, this will be seen in webconfig.lua&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Command will take this general format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://Username:Password@IPAddress:Port/apiproxy/CommandName?params=&amp;lt;base64EncodedString&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample Command:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://evostream:i-D817E76F-B6F2-CC4F-ACAC-EAE9D84CEE3F@52.91.237.115:8888/apiproxy/version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; username is “&lt;strong&gt;evostream&lt;/strong&gt;” and password is the “&lt;strong&gt;UID&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/runtimeapi#http&quot;&gt;Proxy Authentication&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-the-unique-id&quot;&gt;Getting the Unique ID&lt;/h3&gt;
+
+&lt;p&gt;The UID will serves as the password for the Proxy and Web UI authentication. The UID is obtained once a virtual machine is made. It can only be checked in the EMS webconfig.lua.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;in webconfig.lua:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apiProxy=
+{
+   authentication=&quot;basic&quot;,
+   pseudoDomain=&quot;apiproxy&quot;,
+   address=&quot;127.0.0.1&quot;,
+   port=7777,
+   userName=&quot;evostream&quot;,
+   password=&quot;D817E76F-B6F2-CC4F-ACAC-EAE9D84CEE3F&quot;,   --&amp;gt; sample UID
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;terminating-ems-machine&quot;&gt;Terminating EMS machine&lt;/h2&gt;
+
+&lt;h3 id=&quot;stopping-ems-machine&quot;&gt;Stopping EMS machine&lt;/h3&gt;
+
+&lt;p&gt;When you want to stop the virtual machine, fret not, all the changes remains in the server. The machine is only in suspended.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Click on the Virtual machine menu&lt;/li&gt;
+  &lt;li&gt;Right click on the virtual machine name, click on &lt;strong&gt;Stop&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;or, simply click &lt;strong&gt;Stop&lt;/strong&gt; on the virtual machine window&lt;/li&gt;
+  &lt;li&gt;Confirm stopping the virtual machine by clicking &lt;strong&gt;Yes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/stopVM.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;deleting-ems-machine&quot;&gt;Deleting EMS machine&lt;/h3&gt;
+
+&lt;p&gt;Deleting the EMS virtual machine will remove all the changes and the virtual machine itself in the Azure Virtual Machine list.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Click on the Virtual machine menu&lt;/li&gt;
+  &lt;li&gt;Right click on the virtual machine name, click on &lt;strong&gt;Delete&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;or, simply click &lt;strong&gt;Delete&lt;/strong&gt; on the virtual machine window&lt;/li&gt;
+  &lt;li&gt;Choose if you want to delete or keep the attached disk&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/deleteVM.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_azure</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_azure</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Quick Start Guide for Amazon Web Services - Windows</title>
+        <description>&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;This document describes how to install and configure EvoStream Media Server software for Windows on Amazon Elastic Compute Cloud (Amazon EC2), an Amazon web service that provides resizable compute capacity in the cloud.&lt;/p&gt;
+
+&lt;p&gt;Amazon EC2 is a cloud-computing platform that virtualizes computing resources as virtual machines. A single virtual machine configuration is registered as an Amazon Machine Image (AMI). EvoStream provides an Amazon Linux AMI with a preconfigured version of EvoStream Media Server that is ready to start using the Amazon Web Services (AWS) Management Console. You can use this AMI to launch EMS for EC2 instances, paying for your running instance time and bandwidth consumption only while the instances are running. You can launch EMS instances in specific geographical locations that are closer to your audience to reduce latency and in multiple geographical locations to provide high levels of redundancy.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;pre-requisites&quot;&gt;Pre-requisites&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Amazon Web Services Account&lt;/li&gt;
+  &lt;li&gt;Amazon EC2 Console Account&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;free-trial&quot;&gt;Free Trial&lt;/h3&gt;
+
+&lt;p&gt;EMS offers a 30-day free trial use for first-time customers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There will be no software changes but the AWS infrastructure charges still apply.&lt;/p&gt;
+
+&lt;h3 id=&quot;deployment&quot;&gt;Deployment&lt;/h3&gt;
+
+&lt;p&gt;To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will first need to purchase an EMS instance through the Amazon Web Services website: &lt;a href=&quot;https://aws.amazon.com/marketplace&quot;&gt;&lt;em&gt;https://aws.amazon.com/marketplace&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search for the EvoStream Media Server in the AWS marketplace, or simply follow this link:&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/marketplace/pp/B00VTR946Y&quot;&gt;https://aws.amazon.com/marketplace/pp/B00VTR946Y&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image1.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Continue&lt;/strong&gt; and &lt;strong&gt;Sign in&lt;/strong&gt; your AWS account&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select what type of EMS instance you will run: &lt;em&gt;(1-Click Launch or Manual Launch)&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;1-Click Launch&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The setup for the instance is made easy by the Amazon 1-click Launch utility and the EMS can be successfully deployed with all of the default settings.&lt;/p&gt;
+
+&lt;p&gt;A.	Select the &lt;strong&gt;Version&lt;/strong&gt; of the EMS to be used&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image4.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;B.	Select the &lt;strong&gt;Region&lt;/strong&gt; and &lt;strong&gt;EC2 Instance Type&lt;/strong&gt; (size of computer) for your deployment&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/region.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image5.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The EMS can be run on very small computers, including Micro EC2 instances. The size of the instance should be a direct reflection of how much sustained traffic you expect to be hosting. In almost all scenarios you will run out of bandwidth prior to exhausting the CPU or memory limits of the virtual machine.&lt;/p&gt;
+
+&lt;p&gt;C.	Select or create the &lt;strong&gt;VPC&lt;/strong&gt; and &lt;strong&gt;Subnet&lt;/strong&gt; to be used.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image6.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; See &lt;a href=&quot;http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html&quot;&gt;http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html&lt;/a&gt; for more information on VPC.&lt;/p&gt;
+
+&lt;p&gt;D.	Choose a &lt;strong&gt;Security Group&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image7.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The default security group has been designed to provide outside access to all ports used for streaming. The ports are defined and used as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;Port&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Use&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1112&lt;/td&gt;
+      &lt;td&gt;Telnet for API (JSON)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1113&lt;/td&gt;
+      &lt;td&gt;(Internal use only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1222&lt;/td&gt;
+      &lt;td&gt;Telnet for API (ASCII)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1935&lt;/td&gt;
+      &lt;td&gt;RTMP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1936&lt;/td&gt;
+      &lt;td&gt;(Internal use only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;SSH&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3389&lt;/td&gt;
+      &lt;td&gt;RDP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4443&lt;/td&gt;
+      &lt;td&gt;RTMP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5000&lt;/td&gt;
+      &lt;td&gt;(Reserved)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5544&lt;/td&gt;
+      &lt;td&gt;RTSP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5985&lt;/td&gt;
+      &lt;td&gt;(Reserved)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6666&lt;/td&gt;
+      &lt;td&gt;Live FLV&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7777&lt;/td&gt;
+      &lt;td&gt;HTTP for API&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8080&lt;/td&gt;
+      &lt;td&gt;HTTP Requests&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8100&lt;/td&gt;
+      &lt;td&gt;JSON META&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8210&lt;/td&gt;
+      &lt;td&gt;WS JSON META&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8410&lt;/td&gt;
+      &lt;td&gt;WS FMP4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8888&lt;/td&gt;
+      &lt;td&gt;HTTP for EWS (EvoStream Web Server)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9999&lt;/td&gt;
+      &lt;td&gt;MPEG TS&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;These Security Settings can be changed but it will impact the accessibility of the streams on your server.&lt;/p&gt;
+
+&lt;p&gt;E.	Choose or create a &lt;strong&gt;Key Pair&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image8.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Either choose an existing key pair for instance access or create a new one for your account. If you choose an existing pair you &lt;strong&gt;MUST&lt;/strong&gt; have the .pem file already downloaded from that pair. Amazon does not allow you to download key pairs a second time.&lt;/p&gt;
+
+&lt;p&gt;F.	Review the settings created, click on &lt;strong&gt;Launch with 1-Click&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image9.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Manual Launch&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image10.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1: Choose AMI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A.	Select the &lt;strong&gt;EMS version&lt;/strong&gt; to be used&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image11.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;B.	Click the &lt;strong&gt;Launch with EC2 Console&lt;/strong&gt; of the chosen &lt;strong&gt;Region&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/region_man.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2: Choose Instance Type&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You will now be redirected to the &lt;strong&gt;Launch Instance Wizard in Step 2&lt;/strong&gt;. You may launch or with continue the configuration of the image.&lt;/p&gt;
+
+&lt;p&gt;C.	Select the &lt;strong&gt;Instance Type&lt;/strong&gt; to be used. You may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/instancetype.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3: Configure Instance Details&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;D.	Configure the instance to suit your requirements. You may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/instance.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 4: Add Storage&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;E.	&lt;strong&gt;Add New Volume&lt;/strong&gt; or you may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/volume.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;F.	Add a tag for the instance or you may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/tag.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;G.	&lt;strong&gt;Create&lt;/strong&gt; or &lt;strong&gt;select&lt;/strong&gt; the &lt;strong&gt;security group&lt;/strong&gt; to be used then click &lt;strong&gt;Review and Launch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/securitygroup.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 7: Review and Launch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;H.	Review the configuration made, click &lt;strong&gt;Launch&lt;/strong&gt; or go back to modify the changes&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/review.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I.	A window for the keys will prompt. Select an existing key pair or create or proceed without the key pair to be used. Click &lt;strong&gt;Launch instances&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/keypair.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: You will find the instance created in Instances under Instances Menu&lt;/p&gt;
+
+&lt;h2 id=&quot;connecting-to-ems-using-windows&quot;&gt;Connecting to EMS using Windows&lt;/h2&gt;
+
+&lt;h3 id=&quot;aremote-desktop-connection&quot;&gt;A.	Remote Desktop Connection&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the &lt;strong&gt;Remote Desktop Application&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the details of the virtual machine image, click &lt;strong&gt;Connect&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Computer&lt;/strong&gt; - the IP address of the image&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Username&lt;/strong&gt; -Administrator&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Password&lt;/strong&gt;- &lt;em&gt;see below&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;2.1.	How to obtain the password?&lt;/p&gt;
+
+    &lt;p&gt;To get the password, right click on the instance under the Instances list. Click &lt;strong&gt;Connect&lt;/strong&gt; and you will be prompted with this:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/password.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Click on &lt;strong&gt;Get Password&lt;/strong&gt;. Choose the &lt;strong&gt;[key-pair-name].pem&lt;/strong&gt; then click &lt;strong&gt;Decrypt Password&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;A &lt;strong&gt;password&lt;/strong&gt; will be shown on the window.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/decrypt.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enter the &lt;strong&gt;password&lt;/strong&gt; for the user, click &lt;strong&gt;OK&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The connection will be established.Run EMS by double clicking the desktop shortcut icon or running the &lt;code class=&quot;highlighter-rouge&quot;&gt;run_console_ems.bat&lt;/code&gt;. You can now use the EMS capabilities!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The EMS is installed in &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\EvoStream&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;bems-web-ui&quot;&gt;B.	EMS Web UI&lt;/h3&gt;
+
+&lt;p&gt;While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://&amp;lt;DomainOrPublicIP&amp;gt;:8888/EMS_Web_UI/index.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt; DomainOrPublicIP &amp;gt;&lt;/strong&gt; will need to be replaced with the Public Domain or Public IP of your new EC2 Instance.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; EMS should be running to be able to access the EMS Web UI.&lt;/p&gt;
+
+&lt;h4 id=&quot;b1determining-public-ip&quot;&gt;B.1.	Determining Public IP&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to &lt;em&gt;https://console.aws.amazon.com&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;EC2&lt;/strong&gt; under compute&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image23.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the Navigation pane of the EC2 Management Console, under Instances, click &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the running instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the lower pane, click the &lt;strong&gt;Description tab&lt;/strong&gt;. The Public DNS value is the public domain name of your running instance and the Instance ID is the instances instance ID.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image13.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;b2login-for-web-ui&quot;&gt;B.2.	Login for Web UI&lt;/h4&gt;
+
+&lt;p&gt;The Web UI is protected by default when using the EMS on AWS.  When accessing the Web UI you will be prompted for a username and password.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/authentication.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “Amazon Instance ID” - this will need to be obtained via your Amazon account.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Getting the Amazon Instance ID&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;From Amazon Console&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to &lt;em&gt;https://console.aws.amazon.com&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;EC2&lt;/strong&gt; under compute&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image23.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on &lt;strong&gt;Running Instances&lt;/strong&gt; under Resources&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image24.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;Instance Name&lt;/strong&gt; provided for the EMS, and look for the &lt;strong&gt;Instance ID&lt;/strong&gt; given.  This will be your password.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image25.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;http-based-api&quot;&gt;HTTP Based API&lt;/h2&gt;
+
+&lt;p&gt;The above instructions gave you access to the EMS via the command line.  For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API’s available to you are found here: &lt;a href=&quot;http://docs.evostream.com/ems_api_definition/table_of_contents&quot;&gt;API Definition&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For the EMS on AWS, the HTTP based API is exposed, but it requires authentication to be used.  We call this &lt;strong&gt;Proxy Authentication&lt;/strong&gt;. Basic Authentication is used and so just a username and password are required:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “Amazon Instance ID” - this will need to be obtained via your Amazon account as explained above.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Command will take this general format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://Username:Password@IPAddress:Port/apiproxy/CommandName?params=&amp;lt;base64EncodedString&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample Command:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://evostream:i-013c03dc9bab9d69f@52.91.237.115:8888/apiproxy/version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; username is “&lt;strong&gt;evostream&lt;/strong&gt;” and password is the “&lt;strong&gt;instance ID&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/runtimeapi#http&quot;&gt;http://docs.evostream.com/ems_user_guide/runtimeapi#http&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h2 id=&quot;ec2-instance-termination&quot;&gt;EC2 Instance Termination&lt;/h2&gt;
+
+&lt;p&gt;When you terminate an instance, you’ll lose all changes or files that you have on the server. If you have anything that you don’t want to lose, be sure to save it to Amazon Simple Storage Service (Amazon S3) before terminating the instance or you’ll lose your data.&lt;/p&gt;
+
+&lt;p&gt;After you’ve saved your data, do the following to terminate an instance:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the Navigation pane, under Instances, click &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Select the running instance(s) that you want to terminate.&lt;/li&gt;
+  &lt;li&gt;Click the &lt;strong&gt;Actions&lt;/strong&gt; button, and then click &lt;strong&gt;Terminate&lt;/strong&gt;. The Instance State column for the selected instance(s) will show shutting-down and then terminated.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Amazon recommends that you confirm the machine reaches the terminated state before signing out. Charges will continue to accrue for instances that fail to shut down.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_windows</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_windows</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Quick Start Guide for Amazon Web Services - Linux</title>
+        <description>&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;This document describes how to install and configure EvoStream Media Server software for Linux on Amazon Elastic Compute Cloud (Amazon EC2), an Amazon web service that provides resizable compute capacity in the cloud.&lt;/p&gt;
+
+&lt;p&gt;Amazon EC2 is a cloud-computing platform that virtualizes computing resources as virtual machines. A single virtual machine configuration is registered as an Amazon Machine Image (AMI). EvoStream provides an Amazon Linux AMI with a preconfigured version of EvoStream Media Server that is ready to start using the Amazon Web Services (AWS) Management Console. You can use this AMI to launch EMS for EC2 instances, paying for your running instance time and bandwidth consumption only while the instances are running. You can launch EMS instances in specific geographical locations that are closer to your audience to reduce latency and in multiple geographical locations to provide high levels of redundancy.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;pre-requisites&quot;&gt;Pre-requisites&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Amazon Web Services Account&lt;/li&gt;
+  &lt;li&gt;Amazon EC2 Console Account&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;free-trial&quot;&gt;Free Trial&lt;/h3&gt;
+
+&lt;p&gt;EMS offers a 30-day free trial use for first-time customers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There will be no software changes but the AWS infrastructure charges still apply.&lt;/p&gt;
+
+&lt;h3 id=&quot;deployment&quot;&gt;Deployment&lt;/h3&gt;
+
+&lt;p&gt;To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will first need to purchase an EMS instance through the Amazon Web Services website: &lt;a href=&quot;https://aws.amazon.com/marketplace&quot;&gt;&lt;em&gt;https://aws.amazon.com/marketplace&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Search for the EvoStream Media Server in the AWS marketplace, or simply follow this link:&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/marketplace/pp/B00VTR946Y&quot;&gt;https://aws.amazon.com/marketplace/pp/B00VTR946Y&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image1.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Continue&lt;/strong&gt; and &lt;strong&gt;Sign in&lt;/strong&gt; your AWS account&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select what type of EMS instance you will run: &lt;em&gt;(1-Click Launch or Manual Launch)&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;1-Click Launch&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image3.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The setup for the instance is made easy by the Amazon 1-click Launch utility and the EMS can be successfully deployed with all of the default settings.&lt;/p&gt;
+
+&lt;p&gt;A.	Select the &lt;strong&gt;Version&lt;/strong&gt; of the EMS to be used&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image4.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;B.	Select the &lt;strong&gt;Region&lt;/strong&gt; and &lt;strong&gt;EC2 Instance Type&lt;/strong&gt; (size of computer) for your deployment&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/region.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image5.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The EMS can be run on very small computers, including Micro EC2 instances. The size of the instance should be a direct reflection of how much sustained traffic you expect to be hosting. In almost all scenarios you will run out of bandwidth prior to exhausting the CPU or memory limits of the virtual machine.&lt;/p&gt;
+
+&lt;p&gt;C.	Select or create the &lt;strong&gt;VPC&lt;/strong&gt; and &lt;strong&gt;Subnet&lt;/strong&gt; to be used.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image6.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; See &lt;a href=&quot;http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html&quot;&gt;http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html&lt;/a&gt; for more information on VPC.&lt;/p&gt;
+
+&lt;p&gt;D.	Choose a &lt;strong&gt;Security Group&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image7.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The default security group has been designed to provide outside access to all ports used for streaming. The ports are defined and used as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;Port&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;Use&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1112&lt;/td&gt;
+      &lt;td&gt;Telnet for API (JSON)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1113&lt;/td&gt;
+      &lt;td&gt;(Internal use only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1222&lt;/td&gt;
+      &lt;td&gt;Telnet for API (ASCII)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1935&lt;/td&gt;
+      &lt;td&gt;RTMP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1936&lt;/td&gt;
+      &lt;td&gt;(Internal use only)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;22&lt;/td&gt;
+      &lt;td&gt;SSH&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3389&lt;/td&gt;
+      &lt;td&gt;RDP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4443&lt;/td&gt;
+      &lt;td&gt;RTMP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5000&lt;/td&gt;
+      &lt;td&gt;(Reserved)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5544&lt;/td&gt;
+      &lt;td&gt;RTSP&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5985&lt;/td&gt;
+      &lt;td&gt;(Reserved)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6666&lt;/td&gt;
+      &lt;td&gt;Live FLV&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7777&lt;/td&gt;
+      &lt;td&gt;HTTP for API&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8080&lt;/td&gt;
+      &lt;td&gt;HTTP Requests&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8100&lt;/td&gt;
+      &lt;td&gt;JSON META&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8210&lt;/td&gt;
+      &lt;td&gt;WS JSON META&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8410&lt;/td&gt;
+      &lt;td&gt;WS FMP4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8888&lt;/td&gt;
+      &lt;td&gt;HTTP for EWS (EvoStream Web Server)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9999&lt;/td&gt;
+      &lt;td&gt;MPEG TS&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;These Security Settings can be changed but it will impact the accessibility of the streams on your server.&lt;/p&gt;
+
+&lt;p&gt;E.	Choose or create a &lt;strong&gt;Key Pair&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image8.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Either choose an existing key pair for instance access or create a new one for your account. If you choose an existing pair you &lt;strong&gt;MUST&lt;/strong&gt; have the .pem file already downloaded from that pair. Amazon does not allow you to download key pairs a second time.&lt;/p&gt;
+
+&lt;p&gt;F.	Review the settings created, click on &lt;strong&gt;Launch with 1-Click&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image9.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Manual Launch&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image10.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1: Choose AMI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A.	Select the &lt;strong&gt;EMS version&lt;/strong&gt; to be used&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image11.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;B.	Click the &lt;strong&gt;Launch with EC2 Console&lt;/strong&gt; of the chosen &lt;strong&gt;Region&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/region_man.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2: Choose Instance Type&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You will now be redirected to the &lt;strong&gt;Launch Instance Wizard in Step 2&lt;/strong&gt;. You may launch or with continue the configuration of the image.&lt;/p&gt;
+
+&lt;p&gt;C.	Select the &lt;strong&gt;Instance Type&lt;/strong&gt; to be used. You may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/instancetype.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3: Configure Instance Details&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;D.	Configure the instance to suit your requirements. You may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/instance.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 4: Add Storage&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;E.	&lt;strong&gt;Add New Volume&lt;/strong&gt; or you may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/volume.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;F.	Add a tag for the instance or you may &lt;strong&gt;Review and Launch&lt;/strong&gt; the AMI or click &lt;strong&gt;Next&lt;/strong&gt; to continue with the configuration&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/tag.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;G.	&lt;strong&gt;Create&lt;/strong&gt; or &lt;strong&gt;select&lt;/strong&gt; the &lt;strong&gt;security group&lt;/strong&gt; to be used then click &lt;strong&gt;Review and Launch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/securitygroup.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 7: Review and Launch&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;H.	Review the configuration made, click &lt;strong&gt;Launch&lt;/strong&gt; or go back to modify the changes&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/review.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I.	A window for the keys will prompt. Select an existing key pair or create or proceed without the key pair to be used. Click &lt;strong&gt;Launch instances&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/keypair.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: You will find the instance created in Instances under Instances Menu&lt;/p&gt;
+
+&lt;h2 id=&quot;connecting-to-ems-using-linux&quot;&gt;Connecting to EMS using Linux&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; EMS is already running in Linux instance.&lt;/p&gt;
+
+&lt;h3 id=&quot;assh-via-terminal&quot;&gt;A.	SSH via Terminal&lt;/h3&gt;
+
+&lt;p&gt;Connecting to your new instance via SSH is exactly the same as connecting to any Linux EC2 computer. You will access it using the “ubuntu” user and use the .pem key you chose during Instance setup.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Locate the .pem (key file) in the terminal&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Send command: &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh –i ./&amp;lt;evostream-keys.pem&amp;gt; ubuntu@&amp;lt;public_IP&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Public IP can be found on the Amazon instances. See Determining Public IP.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;test@ubuntu:~/Desktop$ ssh -i ./evostream-keys.pem ubuntu@52.91.237.115
+The authenticity of host '52.91.237.115 (52.91.237.115)' can't be established.
+ECDSA key fingerprint is ae:02:ee:41:ff:38:96:ab:78:7b:3a:e6:09:ed:1f:4c.
+Are you sure you want to continue connecting (yes/no)? 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input “&lt;strong&gt;yes&lt;/strong&gt;”, press &lt;strong&gt;Enter&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.13.0-46-generic x86_64)
+   
+	Documentation:  https://help.ubuntu.com/
+ System information as of Wed Jan 20 09:11:53 UTC 2016
+ System load:  0.0               Processes:           106
+ Usage of /:   13.9% of 7.74GB   Users logged in:     1
+ Memory usage: 2%                IP address for eth0: 11.22.33.44.55
+ Swap usage:   0%
+ Graph this data and manage this system at:
+   https://landscape.canonical.com/
+ Get cloud support with Ubuntu Advantage Cloud Guest:
+   http://www.ubuntu.com/business/services/cloud
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;bwindows-putty&quot;&gt;B.	Windows PuTTy&lt;/h3&gt;
+
+&lt;h4 id=&quot;b1pre-requisites&quot;&gt;B.1.	Pre-requisites&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PuTTY Generator&lt;/li&gt;
+  &lt;li&gt;PuTTY Secure Shell Client&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;b2key-file-conversion&quot;&gt;B.2.	Key File Conversion&lt;/h4&gt;
+
+&lt;p&gt;EvoStream Media Server configuration can be accomplished using SSH and a client. Public AMI instances use a public/private key pair to log in instead of a password. The public key half of this pair is embedded in your instance, allowing you to use the private key half to log in securely without a password.&lt;/p&gt;
+
+&lt;p&gt;On Windows® operating systems, you can open a secure session to your Amazon EC2 instance by using the PuTTY Secure Shell client, which you can download from:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.chiark.greenend.org.uk/&quot;&gt;&lt;em&gt;http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The first thing you’ll need to do is convert the private key. The PuTTY Secure Shell client doesn’t natively support the private key format generated by Amazon EC2. Fortunately, PuTTY has a tool called PuTTYgen that you can use to convert your private key to the required PuTTY Private Key File (*.ppk) format. To convert the [key-pairname].pem file that you created to a [key-pair-name].ppk file, do the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;strong&gt;PuTTY Key Generator&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Load&lt;/strong&gt; button&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image14.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select and open the &lt;strong&gt;.pem file&lt;/strong&gt; that you want to convert in the Load private key window.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You’ll need to select the All Files option in the File filter drop-down list to see PEM files in the file list.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt; in the PuTTYgen Notice window&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Save private key&lt;/strong&gt; and save the file with the name &lt;strong&gt;[key-pair-name].ppk&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;b3connecting-via-ssh&quot;&gt;B.3.	Connecting via SSH&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;strong&gt;PuTTY&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select &lt;strong&gt;Session&lt;/strong&gt; under the category tree&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Specify the destination you want to connect to:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image17.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Host Name&lt;/strong&gt; – the public IP address in Amazon EC2 instance running EvoStream Media Server&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Port&lt;/strong&gt; – 22 (default)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Connection type&lt;/strong&gt; – SSH&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select &lt;strong&gt;Auth&lt;/strong&gt; under &lt;strong&gt;Connection &amp;gt; SSH&lt;/strong&gt; in category tree&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click the &lt;strong&gt;Browse&lt;/strong&gt; button to find and open the &lt;strong&gt;[key-pair-name].ppk&lt;/strong&gt; file&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image18.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you will be opening this same session later, you can save it for future use&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;To save the session information:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;On the Basic options for your PuTTY Session page, enter a name for the session in Saved Sessions, and then click the &lt;strong&gt;Save&lt;/strong&gt; button&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image19.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click the &lt;strong&gt;Open&lt;/strong&gt; button to open the secure SSH session. The first time you connect to your instance, you’ll get a PuTTY Security Alert that references the first use of &lt;strong&gt;[key-pair-name].pem&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click &lt;strong&gt;Yes&lt;/strong&gt; to accept the security key&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image20.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Logged in as “&lt;strong&gt;ubuntu&lt;/strong&gt;”&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/loggedin.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you previously saved the SSH session information for this Amazon EC2 instance, do the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;strong&gt;PuTTY&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select &lt;strong&gt;Session&lt;/strong&gt; in the category tree&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the Saved Session and then click the &lt;strong&gt;Load&lt;/strong&gt; button&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image21.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click the &lt;strong&gt;Open&lt;/strong&gt; button to open the secure SSH session.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You should see the login as: prompt in the SSH client window. Enter “&lt;strong&gt;ubuntu&lt;/strong&gt;” as the username&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image22.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/loggedin.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To end your SSH session, enter the exit command or press &lt;strong&gt;CTRL+D&lt;/strong&gt;. You may have to do this twice if you’re logged-in as the root user.&lt;/p&gt;
+
+&lt;h3 id=&quot;cems-web-ui&quot;&gt;C.	EMS Web UI&lt;/h3&gt;
+
+&lt;p&gt;While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: &lt;code class=&quot;highlighter-rouge&quot;&gt;http://&amp;lt;DomainOrPublicIP&amp;gt;:8888/EMS_Web_UI/index.php&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt; DomainOrPublicIP &amp;gt;&lt;/strong&gt; will need to be replaced with the Public Domain or Public IP of your new EC2 Instance.&lt;/p&gt;
+
+&lt;h4 id=&quot;c1determining-public-ip&quot;&gt;C.1.	Determining Public IP&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to &lt;em&gt;https://console.aws.amazon.com&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;EC2&lt;/strong&gt; under compute&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image23.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the Navigation pane of the EC2 Management Console, under Instances, click &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Select the running instance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the lower pane, click the &lt;strong&gt;Description tab&lt;/strong&gt;. The Public DNS value is the public domain name of your running instance and the Instance ID is the instances instance ID.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image13.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;c2login-for-web-ui&quot;&gt;C.2.	Login for Web UI&lt;/h4&gt;
+
+&lt;p&gt;The Web UI is protected by default when using the EMS on AWS.  When accessing the Web UI you will be prompted for a username and password.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/authentication.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “Amazon Instance ID” - this will need to be obtained via your Amazon account.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Getting the Amazon Instance ID&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;From Amazon Console&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sign in to &lt;em&gt;https://console.aws.amazon.com&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;EC2&lt;/strong&gt; under compute&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image23.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on &lt;strong&gt;Running Instances&lt;/strong&gt; under Resources&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image24.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Click on the &lt;strong&gt;Instance Name&lt;/strong&gt; provided for the EMS, and look for the &lt;strong&gt;Instance ID&lt;/strong&gt; given.  This will be your password.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_quick_start_guide/assets/image25.jpeg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;From Terminal&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enter command in the SSH terminal:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://&amp;lt;Public_IP&amp;gt;/latest/meta-data/instance-id -w &quot;\n&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl http://52.91.237.115/latest/meta-data/instance-id -w &quot;\n&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample Response:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;i-013c03dc9bab9d69f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The instance ID of the running instance will be shown.&lt;/p&gt;
+
+&lt;h2 id=&quot;http-based-api&quot;&gt;HTTP Based API&lt;/h2&gt;
+
+&lt;p&gt;The above instructions gave you access to the EMS via the command line.  For integration with the EMS at the software level, using the HTTP Based API is often much more useful.  The full set of API’s available to you are found here: &lt;a href=&quot;http://docs.evostream.com/ems_api_definition/table_of_contents&quot;&gt;API Definition&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For the EMS on AWS, the HTTP based API is exposed, but it requires authentication to be used.  We call this &lt;strong&gt;Proxy Authentication&lt;/strong&gt;. Basic Authentication is used and so just a username and password are required:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Username: evostream&lt;/li&gt;
+  &lt;li&gt;Password: “Amazon Instance ID” - this will need to be obtained via your Amazon account as explained above.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Command will take this general format:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://Username:Password@IPAddress:Port/apiproxy/CommandName?params=&amp;lt;base64EncodedString&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Sample Command:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://evostream:i-013c03dc9bab9d69f@52.91.237.115:8888/apiproxy/version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; username is “&lt;strong&gt;evostream&lt;/strong&gt;” and password is the “&lt;strong&gt;instance ID&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/runtimeapi#http&quot;&gt;http://docs.evostream.com/ems_user_guide/runtimeapi#http&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h2 id=&quot;ec2-instance-termination&quot;&gt;EC2 Instance Termination&lt;/h2&gt;
+
+&lt;p&gt;When you terminate an instance, you’ll lose all changes or files that you have on the server. If you have anything that you don’t want to lose, be sure to save it to Amazon Simple Storage Service (Amazon S3) before terminating the instance or you’ll lose your data.&lt;/p&gt;
+
+&lt;p&gt;After you’ve saved your data, do the following to terminate an instance:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In the Navigation pane, under Instances, click &lt;strong&gt;Instances&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Select the running instance(s) that you want to terminate.&lt;/li&gt;
+  &lt;li&gt;Click the &lt;strong&gt;Actions&lt;/strong&gt; button, and then click &lt;strong&gt;Terminate&lt;/strong&gt;. The Instance State column for the selected instance(s) will show shutting-down and then terminated.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Amazon recommends that you confirm the machine reaches the terminated state before signing out. Charges will continue to accrue for instances that fail to shut down.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_linux</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_quick_start_guide/quick_start_guide_for_amazon_linux</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,12 @@
+#currentDate,#currentTme{font-family:'Roboto Thin',sans-serif}@font-face{font-family:'Roboto Thin';src:url(../font/roboto/Roboto-Thin.ttf) format('truetype')}@font-face{font-family:'Roboto Light';src:url(../font/roboto/Roboto-Light.ttf) format('truetype')}body{background:#000;color:#fff;margin:0;padding:0;overflow-y:hidden}#main{background:url(../images/bgdatetime.png) center center no-repeat #000;width:320px;height:480px;text-align:center}#date-time{padding:35px 0 15px}#currentTme{font-size:64px}#currentDate{font-size:21px}#liveclock{width:180px;height:180px;margin:30px auto 80px}#stage1,#stage2{display:inline;font-family:'Roboto Light';font-size:12px}#location{padding-bottom:20px}.outer_face{position:relative;width:400px;height:400px;border-radius:200px;border:0 solid gray}.outer_face .marker{background:gray;width:6px;margin-left:-3px}.outer_face .marker.oneseven{-moz-transform:rotate(30deg);-ms-transform:rotate(30deg);-webkit-transform:rotate(30deg);transform:rotate(30deg)}.outer_face .marker.twoeight{-moz-transform:rotate(60deg);-ms-transform:rotate(60deg);-webkit-transform:rotate(60deg);transform:rotate(60deg)}.outer_face .marker.fourten{-moz-transform:rotate(120deg);-ms-transform:rotate(120deg);-webkit-transform:rotate(120deg);transform:rotate(120deg)}.outer_face .marker.fiveeleven{-moz-transform:rotate(150deg);-ms-transform:rotate(150deg);-webkit-transform:rotate(150deg);transform:rotate(150deg)}.inner_face{position:relative;width:88%;height:88%;background:0 0;-moz-border-radius:1000px;-webkit-border-radius:1000px;border-radius:1000px;z-index:1000;margin:0 auto;top:6%}.hand,.hand.hour,.inner_face::before{position:absolute;left:50%;background:#fff}.inner_face::before{content:"";width:7px;height:7px;border-radius:10px;margin-left:-5px;margin-top:-5px;top:50%;box-shadow:0 0 30px #00f}.inner_face::after{position:absolute;width:100%;font:400 .8em Arial;color:gray;text-align:center;top:85%}.hand,.hand.hour{width:2px;height:30%;top:20%;margin-left:-2px;-moz-transform:rotate(0);-ms-transform:rotate(0);-webkit-transform:rotate(0);transform:rotate(0);-moz-transform-origin:bottom;-ms-transform-origin:bottom;-webkit-transform-origin:bottom;transform-origin:bottom;z-index:-1}.hand.minute{height:45%;top:5%;width:2px;margin-left:-2.5px;color:#fff}.hand.second{height:50%;width:2px;margin-left:-1px;top:0;background:red;color:#fff}
+
+
+#main{
+    position:relative;
+}
+
+#loading{
+    position:absolute;
+    top: 45%;
+    left:35%;
+}

@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EvoStream Media Server</title>
+    <description>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</description>
+    <link>http://docs.evostream.com/ems_web_services_user_guide/</link>
+    <atom:link href="http://docs.evostream.com/ems_web_services_user_guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 16 Sep 2016 11:27:07 +0000</pubDate>
+    <lastBuildDate>Fri, 16 Sep 2016 11:27:07 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>EMS Web Services User Guide</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/document_definitions&quot;&gt;Document Definitions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/overview&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/ems_web_services&quot;&gt;EMS Web Services&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;What are EMS Web Services?&lt;/li&gt;
+      &lt;li&gt;Why use the EMS Web Services?&lt;/li&gt;
+      &lt;li&gt;How does it work?&lt;/li&gt;
+      &lt;li&gt;System Requirements&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/event_notification_system&quot;&gt;Event Notification System&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;List of Events used by the Web Services&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/configuration&quot;&gt;Configuration&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Configuring EMS Event Notifications&lt;/li&gt;
+      &lt;li&gt;Configuring the EMS Web Service Plugins&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/ems_web_services_plugins&quot;&gt;EMS Web Service Plugins&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Stream AutoRouting&lt;/li&gt;
+      &lt;li&gt;Stream Recorder&lt;/li&gt;
+      &lt;li&gt;Stream Load Balancer&lt;/li&gt;
+      &lt;li&gt;Amazon S3 HDS Upload&lt;/li&gt;
+      &lt;li&gt;Amazon S3 Upload HLS Chunk Plugin&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:01:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/table_of_contents</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/table_of_contents</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Overview</title>
+        <description>&lt;p&gt;This document provides instructions on how to use the EvoStream Media Server (EMS) Web Services. It will cover the basics of starting the web services as well as some advanced topics like modifying configuration files.&lt;/p&gt;
+
+&lt;p&gt;This document is written for users of the EMS Web Services. It is expected that you have a basic understanding of multimedia streaming and the technologies required to perform multimedia streaming.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/overview</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/overview</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Installation</title>
+        <description>&lt;h2 id=&quot;using-php&quot;&gt;Using PHP&lt;/h2&gt;
+
+&lt;h3 id=&quot;pre-requisites&quot;&gt;&lt;strong&gt;Pre-requisites:&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Web Server (EWS, Apache, Nginx)&lt;/li&gt;
+  &lt;li&gt;EMS (events enabled)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;getting-evowebservices&quot;&gt;&lt;strong&gt;Getting evowebservices:&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;The default evowebservices in EMS package is the one that runs on PHP. To be able to install the EMS with evowebservices, please see the installation guide &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/installation&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After installation, the evowebservices will be found here: &lt;code class=&quot;highlighter-rouge&quot;&gt;..\evo-webroot\evowebservices&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;distribution-content&quot;&gt;Distribution Content:&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/evowebservices
+├── config
+│ 	├── config.ini
+│ 	└── config.php
+├── core_modules
+│ 	└── evoapi-core.php
+│   ├── ini-parser.php
+│ 	└── s3-core.php
+├── plugins
+│ 	├── amazonhdsupload.php
+│ 	├── amazonhlsupload.php
+│ 	├── basehdsplugin.php
+│ 	├── basehlsplugin.php
+│ 	├── baseplugin.php
+│ 	├── plugins.php
+│ 	├── streamautorouter.php
+│ 	├── streamloadbalancer.php
+│ 	├── streamrecorder.php
+│ 	└── transcoderesetter.php
+├── evostream_copyright.txt
+├── evowebservices.log
+├── evowebservices.php
+├── LICENSE.md
+└── README.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;starting-evowebservices&quot;&gt;Starting evowebservices:&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Enable the services to be used by configuring the &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ini&lt;/code&gt; file&lt;/li&gt;
+  &lt;li&gt;Start the web server to be used, if EWS will be used, it is automatically started when EMS starts&lt;/li&gt;
+  &lt;li&gt;Run EMS&lt;/li&gt;
+  &lt;li&gt;The Event Notification System would now be receiving data from EMS and trigger the all enabled plugins&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;using-nodejs&quot;&gt;Using Node.js&lt;/h2&gt;
+
+&lt;h3 id=&quot;pre-requisites-1&quot;&gt;&lt;strong&gt;Pre-requisites:&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Node.js&lt;/li&gt;
+  &lt;li&gt;npm&lt;/li&gt;
+  &lt;li&gt;EMS (events enabled)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;getting-evowebservices-1&quot;&gt;&lt;strong&gt;Getting evowebservices:&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h4 id=&quot;a-windows&quot;&gt;A. Windows&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Download&lt;/strong&gt; the evowebservices Windows batch file installer from our Github&lt;/p&gt;
+
+    &lt;p&gt;Link: &lt;a href=&quot;https://github.com/EvoStream/evowebservices-archives/tree/master/installers&quot;&gt;https://github.com/EvoStream/evowebservices-archives/tree/master/installers&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Double click on the .bat file to &lt;strong&gt;install&lt;/strong&gt; evowebservices&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;evowebservices-0.0.1-win-x64.bat
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the installation is successful, evowebservices will start automatically&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;starting evowebservices using npm....
+   
+&amp;gt; evowebservices@0.0.0 start C:\node_evowebservices\node_modules\evowebservices
+&amp;gt; node ./bin/www
+   
+STARTED: evowebservices:server Listening on port 4000
+info: STARTED: evowebservices:server Listening on port 4000
+info: Get enabled Plugins
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;b-linux-installation&quot;&gt; B. Linux Installation&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt; &lt;strong&gt;Download&lt;/strong&gt; the evowebservices Bash Script file installer from our Github.&lt;/p&gt;
+
+    &lt;p&gt;Link: &lt;a href=&quot;https://github.com/EvoStream/evowebservices-archives/tree/master/installers&quot;&gt;https://github.com/EvoStream/evowebservices-archives/tree/master/installers&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Locate the installer file, &lt;strong&gt;install&lt;/strong&gt; the script by typing this in terminal:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./evowebservices-0.0.1-linux-x64.sh
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the installation is successful, evowebservices will start automatically&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Starting EVOWEBSERVICES...
+   
+&amp;gt; evowebservices@0.0.0 start /home/user/Desktop/node_modules/evowebservices
+&amp;gt; node ./bin/www
+   
+STARTED: evowebservices:server Listening on port 4000 
+info: STARTED: evowebservices:server Listening on port 4000 
+info: Get enabled Plugins
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;starting-evowebservices-1&quot;&gt;Starting evowebservices:&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run the evowebservices before starting EMS. Make sure the plugins in evowebservices is configured as well as the event notification system in the config.lua of the EMS.&lt;/li&gt;
+  &lt;li&gt;Open your node command prompt and go to your evowebservices directory. Start the evowebservices by executing command:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/ems_web_services_user_guide/assets/npm_start.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You may check the node console terminal and evowebservice log for errors. The evowebservices log is located on the evowebservices/logs directory&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/installation</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/installation</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Event Notification System</title>
+        <description>&lt;p&gt;The EMS Event Notification System provides an extremely powerful way of interacting with the EMS. At the basic level it allows you to easily understand and monitor the usage of your server. You can either poll and parse the log file, or simply subscribe to the HTTP based notifications sent out by the EMS.&lt;/p&gt;
+
+&lt;p&gt;Beyond monitoring and gathering metrics, you can &lt;strong&gt;use the Event Notification System to create custom stream processing.&lt;/strong&gt; If you want to automatically create HLS or HDS or DASH streams out of new inbound streams, simply call &lt;code class=&quot;highlighter-rouge&quot;&gt;createHLSStream&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;createHDSStream&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;createDASHStream&lt;/code&gt; in response to each “&lt;strong&gt;new inbound stream&lt;/strong&gt;” event. If you want to close inbound streams when the associated outbound stream is lost, call &lt;code class=&quot;highlighter-rouge&quot;&gt;shutdownStream&lt;/code&gt; when you receive a “&lt;strong&gt;outbound stream closed&lt;/strong&gt;” event.&lt;/p&gt;
+
+&lt;h2 id=&quot;list-of-events-used-by-the-web-services&quot;&gt;List of Events used by the Web Services&lt;/h2&gt;
+
+&lt;p&gt;The following events are generated by the EMS:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;inStreamClosed&lt;/strong&gt; – An inbound stream has been closed&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;outStreamCreated&lt;/strong&gt; – A new outbound stream has been created&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;timerCreated&lt;/strong&gt; A new timer has been created via the createTimer API command&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;timerTriggered&lt;/strong&gt; – The requested timer event&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;timerClosed&lt;/strong&gt; - A timer has been closed and will not create any new timerTriggered events&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hlsMasterPlaylistUpdated&lt;/strong&gt; – HLS group playlist has been modified&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hlsChildPlaylistUpdated&lt;/strong&gt; – Stream specific HLS playlist has been modified&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hlsChunkClosed&lt;/strong&gt; – A new HLS segment has been completed and is ready on disk&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hdsMasterPlaylistUpdated&lt;/strong&gt; – HDS group manifest has been modified&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hdsChildPlaylistUpdated&lt;/strong&gt; – Stream specific HDS manifest has been modified&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;hdsChunkClosed&lt;/strong&gt; – A new HDS segment has been completed and is ready on disk&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;dashChunkClosed&lt;/strong&gt; - A new DASH fragment has been completed and is ready on disk&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;dashPlaylistUpdated&lt;/strong&gt; - DASH manifest has been modified&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/event_notification_system</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/event_notification_system</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>EMS Web Service Plugins</title>
+        <description>&lt;h2 id=&quot;stream-autorouting&quot;&gt;Stream AutoRouting&lt;/h2&gt;
+
+&lt;p&gt;This web service automatically forwards a stream to another EMS via RTMP. When a new stream is brought into the EMS, either by issuing a &lt;code class=&quot;highlighter-rouge&quot;&gt;pullStream&lt;/code&gt; or by pushing a stream into the EMS host, this web service issues an API command to automatically forward that stream to another EMS.&lt;/p&gt;
+
+&lt;p&gt;The AutoRouting web service has two configuration values which can be set in the config.ini file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;token&lt;/strong&gt;. If the token is defined, and not empty, the AutoRouting web service will only forward streams to the destination that have the “token” as part of their localStreamName.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;destination_uri.&lt;/strong&gt; The address of the computer you wish to forward the streams to.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;StreamAutoRouter&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;,
+        &quot;parameters&quot;: {
+            &quot;token&quot;: &quot;stream&quot;,
+            &quot;destination_uri&quot;: &quot;192.168.2.3&quot;
+        }
+    },  
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the localstreamnames with “&lt;strong&gt;stream&lt;/strong&gt;” in the host EMS will forward the stream to the destination URI which is the &lt;em&gt;192.168.2.3&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;To verify, do &lt;code class=&quot;highlighter-rouge&quot;&gt;listStreams&lt;/code&gt; on the destination server. You should see all the streams pushed to the destination.&lt;/p&gt;
+
+&lt;h2 id=&quot;stream-recorder&quot;&gt;Stream Recorder&lt;/h2&gt;
+
+&lt;p&gt;This web service tells the EMS to automatically records streams.&lt;/p&gt;
+
+&lt;p&gt;When a new stream is created, this web service issues an API command to automatically records the stream to an mp4 format. The user can also set how long the stream would be recorded in seconds.&lt;/p&gt;
+
+&lt;p&gt;The destination for the recorded file must be set in the config.ini file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;file_location&lt;/strong&gt;. The destination location where the recorded file is saved&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Notes:&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Use an absolute pathing&lt;/li&gt;
+      &lt;li&gt;Use double slash for folder separation if using Windows OS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;period_time&lt;/strong&gt;.  The period of time between pulses expressed in seconds between 1 and 86399. The maximum period_time is 86399 (24 hours).&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;StreamRecorder&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;,
+        &quot;parameters&quot;: {
+            &quot;file_location&quot;: &quot;C:\\EvoStream\\media&quot;,
+            &quot;period_time&quot;: 3600
+        }
+    },    
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the streams pulled by EMS will automatically be recorded in the file location indicated with a period time of 3600 seconds (60 minutes) each file as long as the plugin and or the stream is running.&lt;/p&gt;
+
+&lt;h2 id=&quot;stream-load-balancer&quot;&gt;Stream Load Balancer&lt;/h2&gt;
+
+&lt;p&gt;The Load Balancer web service ensures that a group of EMS instances maintain the same collection of inbound (source) streams.&lt;/p&gt;
+
+&lt;p&gt;When a new stream is created on one EMS, this web service will tell all the other EMS instances to also to and get that stream.&lt;/p&gt;
+
+&lt;p&gt;The list of EMS instances the Load Balancer will maintain is defined in the config.ini file:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;destination_uri&lt;/strong&gt;.  The array of ip address where the inbound streams would be replicated to&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;StreamLoadBalancer&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;, 
+        &quot;parameters&quot;: {
+            &quot;destination_uri&quot;: [
+                &quot;192.168.2.3&quot;,
+                &quot;192.168.2.4&quot;,
+                &quot;192.168.2.5&quot;
+            ]
+        }
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the server IPs listed &lt;em&gt;(192.168.2.3, 192.168.2.4, 192.168.2.5)&lt;/em&gt; will have the same pulled streams as the host EMS.&lt;/p&gt;
+
+&lt;p&gt;To verify, do &lt;code class=&quot;highlighter-rouge&quot;&gt;listconfig&lt;/code&gt; in all destination IPs. All pulled streams from the host EMS should also be pulled by the destination servers.&lt;/p&gt;
+
+&lt;h2 id=&quot;amazon-s3-hds-upload&quot;&gt;Amazon S3 HDS Upload&lt;/h2&gt;
+
+&lt;p&gt;This web service automatically uploads an HDS stream to an Amazon S3 storage instance.&lt;/p&gt;
+
+&lt;p&gt;As the EMS writes HDS chunks to disk, this web service uploads those file chunks to your Amazon S3 instance.&lt;/p&gt;
+
+&lt;p&gt;Your Amazon S3 access and secret key must be set in the config.ini file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_access_key&lt;/strong&gt;. The amazon aws s3 access key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_secret_key&lt;/strong&gt;. The amazon aws s3 secret key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;default_bucket&lt;/strong&gt;. The bucket in amazon aws s3 where files will be uploaded&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;bootstrap&lt;/strong&gt;. The bootstrap file included with the fragments&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Bootstrap is the bootstrap file which should be included with the HDS chunks. If you are unsure what this should be, it should be left as ‘&lt;strong&gt;bootstrap&lt;/strong&gt;’.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;AmazonHDSUpload&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;,
+        &quot;parameters&quot;: {
+            &quot;aws_access_key&quot;: &quot;1234567890&quot;,
+            &quot;aws_secret_key&quot;: &quot;ABCDEFGHIJ1234567890&quot;,
+            &quot;default_bucket&quot;: &quot;HDS_files&quot;,
+            &quot;bootstrap&quot;: &quot;bootstrap&quot;
+        }
+    },
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the HDS files to be created will automatically be uploaded on the Amazon S3 bucket inside &lt;em&gt;HDS_files&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; All files created when the service is not running will not be included in upload&lt;/p&gt;
+
+&lt;h2 id=&quot;amazon-s3-hls-upload&quot;&gt;Amazon S3 HLS Upload&lt;/h2&gt;
+
+&lt;p&gt;This web service automatically uploads an HLS stream to an Amazon S3 storage instance.&lt;/p&gt;
+
+&lt;p&gt;As the EMS writes HLS chunks to disk, this web service uploads those file chunks to your Amazon S3 instance.&lt;/p&gt;
+
+&lt;p&gt;Your Amazon S3 access and secret key must be set in the config.ini file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_access_key&lt;/strong&gt;. The amazon aws s3 access key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_secret_key&lt;/strong&gt;. The amazon aws s3 secret key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;default_bucket&lt;/strong&gt;. The bucket in amazon aws s3 where files will be uploaded&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;AmazonHLSUpload&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;,
+        &quot;parameters&quot;: {
+            &quot;aws_access_key&quot;: &quot;1234567890&quot;,
+            &quot;aws_secret_key&quot;: &quot;ABCDEFGHIJ1234567890&quot;,
+            &quot;default_bucket&quot;: &quot;HLS_files&quot;,
+        }
+    },
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the HLS files to be created will automatically be uploaded on the Amazon S3 bucket inside &lt;em&gt;HLS_files&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; All files created when the service is not running will not be included in upload&lt;/p&gt;
+
+&lt;h2 id=&quot;amazon-s3-dash-upload&quot;&gt;Amazon S3 DASH Upload&lt;/h2&gt;
+
+&lt;p&gt;This web service automatically uploads DASH stream to an Amazon S3 storage instance.&lt;/p&gt;
+
+&lt;p&gt;As the EMS writes DASH manifest chunks to disk, this web service uploads those file chunks to your Amazon S3 instance.&lt;/p&gt;
+
+&lt;p&gt;Your Amazon S3 access and secret key must be set in the config.ini file.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_access_key&lt;/strong&gt;. The amazon aws s3 access key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;aws_secret_key&lt;/strong&gt;. The amazon aws s3 secret key&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;default_bucket&lt;/strong&gt;. The bucket in amazon aws s3 where files will be uploaded&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &quot;AmazonDASHUpload&quot;: {
+        &quot;plugin_switch&quot;: &quot;enabled&quot;,
+        &quot;parameters&quot;: {
+            &quot;aws_access_key&quot;: &quot;1234567890&quot;,
+            &quot;aws_secret_key&quot;: &quot;ABCDEFGHIJ1234567890&quot;,
+            &quot;default_bucket&quot;: &quot;DASH_files&quot;,
+        }
+    },
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In this configuration, all the DASH files to be created will automatically be uploaded on the Amazon S3 bucket inside &lt;em&gt;DASH_files.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; All files created when the service is not running will not be included in upload&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/ems_web_services_plugins</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/ems_web_services_plugins</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>EMS Web Services</title>
+        <description>&lt;h2 id=&quot;what-are-ems-web-services&quot;&gt;What are EMS Web Services?&lt;/h2&gt;
+
+&lt;p&gt;EMS Web Services are a suite of scripts which can be hosted by any Web Server and that leverage the EMS’s Event Notification System and Runtime-APIs. The EMS Web Services provide a convenient way to extend and customize the EMS for your projects and environments.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-use-the-ems-web-services&quot;&gt;Why use the EMS Web Services?&lt;/h2&gt;
+
+&lt;p&gt;The EMS Web Services are tools which use of the EMS Event Notification System together with the Runtime APIs to create custom stream processing. These  scripts (functions that simply wrap the HTTP interface calls of the Runtime APIs) can be used in your production environment and can be modified to meet your specific needs. The source code for all web services are provided for you to use, modify and extend!&lt;/p&gt;
+
+&lt;h3 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h3&gt;
+
+&lt;p&gt;The EMS Web Services are web application scripts that run with the EMS’ Event Notification System and use the EMS Runtime APIs to create automated stream processing. Each web service provides a unique set of features and can be combined to create aggregate effects.&lt;/p&gt;
+
+&lt;h2 id=&quot;system-requirements&quot;&gt;System Requirements&lt;/h2&gt;
+
+&lt;h3 id=&quot;operating-system-requirements&quot;&gt;Operating System Requirements&lt;/h3&gt;
+
+&lt;p&gt;The EMS Web Services can either run alongside the EMS or on a completely separate computer. The EMS Web Services can run on Windows®, Linux and Mac OSX.&lt;/p&gt;
+
+&lt;h3 id=&quot;web-server-requirements&quot;&gt;Web Server Requirements&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At least 700 MHz processor&lt;/li&gt;
+  &lt;li&gt;Minimum of  128MB (system memory)&lt;/li&gt;
+  &lt;li&gt;At least 10MB free storage space&lt;/li&gt;
+  &lt;li&gt;Web Server (if .php scripts will be used)&lt;/li&gt;
+  &lt;li&gt;Node.js (if .js scripts will be used)&lt;/li&gt;
+  &lt;li&gt;Internet access&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/ems_web_services</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/ems_web_services</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Document Definitions</title>
+        <description>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;strong&gt;TERM&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;DEFINITION&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;AWS&lt;/td&gt;
+      &lt;td&gt;Amazon Web Services&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;CURL&lt;/td&gt;
+      &lt;td&gt;A tool to transfer data from or to a server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;EMS&lt;/td&gt;
+      &lt;td&gt;EvoStream Media Server&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HDS&lt;/td&gt;
+      &lt;td&gt;HTTP Dynamic Streaming. HTTP adaptive bitrate streaming defined by Adobe.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HLS&lt;/td&gt;
+      &lt;td&gt;HTTP Live Stream. HTTP adaptive bitrate streaming defined by Apple.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;HTTP&lt;/td&gt;
+      &lt;td&gt;Hyper-Text Transfer Protocol. The basic protocol used for web-page loading and web browsing. Also used for tunneling by many protocols. TCP based.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;JSON&lt;/td&gt;
+      &lt;td&gt;JavaScript Object Notation&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Lua&lt;/td&gt;
+      &lt;td&gt;A lightweight multi-paradigm programming language&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;PHP&lt;/td&gt;
+      &lt;td&gt;A server-side scripting language&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;URL&lt;/td&gt;
+      &lt;td&gt;Uniform Resource Locator. This is a specific form of the URI used for web browsing (http://ip/page).&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/document_definitions</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/document_definitions</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Configuration</title>
+        <description>&lt;h2 id=&quot;configuring-ems-event-notifications&quot;&gt;Configuring EMS Event Notifications&lt;/h2&gt;
+
+&lt;p&gt;EMS Event Notifications must be configured to communicate with the EMS Web Services. The EMS configuration file must be modified as follows. Please view the &lt;a href=&quot;http://docs.evostream.com/ems_user_guide/table_of_contents&quot;&gt;EMS User’s Guide&lt;/a&gt; for more detailed information on configuring Event Notifications.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;config.lua:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;eventLogger= 
+{
+  sinks=
+  { 
+    {
+      type=&quot;RPC&quot;, 
+      url=&quot;http://192.168.2.39/evowebservices/evowebservices.php&quot;,    -- for php
+      url=&quot;http://localhost:4000/evowebservices/&quot;,                    -- for node       
+      serializerType=&quot;JSON&quot;,
+      -- serializerType=&quot;XML&quot; 
+      -- serializerType=&quot;XMLRPC&quot;
+      enabledEvents= 
+      { 
+		&quot;inStreamCreated&quot;,
+		&quot;inStreamClosed&quot;,
+		&quot;outStreamCreated&quot;,
+		&quot;timerCreated&quot;,
+		&quot;timerTriggered&quot;,
+		&quot;timerClosed&quot;,						
+		&quot;hlsMasterPlaylistUpdated&quot;,
+		&quot;hlsChildPlaylistUpdated&quot;,
+		&quot;hlsChunkClosed&quot;,
+		&quot;hdsMasterPlaylistUpdated&quot;,
+		&quot;hdsChildPlaylistUpdated&quot;,
+		&quot;hdsChunkClosed&quot;,
+		&quot;dashChunkClosed&quot;,
+		&quot;dashPlaylistUpdated&quot;	
+      }, 
+    }, 
+  }, 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;enabledEvents&lt;/code&gt;&lt;/strong&gt; parameter is optional and allows you to specify only the events which you wish to receive. &lt;strong&gt;If the enabledEvents section is not specified, all events will be generated.&lt;/strong&gt; The list of all possible events can be found above, and more detail on each event can be found in the EMS API Definition document.&lt;/p&gt;
+
+&lt;p&gt;The evowebservices rely on EMS Events being generated as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RPC – Remote Procedure Calls&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Event details are transmitted to a remote host via HTTP POST. The EMS will ignore any response from the remote host.&lt;/p&gt;
+
+    &lt;p&gt;RPC sink configuration:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;type=&quot;RPC&quot;,
+url=&quot;http://localhost/evowebservices/evowebservices.php&quot;,       -- for php
+url=&quot;http://localhost:4000/evowebservices/&quot;,                    -- for node     
+serializerType=&quot;JSON&quot; 
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;The url field specifies the destination which will be accepting the HTTP POST event notifications. In this example, the web services are installed on the same computer that the EMS is running on (“localhost”). This value can be changed to the IP address of the computer running the web services.&lt;/p&gt;
+
+    &lt;p&gt;​&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;serializerType&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Format for the event logs. The serializerType can in the format of JSON, XML or XMLRPC.&lt;/p&gt;
+
+    &lt;p&gt;Sample format of JSON:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;payload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;creationTimestamp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1349335053486.4370&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;queryTimestamp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1349335053487.4370&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;NR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;uniqueId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;upTime&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;streamCreated&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;configuring-the-ems-web-service-plugins&quot;&gt;Configuring the EMS Web Service Plugins&lt;/h2&gt;
+
+&lt;p&gt;Every EMS Web Service is contained within a “&lt;strong&gt;plugin&lt;/strong&gt;”. Each plugin can be enabled or disabled, effectively turning on and off each web service. The EMS Web Service system allows many Web Service Plugins to be active at one time, allowing users to create an entire suite of features.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-configuration-file-configinipluginsjson&quot;&gt;A. Configuration file (config.ini/plugins.json)&lt;/h3&gt;
+
+&lt;p&gt;The EMS Web Services has a primary configuration file for the plugins.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For php:&lt;/strong&gt;  evowebservices &amp;gt; config &amp;gt; config.ini&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For node:&lt;/strong&gt; evowebservices &amp;gt; config &amp;gt; plugins.json&lt;/p&gt;
+
+&lt;p&gt;Turn on a plugin by changing the &lt;strong&gt;disabled&lt;/strong&gt; to &lt;strong&gt;enabled&lt;/strong&gt;. By default all plugins are disabled.&lt;/p&gt;
+
+&lt;p&gt;Plugin Configuration:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;StreamLoadBalancer = disabled 
+StreamAutoRouter = disabled
+StreamRecorder = disabled
+AmazonHDSUpload = disabled
+AmazonHLSUpload = disabled 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://docs.evostream.com/ems_web_services_user_guide/ems_web_services_plugins&quot;&gt;EMS Web Service Plugins&lt;/a&gt; for the detailed information of plugins.&lt;/p&gt;
+
+&lt;h3 id=&quot;b-logging-loggingjson&quot;&gt;B. Logging (logging.json)&lt;/h3&gt;
+
+&lt;p&gt;Available only on node. This is the configuration for the evowebservices log files and the log console. Go to &lt;strong&gt;evowebservices &amp;gt; config &amp;gt; logging.json&lt;/strong&gt; for configuration.&lt;/p&gt;
+
+&lt;p&gt;Configuration options for logging:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;options&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;level&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;silly&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;    
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;handleExceptions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;maxsize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5242880&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;level - the logging level for logs&lt;/p&gt;
+
+    &lt;p&gt;There are 6 default levels in winston:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;level 0 = silly (lowest)
+level 1 = debug
+level 2 = verbose
+level 3 = info
+level 4 = warn
+level 5 = error (highest)
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;handleExceptions - Handling Uncaught Exceptions with winston&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;json - log files are in json format otherwise log files are saved as string format&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;maxsize - maximum size of the log file in KB&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+        <link>http://docs.evostream.com/ems_web_services_user_guide/configuration</link>
+        <guid isPermaLink="true">http://docs.evostream.com/ems_web_services_user_guide/configuration</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html>
+
+  
+<!-- Mirrored from docs.evostream.com/ems_user_guide/emsconfigfile by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>EMS Configuration File</title>
+  <meta name="description" content="config.lua">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="emsconfigfile.html">
+  <link rel="alternate" type="application/rss+xml" title="EvoStream Media Server" href="feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="https://evostream.com/">Back to EvoStream.com</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="doc_index/index.html">Documentation Main Index</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="search/index.html">Search User Guide</a>
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">EMS Configuration File</h1>
+    <p class="post-meta">
+      <a href="https://github.com/EvoStream/ems_user_guide/blob/gh-pages/_posts/2016-01-01-emsconfigfile.md">Edit on GitHub</a>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="configlua">config.lua</h2>
+
+<p>The EMS configuration file, config.lua, is a hierarchical data structure of assignments (key names with values). It is sent as a parameter when running the EvoStream server. The format is as follows:</p>
+
+<p><code class="highlighter-rouge">&lt;keyname&gt;= &lt;value&gt;</code></p>
+
+<p>where <code class="highlighter-rouge">&lt;value&gt;</code> could be any of the following types:</p>
+
+<ul>
+  <li>string = series of alpha numeric characters enclosed in double quotes</li>
+  <li>number = digits (without double quotes around it)</li>
+  <li>array = list of values separated by comma and is grouped by braces {}</li>
+  <li>aliases = {“flvplayback1”, “vod1”, “live”}</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>aliases = {“flvplayback1”, “vod1”, “live”}
+</code></pre>
+</div>
+
+<p><strong>object =</strong> list of assignments enclosed by braces {}</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>configurations =
+{
+    daemon = "true",
+    pathSeparator = "/",
+    logAppenders = {...},
+    applications = {...}
+}
+</code></pre>
+</div>
+
+<p>In the example above, configurations has a value of type object. An object is a group of data inside braces (<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code>) which may contains several assignments (<code class="highlighter-rouge">&lt;keynames&gt; = &lt;values&gt;</code>) separated by commas (<code class="highlighter-rouge">,</code>) and in turn could be another object. The assignments in the example above are <code class="highlighter-rouge">daemon</code>, <code class="highlighter-rouge">pathSeparator</code>, <code class="highlighter-rouge">logAppenders</code>, and <code class="highlighter-rouge">applications</code>. Notice that the values of <code class="highlighter-rouge">logAppenders</code> and applications could be another object or array recursively.</p>
+
+<p><strong>Contents</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>configuration = 
+{
+	daemon = false,
+	pathSeparator = “/”,
+	logAppenders = 
+	{
+		-- content removed for clarity
+	},
+	applications = 
+	{
+		-- content removed for clarity
+	}
+}}
+</code></pre>
+</div>
+
+<p><strong>configuration</strong> – This is the entire structure for all configuration needed by the EMS Server.</p>
+
+<p><strong>Configuration Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">daemon</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">yes</td>
+      <td><strong>true</strong>  means the server will start in daemon mode. <strong>false</strong> means it will start in console mode (nice for development).</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">pathSeparator</td>
+      <td style="text-align: center">string(1)</td>
+      <td style="text-align: center">yes</td>
+      <td>This value will be used by the server to compose paths (like media files paths). Examples: on UNIX-like systems this is / while on windows is . Special care must be taken when you specify this value on windows because \ is an escape sequence for Lua so the value should be “\”.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">logAppenders</td>
+      <td style="text-align: center">object</td>
+      <td style="text-align: center">yes</td>
+      <td>Will hold a collection of log appenders. Each log message will be sent to each of the log appenders enumerated in this configuration section.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">eventLogger</td>
+      <td style="text-align: center">object</td>
+      <td style="text-align: center">No</td>
+      <td>Settings for the server-wide event sinks</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">applications</td>
+      <td style="text-align: center">object</td>
+      <td style="text-align: center">yes</td>
+      <td>Will hold a collection of loaded applications. Besides that, it will also hold few other values.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">instancesCount</td>
+      <td style="text-align: center">number</td>
+      <td style="text-align: center">yes</td>
+      <td>The number of virtual instances of EMS server where load balancing will be performed. If this item is missing, it will be replaced by 0, disabling multiple instances. If its value is -1, it will be replaced by the number of CPUs, enabling one or more additional instances.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">clientSideBuffer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">No</td>
+      <td>The number of seconds that the EMS will buffer when behaving as an RTMP client.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">maxRtmpOutBuffer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">No</td>
+      <td>The maximum amount of bytes the EMS will store in the output RTMP buffer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">maxRTSPOutBuffer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">No</td>
+      <td>The maximum amount of bytes the EMS will store in the output RTSP buffer. Only used for RTSP when the final transport is RTP over TCP</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When the server starts, the following sequence of operations is performed:</p>
+
+<p>The configuration file is loaded. Part of the loading process, is the verification,. If if something is wrong with the syntax, please try this:</p>
+
+<ul>
+  <li>
+    <p>For Linux Package:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   /usr/bin/evostreamms –use-implicit-console-appender /etc/evostreamms/config.lua
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>For Linux Archive:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   cd EMS_INSTALL_DIRECTORY
+   ./evostreamms --use-implicit-console-appender ../config/config.lua
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>For Windows:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>   cd EMS_INSTALL_DIRECTORY
+   evostreamms --use-implicit-console-appender config\config.lua
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> EMS_INSTALL_DIRECTORY is the <code class="highlighter-rouge">bin</code> directory within the EvoStream Media Server Archive directory.</p>
+
+<ol>
+  <li>The “daemon” value is read. The server now will either fork to become daemon or continue as is in console mode.</li>
+  <li>The “logAppenders” value is read. This is where all log appenders are configured and brought up to running state. Depending on the collection of your log appenders, you may (not) see further log messages.</li>
+  <li>The “applications” value is taken into consideration. Up until now, the server doesn’t do much. After this stage completes, all the applications are fully functional and the server is online and ready to do stuff.</li>
+</ol>
+
+<h3 id="logappenders">logAppenders</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>logAppenders =
+{
+    {
+        name="console appender",
+        type="coloredConsole",
+        level=6
+    },
+    {
+        name="file appender",
+        type="file",
+        level=6,
+        fileName="../logs/evostream",
+    }
+}
+</code></pre>
+</div>
+
+<p>This section contains a list of log appenders. The entire collection of appenders listed in this section is loaded inside the logger at config-time. All log messages will be than passed to all these log appenders. Depending on the log level, an appender may (or may not) log the message. “Logging” a message means “saving” it on the specified “media” (in the example below we have a console appender and a file).</p>
+
+<p><strong>logAppenders Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">name</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The name of the appender. It is usually used inside pretty print routines.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">type</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The type of the appender. Types <code class="highlighter-rouge">console</code> and <code class="highlighter-rouge">coloredConsole</code> will output to the console. The difference between them is that <code class="highlighter-rouge">coloredConsole</code> will also apply a color to the message, depending on the log level. Quite useful when eye-balling the console. Type <code class="highlighter-rouge">file</code> log appender will output everything to the specified file.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">level</td>
+      <td style="text-align: center">number</td>
+      <td style="text-align: center">yes</td>
+      <td>The log level used. The values are presented just below. Any message having a log level less or equal to this value will be logged. The rest are discarded. (<strong>Log levels:</strong> 0 FATAL, 1 ERROR, 2 WARNING, 3 INFO, 4 DEBUG, 5 FINE, 6 FINEST, -1 disable logs)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fileName</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>If the type of appender is a file, this will contain the path of the file.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">newLineCharacters</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">no</td>
+      <td>Newline character used in the file appender.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fileHistorySize</td>
+      <td style="text-align: center">number</td>
+      <td style="text-align: center">no</td>
+      <td>The maximum number of log files to be retained. The oldest log file will be deleted first if this number is exceeded.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fileLength</td>
+      <td style="text-align: center">number</td>
+      <td style="text-align: center">no</td>
+      <td>Buffer size of the file appender.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">singleLine</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">no</td>
+      <td>If yes, multi-line log messages are merged into one line.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> When daemon mode is set to true, all console appenders will be ignored. (Read the explanation for daemon setting above).</p>
+
+<h3 id="applications">applications</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>applications =
+{
+    rootDirectory = "./",
+    {
+        name="evostreamms",
+        -- settings for evostreamms
+    },
+    {
+        name="anotherApplication",
+        -- settings for anotherApplication
+    },
+}
+</code></pre>
+</div>
+
+<p>This section is where all the applications inside the server are placed. It holds the attributes of each application that the server will use to launch them. Each application may have specific attributes that it requires to execute its own functionality.</p>
+
+<p><strong>application Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">rootDirectory</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">true</td>
+      <td>The folder containing applications subfolders. If this path begins with a “/” or “" (depending on the OS), then is treated as an absolute path. Otherwise is treated as a path relative to the run-time directory (the place where you started the server).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Following the <em>rootDirectory</em>, there is a collection of applications. Each application has its properties contained in an object. See details below.</p>
+
+<h3 id="application-definition">application Definition</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="err">appDir=</span><span class="nt">"./"</span><span class="err">,</span><span class="w">
+    </span><span class="err">name=</span><span class="nt">"evostreamms"</span><span class="err">,</span><span class="w">
+    </span><span class="err">description=</span><span class="nt">"EVOSTREAM MEDIA SERVER"</span><span class="err">,</span><span class="w">
+    </span><span class="err">protocol=</span><span class="nt">"dynamiclinklibrary"</span><span class="err">,</span><span class="w">
+    </span><span class="err">default=true,</span><span class="w">
+    </span><span class="err">pushPullPersistenceFile=</span><span class="nt">"..\\config\\pushPullSetup.xml"</span><span class="err">,</span><span class="w">
+    </span><span class="err">authPersistenceFile=</span><span class="nt">"..\\config\\auth.xml"</span><span class="err">,</span><span class="w">
+    </span><span class="err">connectionsLimitPersistenceFile=</span><span class="nt">"..\\config\\connlimits.xml"</span><span class="err">,</span><span class="w">
+    </span><span class="err">bandwidthLimitPersistenceFile=</span><span class="nt">"..\\config\\bandwidthlimits.xml"</span><span class="err">,</span><span class="w">
+    </span><span class="err">ingestPointsPersistenceFile=</span><span class="nt">"..\\config\\ingestpoints.xml"</span><span class="err">,</span><span class="w">
+    </span><span class="err">streamsExpireTimer=10,</span><span class="w">
+    </span><span class="err">rtcpDetectionInterval=15,</span><span class="w">
+    </span><span class="err">hasStreamAliases=false,</span><span class="w">
+    </span><span class="err">hasIngestPoints=false,</span><span class="w">
+    </span><span class="err">validateHandshake=false,</span><span class="w">
+    </span><span class="err">aliases={</span><span class="nt">"er"</span><span class="err">,</span><span class="w"> </span><span class="nt">"live"</span><span class="err">,</span><span class="w"> </span><span class="nt">"vod"</span><span class="err">},</span><span class="w">
+    </span><span class="err">maxRtmpOutBuffer=</span><span class="mi">512</span><span class="err">*</span><span class="mi">1024</span><span class="err">,</span><span class="w">
+    </span><span class="err">hlsVersion=</span><span class="mi">3</span><span class="err">,</span><span class="w">
+    </span><span class="err">useSourcePts=</span><span class="kc">false</span><span class="err">,</span><span class="w">
+    </span><span class="err">enableCheckBandwidth=</span><span class="kc">true</span><span class="err">,</span><span class="w">
+    </span><span class="err">vodRedirectRtmpIp=</span><span class="s2">""</span><span class="err">,</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>This is where the settings of an application are defined. We will present only the settings common to all applications. Later on, we will also explain the settings particular to certain applications.</p>
+
+<p><strong>application Definition Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">name</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">False</td>
+      <td>Could be the name of the company, organization etc.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Description</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">False</td>
+      <td>Brief description of the “name”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Protocol</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Default</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">pushPullPersistenceFile</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">connectionsLimitPersistenceFile</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">bandwidthLimitPersistenceFile</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ingestPointsPersistenceFile</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">streamsExpireTimer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">rtcpDetectionInterval</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hasStreamAliases</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hasIngestPoints</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">validateHandshake</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">aliases</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">Designed to be used to protect\/hide your source streams</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">maxRtmpOutBuffer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">hlsVersion</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">True</td>
+      <td>The HLS version. Supported versions are from 3-6. User should make sure of the version before creating HLS files.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">useSourcePts</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">False</td>
+      <td>If set to 1, the outbound stream will use the PTS of the source stream. Otherwise, the pushed stream will start at 0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">enableCheckBandwidth</td>
+      <td style="text-align: center">Boolean</td>
+      <td style="text-align: center">True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">vodRedirectRtmpIp</td>
+      <td style="text-align: center">IP Address</td>
+      <td style="text-align: center">False</td>
+      <td>The IP address of the other server that</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="media">media</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="err">mediaStorage</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">{</span><span class="w">
+	</span><span class="err">recordedStreamsStorage=</span><span class="nt">"../media"</span><span class="err">,</span><span class="w">
+	</span><span class="err">{</span><span class="w">
+	</span><span class="err">description=</span><span class="nt">"Default media storage"</span><span class="err">,</span><span class="w">
+	</span><span class="err">mediaFolder=</span><span class="nt">"../media"</span><span class="err">,</span><span class="w">
+	</span><span class="err">},</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>This is where the settings of media folder defined. There are several uses of the media folder:</p>
+
+<ul>
+  <li>Storage of vod file that is used for <code class="highlighter-rouge">pullStream</code></li>
+  <li>Location of the created file using <code class="highlighter-rouge">generateLazyPull</code> command</li>
+  <li>Storage of recorded streams using record command</li>
+</ul>
+
+<p><strong>media Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">recordedStreamsStorage</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td>The path of the media folder to be used in record streams</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">description</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">False</td>
+      <td>The description of the media storage</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">mediafolder</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">True</td>
+      <td>The path of the media storage folder</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="acceptors">acceptors</h3>
+
+<p>The “acceptors” block is found within the “applications” section named “evostreamms” in the configuration file. Each acceptor protocol used by applications is defined here. Some protocols may require additional parameters.</p>
+
+<p><strong>acceptor Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">ip</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The IP where the service is located. A value of 0.0.0.0 means all interfaces and all IPs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">port</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>Port number that the service will listen to.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">protocol</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The protocol stack handled by the ip:port combination.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following acceptor types are supported by EMS:</p>
+
+<p><strong>acceptor Protocol Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Acceptor Protocol</th>
+      <th style="text-align: center">Typical IP</th>
+      <th style="text-align: center">Typical Port</th>
+      <th style="text-align: center">Additional Parameters (see Note 1)</th>
+      <th style="text-align: center">Protocol Stack (Tags)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">inboundRtmp</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">1935</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">TCP+IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundRtmps</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">8081</td>
+      <td style="text-align: center">sslKey (path to SSL key file), sslCert (path to SSL certificate file) (see Note 2)</td>
+      <td style="text-align: center">TCP+ISSL+IRS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundRtmpt</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">8080</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">TCP+IH4R</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundTcpTs</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">9999</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">TCP+ITS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundUdpTs</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">9999</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">UDP+ITS</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundRtsp</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">5544</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">TCP+RTSP</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundLiveFlv</td>
+      <td style="text-align: center">0.0.0.0</td>
+      <td style="text-align: center">6666</td>
+      <td style="text-align: center">waitForMetadata (boolean)</td>
+      <td style="text-align: center">TCP+ILFL</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundBinVariant</td>
+      <td style="text-align: center">127.0.0.1</td>
+      <td style="text-align: center">1113</td>
+      <td style="text-align: center">clustering (boolean)</td>
+      <td style="text-align: center">TCP+BVAR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundJsonCli</td>
+      <td style="text-align: center">127.0.0.1</td>
+      <td style="text-align: center">1112</td>
+      <td style="text-align: center">useLengthPadding (boolean)</td>
+      <td style="text-align: center">TCP+IJSONCLI</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundHttpJsonCli</td>
+      <td style="text-align: center">127.0.0.1</td>
+      <td style="text-align: center">7777</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">TCP+IHTT+H4C+IJSONCLI</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">inboundAsciiCli</td>
+      <td style="text-align: center">127.0.0.1</td>
+      <td style="text-align: center">1222</td>
+      <td style="text-align: center">useLengthPadding (boolean)</td>
+      <td style="text-align: center">TCP+IASCCLI</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Protocol Group Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Protocol Group</th>
+      <th>Tag</th>
+      <th>Protocol Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Carrier Protocols</td>
+      <td>TCP</td>
+      <td>TCP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>UDP</td>
+      <td>UDP</td>
+    </tr>
+    <tr>
+      <td>Variant Protocols</td>
+      <td>BVAR</td>
+      <td>Bin Variant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>XVAR</td>
+      <td>XML Variant</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>JVAR</td>
+      <td>JSON Variant</td>
+    </tr>
+    <tr>
+      <td>RTMP Protocols</td>
+      <td>IR</td>
+      <td>Inbound RTMP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IRS</td>
+      <td>Inbound RTMPS</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OR</td>
+      <td>Outbound RTMP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RS</td>
+      <td>RTMP Dissector</td>
+    </tr>
+    <tr>
+      <td>Encryption Protocols</td>
+      <td>RE</td>
+      <td>RTMPE</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>ISSL</td>
+      <td>Inbound SSL</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OSSL</td>
+      <td>Outbound SSL</td>
+    </tr>
+    <tr>
+      <td>MPEG-TS Protocol</td>
+      <td>ITS</td>
+      <td>Inbound TS</td>
+    </tr>
+    <tr>
+      <td>HTTP Protocols</td>
+      <td>IHTT</td>
+      <td>Inbound HTTP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IHTT2</td>
+      <td>Inbound HTTP2</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IH4R</td>
+      <td>Inbound HTTP for RTMP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OHTT</td>
+      <td>Outbound HTTP</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OHTT2</td>
+      <td>Outbound HTTP2</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OH4R</td>
+      <td>Outbound HTTP for RTMP</td>
+    </tr>
+    <tr>
+      <td>CLI Protocols</td>
+      <td>IJSONCLI</td>
+      <td>Inbound JSON CLI</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>H4C</td>
+      <td>HTTP for CLI</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IASCCLI</td>
+      <td>Inbound ASCII CLI</td>
+    </tr>
+    <tr>
+      <td>RPC Protocols</td>
+      <td>IRPC</td>
+      <td>Inbound RPC</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>ORPC</td>
+      <td>Outbound RPC</td>
+    </tr>
+    <tr>
+      <td>Passthrough Protocol</td>
+      <td>PT</td>
+      <td>Passthrough</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="autohlshdsdashmss">autoHLS/HDS/DASH/MSS</h3>
+
+<p>Within the “evostreamms” application section of the config.lua file, you will need to uncomment out the autoHLS group. (To uncomment it remove the “–[[” and “]]–” strings).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>autoDASH=
+    targetFolder= "..\\evo-webroot",
+},
+autoHLS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+autoHDS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+autoMSS=
+{
+    targetFolder= "..\\evo-webroot",
+},
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">autoHLS/HDS/DASH/MSS</code> configuration group defines the parameter settings that will be used when the <code class="highlighter-rouge">createHLS/HDS/DASH/MSSStream</code> is automatically called on stream creation. Since targetFolder is the only mandatory field in create stream, that value MUST be specified in the autoHLS section. All other parameters can be specified if you want to override the default values.</p>
+
+<h3 id="authentication">authentication</h3>
+
+<p>The “authentication” block is found within the “applications” section named “evostreamms” in the configuration file. Authentication settings for RTMP and RTSP protocols are defined separately. For RTMP, another file, <code class="highlighter-rouge">auth.xml</code>, is required to enable authentication. In addition, a users file, typically named <code class="highlighter-rouge">users.lua</code>, provides the user names and passwords.</p>
+
+<p><strong>authentication Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Protocol</th>
+      <th style="text-align: center">Parameter</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Typical Setting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">RTMP</td>
+      <td style="text-align: center">type</td>
+      <td style="text-align: center">true</td>
+      <td>“adobe”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RTMP</td>
+      <td style="text-align: center">encoderAgents</td>
+      <td style="text-align: center">true</td>
+      <td>“FMLE…” <em>(see below)</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RTMP</td>
+      <td style="text-align: center">usersFile</td>
+      <td style="text-align: center">true</td>
+      <td>”../config/users.lua”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RTSP</td>
+      <td style="text-align: center">usersFile</td>
+      <td style="text-align: center">true</td>
+      <td>”../config/users.lua”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RTSP</td>
+      <td style="text-align: center">authenticatePlay</td>
+      <td style="text-align: center">false</td>
+      <td>true (default value is false)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>authentication=
+{
+    rtmp=
+    {
+        type="adobe",
+        encoderAgents=
+        {
+            "FMLE/3.0 (compatible; FMSc/1.0)",
+            "Wirecast/FM 1.0 (compatible; FMSc/1.0)",
+            "EvoStream Media Server (www.evostream.com)"
+        },
+        usersFile="..\\config\\users.lua"
+    },
+    rtsp=
+    {
+        usersFile="..\\config\\users.lua",
+        --authenticatePlay=false,
+    }
+},
+</code></pre>
+</div>
+
+<p><strong>Notes:</strong></p>
+
+<ol>
+  <li>
+    <p>Authentication is disabled if the “authentication” block in the “config.lua” file is missing or incomplete. For RTMP protocol, authentication is disabled if the “auth.xml” file is missing or contains a “false” setting. For RTSP protocol, authentication is disabled if “authenticatePlay” in the “rtsp” block is omitted or set to “false”.</p>
+  </li>
+  <li>
+    <p>Scripts are available for creating certificates and keys for EMS. Please refer to our GitHub files <a href="https://github.com/EvoStream/evostream_addons/tree/master/certificates_and_keys">here</a> for details.</p>
+  </li>
+</ol>
+
+<h3 id="eventlogger">eventLogger</h3>
+
+<p>To enable Event Notifications you will need to enable/uncomment the eventLogger section of the config.lua file. Comments in LUA are specified by either a “–” for a single line, or denoted by a “–[[” to start a comment block and a “]]–” to end a comment block. By default the eventLogger section is commented out using the block style comments, so you will need to remove both the –[[and]]–strings.</p>
+
+<p>The configuration entry must be constructed as follows:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>eventLogger=
+{
+    sinks=
+    {
+        type="sink1_type",
+        -- property1 of sink1
+        -- property2 of sink1
+    },
+    enabledEvents=
+    {
+        "inStreamCreated",
+        "inStreamClosed",
+    }
+},
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">enabledEvents</code> parameter is optional and allows you to specify only the events which you wish to receive. If the enabledEvents section is not specified, all events will be generated.</p>
+
+<p>All event types are listed below.</p>
+
+<p><strong>Stream Events Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>inStreamCreated</td>
+      <td>A new inbound stream has been created</td>
+    </tr>
+    <tr>
+      <td>outStreamCreated</td>
+      <td>A new outbound stream has been created</td>
+    </tr>
+    <tr>
+      <td>streamCreated</td>
+      <td>A new neutral (neither in nor out) stream has been created</td>
+    </tr>
+    <tr>
+      <td>inStreamClosed</td>
+      <td>An inbound stream has been closed</td>
+    </tr>
+    <tr>
+      <td>outStreamClosed</td>
+      <td>An outbound stream has been closed</td>
+    </tr>
+    <tr>
+      <td>streamClosed</td>
+      <td>A neutral stream has been closed</td>
+    </tr>
+    <tr>
+      <td>inStreamCodecsUpdated</td>
+      <td>The audio and/or video codecs for this inbound stream have been identified or changed</td>
+    </tr>
+    <tr>
+      <td>outStreamCodecsUpdated</td>
+      <td>The audio and/or video codecs for this outbound stream have been identified or changed</td>
+    </tr>
+    <tr>
+      <td>streamCodecsUpdated</td>
+      <td>The audio and/or video codecs for this neutral stream have been identified or changed</td>
+    </tr>
+    <tr>
+      <td>audioFeedStopped</td>
+      <td>The audio feed has stopped for an extended period</td>
+    </tr>
+    <tr>
+      <td>videoFeedStopped</td>
+      <td>The video feed has stopped for an extended period</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Adaptive Streaming/File-based Streaming Events Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hlsChildPlaylistUpdated</td>
+      <td>Stream specific HLS playlist has been modified</td>
+    </tr>
+    <tr>
+      <td>hlsMasterPlaylistUpdated</td>
+      <td>HLS group playlist has been modified</td>
+    </tr>
+    <tr>
+      <td>hlsChunkCreated</td>
+      <td>A new HLS segment was opened on disk</td>
+    </tr>
+    <tr>
+      <td>hlsChunkClosed</td>
+      <td>A new HLS segment has been completed and is ready on disk</td>
+    </tr>
+    <tr>
+      <td>hlsChunkError</td>
+      <td>A failure occurred when writing to an HLS segment file</td>
+    </tr>
+    <tr>
+      <td>hdsChildPlaylistUpdated</td>
+      <td>Stream specific HDS manifest has been modified</td>
+    </tr>
+    <tr>
+      <td>hdsMasterPlaylistUpdated</td>
+      <td>HDS group manifest has been modified</td>
+    </tr>
+    <tr>
+      <td>hdsChunkCreated</td>
+      <td>A new HDS segment file has been opened</td>
+    </tr>
+    <tr>
+      <td>hdsChunkClosed</td>
+      <td>A new HDS segment has been completed and is ready on disk</td>
+    </tr>
+    <tr>
+      <td>hdsChunkError</td>
+      <td>A failure occurred when writing to an HDS segment/fragment file</td>
+    </tr>
+    <tr>
+      <td>mssChunkCreated</td>
+      <td>A new MSS fragment file has been opened</td>
+    </tr>
+    <tr>
+      <td>mssChunkClosed</td>
+      <td>A new MSS fragment has been completed and is ready on disk</td>
+    </tr>
+    <tr>
+      <td>mssChunkError</td>
+      <td>A failure occurred when writing to an MSS fragment file</td>
+    </tr>
+    <tr>
+      <td>mssPlaylistUpdated</td>
+      <td>MSS manifest has been modified</td>
+    </tr>
+    <tr>
+      <td>dashChunkCreated</td>
+      <td>A new DASH fragment file has been opened</td>
+    </tr>
+    <tr>
+      <td>dashChunkClosed</td>
+      <td>A new DASH fragment has been completed and is ready on disk</td>
+    </tr>
+    <tr>
+      <td>dashChunkError</td>
+      <td>A failure occurred when writing to an DASH fragment file</td>
+    </tr>
+    <tr>
+      <td>dashPlaylistUpdated</td>
+      <td>DASH manifest has been modified</td>
+    </tr>
+    <tr>
+      <td>recordChunkCreated</td>
+      <td>A new record fragment file has been opened</td>
+    </tr>
+    <tr>
+      <td>recordChunkClosed</td>
+      <td>A new record fragment has been completed and is ready on disk</td>
+    </tr>
+    <tr>
+      <td>recordChunkError</td>
+      <td>A failure occurred when writing to a record fragment file</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>API Based Events Table</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cliRequest</td>
+      <td>The EMS has received a Runtime API command</td>
+    </tr>
+    <tr>
+      <td>cliResponse</td>
+      <td>The response generated by the EMS for the last Runtime API command</td>
+    </tr>
+    <tr>
+      <td>processStarted</td>
+      <td>A process has been started at the request of the launchProcess API command</td>
+    </tr>
+    <tr>
+      <td>processStopped</td>
+      <td>A process started via the launchProcess API command has been stopped</td>
+    </tr>
+    <tr>
+      <td>timerCreated</td>
+      <td>A new timer has been created via the setTimer API command</td>
+    </tr>
+    <tr>
+      <td>timerTriggered</td>
+      <td>The requested timer event</td>
+    </tr>
+    <tr>
+      <td>timerClosed</td>
+      <td>Indicates the timer is no longer valid and will not create any futher timerTriggered events</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Connection Based Events Table</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>protocolRegisteredToApp</td>
+      <td>A connection has been fully established</td>
+    </tr>
+    <tr>
+      <td>protocolUnregisteredFromApp</td>
+      <td>A connection has been disconnected</td>
+    </tr>
+    <tr>
+      <td>carrierCreated</td>
+      <td>Some IO handler, such as a TCP socket, has been created. This is not analogous to a connection creation.</td>
+    </tr>
+    <tr>
+      <td>carrierClosed</td>
+      <td>Some IO handler, such as a UDP socket, has been closed. This is not analogous to a connection being closed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Application Based Events Table</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>applicationStart</td>
+      <td>The internal EMS application has started</td>
+    </tr>
+    <tr>
+      <td>applicationStop</td>
+      <td>The internal EMS application has stopped, likely indicating a shutdown is about to occur</td>
+    </tr>
+    <tr>
+      <td>serverStarted</td>
+      <td>The EMS has fully started</td>
+    </tr>
+    <tr>
+      <td>serverStopping</td>
+      <td>The EMS is about to shutdown. This is sent as late as possible, but clearly not after shutdown has been completed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Web Server Events Table</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>streamingSessionStarted</td>
+      <td>A streaming session has been started</td>
+    </tr>
+    <tr>
+      <td>streamingSessionEnded</td>
+      <td>A streaming session has been completed</td>
+    </tr>
+    <tr>
+      <td>mediaFileDownloaded</td>
+      <td>A file download has been completed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="event-sinks">Event Sinks</h4>
+
+<p>There are two main types of event sinks:</p>
+
+<p>1. <strong>File Event Sink</strong> – Event details are written to a log file located relative to the current directory. The log file is overwritten each time the EMS starts up.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type="file",
+filename="log.txt",
+format="text",
+customData="my custom data"
+</code></pre>
+</div>
+
+<p>File sink configuration:</p>
+
+<p>The format can be one of the following types:</p>
+
+<ul>
+  <li>
+    <p>“text” (plain text)</p>
+  </li>
+  <li>
+    <p>“xml”</p>
+  </li>
+  <li>
+    <p>“json”</p>
+  </li>
+  <li>
+    <p>“w3c”</p>
+
+    <p>A typical configuration of a file sink follows:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  eventLogger=
+  {
+      sinks=
+      {
+          {
+              type="file",
+              filename="../logs/events.txt",
+              --format="text",
+              --format="xml",
+              --format="json",
+              format="w3c",
+              timestamp=true,
+              appendTimestamp=true,
+              appendInstance=true,
+              fileChunkLength=43200, -- 12 hours (in seconds)
+              fileChunkTime="18:00:00",
+              enabledEvents=
+              {
+                  "inStreamCreated",
+                  "outStreamCreated",
+                  "streamCreated",
+                  -- content removed for clarity
+              },
+              {
+                  -- content removed for clarity
+              },
+          },
+      },
+  },
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><strong>File Sink Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">customData</td>
+      <td style="text-align: center">object</td>
+      <td style="text-align: center">no</td>
+      <td>Custom data that will be appended to all events generated by this sink. It overrides the custom data node defined on the upper level. It can also be a complex structure, see illustration above.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">type</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The type of sink, “file”.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">filename</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The base name of the file.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">format</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>Sets the file format. Allowed values are “text”, “xml”, “json” and “w3c”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">timestamp</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">appendTimestamp</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">no</td>
+      <td>Sets the option to append a timestamp. If true, timestamp (YYYYMMDD_HHmmSS) is appended on every log file created. Otherwise, a 4-digit running number is appended. Default value is true.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">appendInstance</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">no</td>
+      <td>Appends a random 4-digit instance ID after every log file. Default is false.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fileChunkLength</td>
+      <td style="text-align: center">number</td>
+      <td style="text-align: center">no</td>
+      <td>Number of seconds to create new file.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">fileChunkTime</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">no</td>
+      <td>Time of the day to chunk log file, in HH:MM:SS format. <em>Note__: No file chunking when fileChunkLength and fileChunkTime are both present.</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">enabledEvents</td>
+      <td style="text-align: center">object</td>
+      <td style="text-align: center">no</td>
+      <td>Events that are logged. If not set, all are logged. But for W3C, non-stream-related events are ignored.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As indicated above, the name of the file can be set using a number of options. For example,</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>filename = "/var/evostreamms/logs/streams"
+appendTimestamp = true
+appendInstance = true
+</code></pre>
+</div>
+
+<p>The log file would be <code class="highlighter-rouge">/var/evostreamms/logs/streams_0237_20140311_183046.txt</code>.</p>
+
+<p>2. <strong>RPC (Remote Procedure Calls) Event Sink</strong> – Event details are transmitted to a remote host via HTTP POST. The EMS will ignore any response from the remote host.</p>
+
+<p>RPC sink configuration:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type="RPC",
+url="http://192.168.1.5:5555/something/service",
+serializerType="JSON",
+customData="my custom data"
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">url</code> field specifies the destination which will be accepting the HTTP POST event notifications..</p>
+
+<p>The <code class="highlighter-rouge">serializer</code> type can be one of the following formats:</p>
+
+<ul>
+  <li><strong>JSON</strong></li>
+</ul>
+
+<p>Format of JSON POST:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"payload"</span><span class="p">:{</span><span class="nt">"creationTimestamp"</span><span class="p">:</span><span class="mf">1349335053486.4370</span><span class="p">,</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="nt">"queryTimestamp"</span><span class="p">:</span><span class="mf">1349335053487.4370</span><span class="p">,</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"NR"</span><span class="p">,</span><span class="nt">"uniqueId"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">"upTime"</span><span class="p">:</span><span class="mf">1.0000</span><span class="p">},</span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"streamCreated"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<ul>
+  <li><strong>XML</strong></li>
+</ul>
+
+<p>Format of XML POST:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;MAP</span> <span class="na">isArray=</span><span class="s">"false"</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;MAP</span> <span class="na">isArray=</span><span class="s">"false"</span> <span class="na">name=</span><span class="s">"payload"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;DOUBLE</span> <span class="na">name=</span><span class="s">"creationTimestamp"</span><span class="nt">&gt;</span>1349335287346.813<span class="nt">&lt;/DOUBLE&gt;</span>
+        <span class="nt">&lt;STR</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;&lt;/STR&gt;</span>
+        <span class="nt">&lt;DOUBLE</span> <span class="na">name=</span><span class="s">"queryTimestamp"</span><span class="nt">&gt;</span>1349335287346.813<span class="nt">&lt;/DOUBLE&gt;</span>
+        <span class="nt">&lt;STR</span> <span class="na">name=</span><span class="s">"type"</span><span class="nt">&gt;</span>NR<span class="nt">&lt;/STR&gt;</span>
+        <span class="nt">&lt;UINT64</span> <span class="na">name=</span><span class="s">"uniqueId"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/UINT64&gt;</span>
+        <span class="nt">&lt;DOUBLE</span> <span class="na">name=</span><span class="s">"upTime"</span><span class="nt">&gt;</span>0.000<span class="nt">&lt;/DOUBLE&gt;</span>
+    <span class="nt">&lt;/MAP&gt;</span>
+<span class="nt">&lt;STR</span> <span class="na">name=</span><span class="s">"type"</span><span class="nt">&gt;</span>streamCreated<span class="nt">&lt;/STR&gt;</span>
+<span class="nt">&lt;/MAP&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>XMLRPC</strong></li>
+</ul>
+
+<p>Format of XMLRPC POST: (indented for clarity)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;methodCall&gt;</span>
+    <span class="nt">&lt;methodName&gt;</span>event.Log<span class="nt">&lt;/methodName&gt;</span>
+    <span class="nt">&lt;params&gt;</span>
+        <span class="nt">&lt;param&gt;</span>
+            <span class="nt">&lt;value&gt;</span>
+                <span class="nt">&lt;struct&gt;</span>
+                    <span class="nt">&lt;member&gt;</span>
+                        <span class="nt">&lt;name&gt;</span>payload<span class="nt">&lt;/name&gt;</span>
+                        <span class="nt">&lt;value&gt;</span>
+                            <span class="nt">&lt;struct&gt;</span>
+                            <span class="nt">&lt;member&gt;</span>
+                                <span class="nt">&lt;name&gt;</span>creationTimestamp<span class="nt">&lt;/name&gt;</span>
+                                <span class="nt">&lt;value&gt;&lt;double&gt;</span>0.000000<span class="nt">&lt;/double&gt;&lt;/value&gt;</span>
+                            <span class="nt">&lt;/member&gt;</span>
+                            <span class="c">&lt;!-- contents removed for clarity --&gt;</span>
+                            <span class="nt">&lt;/struct&gt;</span>
+                        <span class="nt">&lt;/value&gt;</span>
+                    <span class="nt">&lt;/member&gt;</span>
+                    <span class="nt">&lt;member&gt;</span>
+                        <span class="nt">&lt;name&gt;</span>type<span class="nt">&lt;/name&gt;</span>
+                        <span class="nt">&lt;value&gt;&lt;string&gt;</span>streamCreated<span class="nt">&lt;/string&gt;&lt;/value&gt;</span>
+                    <span class="nt">&lt;/member&gt;</span>
+                <span class="nt">&lt;/struct&gt;</span>
+            <span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;/param&gt;</span>
+    <span class="nt">&lt;/params&gt;</span>
+<span class="nt">&lt;/methodCall&gt;</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">customData</code> parameter for both File and RPC Event Sinks can be <em>optionally</em> used to extra data to each event for that sink. This could be used to identify the particular EMS instance which is generating the event, return a particular ID or Key which is pertinent to your handling of the event, or anything really! A customData parameter can be a simple sting value or a complex LUA object.</p>
+
+<p>If a <code class="highlighter-rouge">customData</code> parameter is not specified for a node, the value of the parent eventLogger customData node will be used. If that is also not specified, the value will be V_NULL.</p>
+
+<h3 id="transcoder">Transcoder</h3>
+
+<p>Within the application section you can find the configuration for the EvoStream Transcoder. The default settings are generally going to be fine for all applications, but under certain circumstances they may need to be adjusted. The transcoder section looks like the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>transcoder = {
+    scriptPath="..\\emsTranscoder.bat",
+    srcUriPrefix="rtsp://localhost:5544/",
+    dstUriPrefix="-f flv tcp://localhost:6666/"
+},
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">srcUriPrefix</code> tells the transcoder how to get the stream from the EMS. The <code class="highlighter-rouge">dstUriPrefix</code> tells the transcoder how to push the stream back to the EMS. The ports used in these two values must match the acceptors the EMS is actively listening on. By default this is i<code class="highlighter-rouge">5544</code> for RTSP and <code class="highlighter-rouge">6666</code> for liveFLV.</p>
+
+<p><strong>Transcoder Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">scriptPath</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The location for the helper script for the transcoder. The transcode API function calls this script instead of calling the binary directly so that the binary can be replaced should you want to use a custom transcoder.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">srcUriPrefix</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">Yes</td>
+      <td>When using the transcode API function, you can specify just a localStreamName as the source stream. This is the prefix that will be pre-pended to the provided localStreamName when actually pulling that source stream. For example, if <code class="highlighter-rouge">srcUriPrefix="rtsp://localhost:5544"</code> and the stream name <code class="highlighter-rouge">"test1"</code> is given to the transcode command, the following URI will be used: <code class="highlighter-rouge">rtsp://localhost:5544/test1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">dstUriPrefix</td>
+      <td style="text-align: center">String</td>
+      <td style="text-align: center">Yes</td>
+      <td>This is the converse of the srcUriPrefix, in that if just a localStreamName is given as a destination in the transcode command, this is the string that will be prepended to the stream name. That complete command will then be used by the transcoder to send the stream back to the EMS.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="drm">drm</h3>
+
+<p>Also in the application section of the config.lua file, the DRM section provides the configuration values for any DRM that needs to be activated. This section is commented out by default (wrapped in “–[[” and “]]–”). It must be un-commented-out before DRM will be activated.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>drm={
+    type="verimatrix",
+    requestTimer=1,
+    reserveKeys=10,
+    reserveIds=10,
+    -- urlPrefix="http://server1.evostream1.com:12684/CAB/keyfile"
+    urlPrefix="http://vcas3multicas1.verimatrix.com:12684/CAB/keyfile"
+},
+</code></pre>
+</div>
+
+<p><strong>drm Structure Table:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Key</th>
+      <th style="text-align: center">Type</th>
+      <th style="text-align: center">Mandatory</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">type</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">yes</td>
+      <td>The type of DRM to be used. Options are: “verimatrix” – Enables Verimatrix DRM on HLS “evo” – Enables AES encryption on HLS”none” – disables DRM. This is the same as commenting out this section of the config file.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">requestTimer</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">Yes, when type=verimatrix</td>
+      <td>The key request timer period in seconds. Right after startup, the EMS will request keys from the Verimatrix Key Server every timer period.Default=1, Min=1, Max=none. (If set below min, the min value will be used.)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">reserveKeys</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">Yes, when type=verimatrix</td>
+      <td>The number of keys buffered per ID.Default=10, Min=5, Max=none. (If set below min, the min value will be used.)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">reserveIds</td>
+      <td style="text-align: center">Number</td>
+      <td style="text-align: center">Yes, when type=verimatrix</td>
+      <td>The number of reserve IDs with key buffers to be filled in addition to active IDs.Default=10, Min=5, Max=none. (If set below min, the min value will be used.)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">urlPrefix</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">Yes, when type=verimatrix</td>
+      <td>The location of your Verimatrix VCAS Key Server</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="../index.html">Documentation main index</a></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>Sales Support</li>
+          <li><a href="mailto:salesupport@evostream.com">salesupport@evostream.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/EvoStream"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">EvoStream</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/EvoStreamInc"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">EvoStreamInc</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>EvoStream, 1010 Turquoise, Suite 101, San Diego, CA 92109, California, USA.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+
+<!-- Mirrored from docs.evostream.com/ems_user_guide/emsconfigfile by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Dec 2016 10:37:58 GMT -->
+</html>

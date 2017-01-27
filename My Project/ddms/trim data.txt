@@ -1,0 +1,3 @@
+update data 
+ set SiteName=SUBSTRING(SiteName, 1, CHAR_LENGTH(SiteName) - 4) 
+WHERE data.id='85'
